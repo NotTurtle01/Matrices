@@ -1,2 +1,9 @@
 #Módulo Matrices.
-#Holamundo
+
+#Definición matrices:
+
+class matriz:
+  def __init__(self,lista):
+    self.matriz = 
+
+A = matriz([2,3],[1,2])
