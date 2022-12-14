@@ -16,4 +16,11 @@ class matriz:
     cadena = 'Tu matriz es: {0}\n'.format(self.matriz)
     return cadena
 
-A = matriz([[2,3],[1,2]])
+  def __len__(self):
+    contador = 0
+    for i in self.matriz:
+        contador += 1
+    return contador
+
+A = matriz([[2],[1,2]])
+print(len(A))
