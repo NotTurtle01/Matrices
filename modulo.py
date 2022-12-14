@@ -1,7 +1,6 @@
-#Módulo Matrices.
+#Óscar Mirás Sánchez. Joel Rubio González.
 
-#Definición matrices:
-
+#Módulo de Python: class matriz.
 
 class matriz:
   def __init__(self,lista):
@@ -22,5 +21,6 @@ class matriz:
         contador += 1
     return contador
 
-A = matriz([[2],[1,2]])
-print(len(A))
+A = matriz([[2,4],[1,2]])
+print(A)
+
