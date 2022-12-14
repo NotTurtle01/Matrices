@@ -14,5 +14,6 @@ class matriz:
    
   def __str__(self):
     cadena = 'Tu matriz es: {0}\n'.format(self.lista)
+    return cadena
 
 A = matriz([2,3],[1,2])
