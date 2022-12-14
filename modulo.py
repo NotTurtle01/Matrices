@@ -13,6 +13,6 @@ class matriz:
         print('Tu lista no es una matriz')
    
   def __str__(self):
-    cadena = 'Tu matriz es: {0}\n'.format(self.)
+    cadena = 'Tu matriz es: {0}\n'.format(self.lista)
 
 A = matriz([2,3],[1,2])
