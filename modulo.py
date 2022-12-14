@@ -16,4 +16,4 @@ class matriz:
     cadena = 'Tu matriz es: {0}\n'.format(self.matriz)
     return cadena
 
-A = matriz([2,3],[1,2])
+A = matriz([[2,3],[1,2]])
