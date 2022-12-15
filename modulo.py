@@ -57,6 +57,14 @@ class matriz:
 
   def opuesta(self):
     return self.escalar_matriz(-1) #Uso recursivo de la función escalar_matriz
-
+  
+  def identidad(self,n):
+    M = []
+    for i in range(n):
+      M.append([0] * n )
+    for i in range(n):
+      M[i][i] = 1
+    return M
+      
 A = matriz([[2,3,4], [1,2,5], [9,2,3]])
-print(A.opuesta())
+print(A.identidad(9))
