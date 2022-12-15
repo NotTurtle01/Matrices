@@ -96,5 +96,22 @@ class matriz:
               lista_nula[i].append(0)
       return lista_nula
 
+    def __add__(self,otro):
+        if otro.filas != self.filas:
+            print('Como las matrices no tienen las mismas dimensiones no se pueden sumar')
+        elif otro.columnas != self.columnas:
+            print('Como las matrices no tienen las mismas dimensiones no se pueden sumar')
+        else:
+            suma = []
+            for i in range(self.filas):
+                fila = []
+                for j in range(self.columnas):
+                    fila.append(self.matriz[i][j] + otro.matriz[i][j])
+                suma.append(fila)
+        return suma
+
 A = matriz([[2,3,4], [1,2,5], [9,2,3]])
 print(A.nula(3,4))
+
+
+   
