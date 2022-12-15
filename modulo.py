@@ -15,14 +15,32 @@ class matriz:
             self.filas = len(lista)
             self.columnas = len(lista[0])
 
-    def __str__(self):
-        cadena = ''
-        for i in range(0,len(self.matriz)):
-            if i != (len(self.matriz)-1):
-                cadena = cadena + str(self.matriz[i]) + '\n'
-            else:
-                cadena = cadena + str(self.matriz[i])
-        return cadena
+  def __str__(self):
+    cadena = ''
+    for i in range(0,len(self.matriz)):
+        if i != (len(self.matriz)-1):
+            cadena = cadena + str(self.matriz[i]) + '\n'
+        else:
+            cadena = cadena + str(self.matriz[i])
+    return cadena
+    
+  def crearmatriz(self,n,m):
+        defecto = [[0]]
+        for i in range(n-1):
+            defecto.append([0])
+        for i in range(n):
+            for j in range(m-1):
+                defecto[i].append(0)
+        for i in range(n):
+            for j in range(m):
+                valido = False
+                while not valido:
+                    try:          
+                        defecto[i][j] = float(input('Dime el elemento de la fila ' + str(i+1) + ' ,columna ' + str(j+1) + ': '))
+                        valido = True
+                    except ValueError:
+                        print('Eso no es un número válido, intentelo de nuevo')
+        return defecto
   
   def mostrar_objeto(self,n,m):
     return self.matriz[n-1][m-1]
