@@ -110,8 +110,22 @@ class matriz:
                 suma.append(fila)
         return suma
 
-A = matriz([[2,3,4], [1,2,5], [9,2,3]])
-print(A.nula(3,4))
+    def __sub__(self,otro):
+        if otro.filas != self.filas:
+            print('Como las matrices no tienen las mismas dimensiones no se pueden sumar')
+        elif otro.columnas != self.columnas:
+            print('Como las matrices no tienen las mismas dimensiones no se pueden sumar')
+        else:
+            resta = []
+            for i in range(self.filas):
+                fila = []
+                for j in range(self.columnas):
+                    fila.append(self.matriz[i][j] - otro.matriz[i][j])
+                resta.append(fila)
+        return resta
 
+A = matriz([[2,3,4], [1,2,5], [9,2,3]])
+B = matriz([[5,2,3], [3,2,3], [9,2,4]])
+print(A-B)
 
    
