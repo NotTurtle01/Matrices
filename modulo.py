@@ -56,7 +56,7 @@ class matriz:
     return self.matriz
 
   def opuesta(self):
-    return self.escalar_matriz(-1)
+    return self.escalar_matriz(-1) #Uso recursivo de la función escalar_matriz
 
 A = matriz([[2,3,4], [1,2,5], [9,2,3]])
 print(A.opuesta())
