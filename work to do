@@ -1,9 +1,49 @@
-#Módulo Matrices.
 
-#Definición matrices:
 
 class matriz:
-  def __init__(self,lista):
-    self.matriz = 
+    def __init__(self,lista):
+        if lista == []:
+            self.matriz = lista
+        else:
+            for fila in lista:
+                if len(fila) != len(lista[0]):
+                    print('Eso no es una matriz válida')
+                    quit()
+            self.matriz = lista
+            self.filas = len(lista)
+            self.columnas = len(lista[0])
 
-A = matriz([2,3],[1,2])
+
+    def __str__(self):
+        cadena = ''
+        for i in range(0,len(self.matriz)):
+            if i != (len(self.matriz)-1):
+                cadena = cadena + str(self.matriz[i]) + '\n'
+            else:
+                cadena = cadena + str(self.matriz[i])
+        return cadena
+    
+    def mostrarelemento(self,n,m):
+        return self.matriz[n-1][m-1]
+    
+    def asignarelemento(self,n,m,elemento):
+        self.matriz[n-1][m-1] = elemento
+        return self.matriz
+
+    def crearmatriz(self,n,m):
+        defecto = [[0]]
+        for i in range(n-1):
+            defecto.append([0])
+        for i in range(n):
+            for j in range(m-1):
+                defecto[i].append(0)
+        for i in range(n):
+            for j in range(m):
+                valido = False
+                while not valido:
+                    try:          
+                        defecto[i][j] = float(input('Dime el elemento de la fila ' + str(i+1) + ' ,columna ' + str(j+1) + ': '))
+                        valido = True
+                    except ValueError:
+                        print('Eso no es un número válido, intentelo de nuevo')
+        return defecto
