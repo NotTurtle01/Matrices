@@ -48,6 +48,13 @@ class matriz:
       for i in range(self.columnas):
         lista_diagonal_2.append(self.matriz[self.filas -1 - i][i])
       return lista_diagonal_2
+    
+  def escalar_matriz(self,escalar):
+    suma = 0
+    for fila in range(self.columnas):
+      for columna in range(self.filas):
+          self.matriz[fila][columna] = escalar * self.matriz[fila][columna]
+    return self.matriz
 
 A = matriz([[2,3,4], [1,2,5], [9,2,3]])
-print(A.diagonal(2))
+print(A.escalar_matriz(-3))
