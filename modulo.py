@@ -89,3 +89,4 @@ class matriz:
       
 A = matriz([[2,3,4], [1,2,5], [9,2,3]])
 print(A.identidad(9))
+a
