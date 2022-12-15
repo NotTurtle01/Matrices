@@ -3,23 +3,26 @@
 #Módulo de Python: class matriz.
 
 class matriz:
-  def __init__(self,lista):
-    self.matriz = lista
-    self.filas = len(lista)
-    self.columnas = len(lista[0])
-    for fila in lista:
-      if len(fila) != len(lista[0]):
-        print('Tu lista no es una matriz válida')
-        quit()
-   
-  def __str__(self):
-    cadena = ''
-    for i in self.matriz:
-      if i != self.matriz[-1]:
-        cadena = cadena + str(i) + '\n'
-      else:
-        cadena = cadena + str(i)
-    return cadena
+    def __init__(self,lista):
+        if lista == []:
+            self.matriz = lista
+        else:
+            for fila in lista:
+                if len(fila) != len(lista[0]):
+                    print('Eso no es una matriz válida')
+                    quit()
+            self.matriz = lista
+            self.filas = len(lista)
+            self.columnas = len(lista[0])
+
+    def __str__(self):
+        cadena = ''
+        for i in range(0,len(self.matriz)):
+            if i != (len(self.matriz)-1):
+                cadena = cadena + str(self.matriz[i]) + '\n'
+            else:
+                cadena = cadena + str(self.matriz[i])
+        return cadena
   
   def mostrar_objeto(self,n,m):
     return self.matriz[n-1][m-1]
