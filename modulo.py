@@ -88,10 +88,13 @@ class matriz:
       return M
       
     def nula(self,n,m):
-      M = []
-      for i in self.filas:
-        M.append([0] * n)
-      return M
+      lista_nula = [[0]]
+      for i in range(n-1):
+          lista_nula.append([0])
+      for i in range(n):
+          for j in range(m-1):
+              lista_nula[i].append(0)
+      return lista_nula
 
 A = matriz([[2,3,4], [1,2,5], [9,2,3]])
-print(A.nula(9))
+print(A.nula(3,4))
