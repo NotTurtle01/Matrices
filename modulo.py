@@ -13,7 +13,12 @@ class matriz:
         quit()
    
   def __str__(self):
-    cadena = 'Tu matriz es: {0}\n'.format(self.matriz)
+    cadena = ''
+    for i in self.matriz:
+      if i != self.matriz[-1]:
+        cadena = cadena + str(i) + '\n'
+      else:
+        cadena = cadena + str(i)
     return cadena
   
   def mostrar_objeto(self,n,m):
@@ -23,7 +28,19 @@ class matriz:
     self.matriz[n-1][m-1] = elemento
     return self.matriz
 
+  def fila(self,n):
+    return self.matriz[n-1]
+  
+  def columna(self,m):
+    lista_columna = []
+    for i in self.matriz:
+      lista_columna.append(i[m-1])
+    return lista_columna
+
+  def diagonal(self,d):
+    if d == 1:
+      
+
+
 A = matriz([[2,3], [1,2], [1,5]])
-print(A)
-print(A.mostrar_objeto(2, 1))
-print(A.asignar_elemento(2, 1, 89))
+print(A.columna(1))
