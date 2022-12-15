@@ -46,7 +46,8 @@ class matriz:
     if d == 2:
       lista_diagonal_2 = []
       for i in range(self.columnas):
-        lista_diagonal_2.append(self.matriz[self.filas-i][i])
+        lista_diagonal_2.append(self.matriz[self.filas -1 - i][i])
+      return lista_diagonal_2
 
-A = matriz([[2,3], [1,2]])
+A = matriz([[2,3,4], [1,2,5], [9,2,3]])
 print(A.diagonal(2))
