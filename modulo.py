@@ -50,7 +50,6 @@ class matriz:
       return lista_diagonal_2
     
   def escalar_matriz(self,escalar):
-    suma = 0
     for fila in range(self.columnas):
       for columna in range(self.filas):
           self.matriz[fila][columna] = escalar * self.matriz[fila][columna]
