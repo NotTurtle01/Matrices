@@ -39,8 +39,14 @@ class matriz:
 
   def diagonal(self,d):
     if d == 1:
-      
+      lista_diagonal_1 = []
+      for i in range(self.columnas):
+        lista_diagonal_1.append(self.matriz[i][i])
+      return lista_diagonal_1
+    if d == 2:
+      lista_diagonal_2 = []
+      for i in range(self.columnas):
+        lista_diagonal_2.append(self.matriz[self.filas-i][i])
 
-
-A = matriz([[2,3], [1,2], [1,5]])
-print(A.columna(1))
+A = matriz([[2,3], [1,2]])
+print(A.diagonal(2))
