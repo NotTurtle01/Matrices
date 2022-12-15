@@ -55,5 +55,8 @@ class matriz:
           self.matriz[fila][columna] = escalar * self.matriz[fila][columna]
     return self.matriz
 
+  def opuesta(self):
+    return self.escalar_matriz(-1)
+
 A = matriz([[2,3,4], [1,2,5], [9,2,3]])
-print(A.escalar_matriz(-3))
+print(A.opuesta())
