@@ -10,17 +10,13 @@ class matriz:
     for fila in lista:
       if len(fila) != len(lista[0]):
         print('Tu lista no es una matriz')
+        quit()
    
   def __str__(self):
     cadena = 'Tu matriz es: {0}\n'.format(self.matriz)
     return cadena
 
-  def __len__(self):
-    contador = 0
-    for i in self.matriz:
-        contador += 1
-    return contador
-
-A = matriz([[2,4],[1,2]])
+A = matriz([[2,3], [1,2], [1,5,6]])
 print(A)
+
 
