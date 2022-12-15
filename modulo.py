@@ -59,6 +59,7 @@ class matriz:
       return lista_columna
       
     def diagonal(self,d):
+        #OJO. Hacer la comprobación de ES_CUADRADA
       if d == 1:
         lista_diagonal_1 = []
         for i in range(self.columnas):
