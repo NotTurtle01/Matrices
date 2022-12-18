@@ -143,6 +143,22 @@ class matriz:
       else:
         return False
 
+    def __mul__(self,otro):
+    if self.columnas != otro.filas:
+        print('Esas matrices no tienen dimensiones validas para multiplicar')
+        quit()
+    else:
+        mul = []
+        for i in range(self.filas):
+            fila = []
+            for j in range(otro.columnas):
+                suma = 0
+                for t in range(otro.columnas):
+                    suma += self.matriz[i][t] * otro.matriz[t][j]
+                fila.append(suma)
+            mul.append(fila)
+        return mul
+    
 A = matriz([[2,3,4], [1,2,5], [9,2,3]])
 B = matriz([[5,2,3], [3,2,3], [9,2,4]])
 print(A-B)
