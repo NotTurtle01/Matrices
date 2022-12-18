@@ -161,6 +161,14 @@ class matriz:
       else:
         return False
     
+    def is_triangular_superior(self):
+      flag = True
+      for i in range(1, self.filas):
+        for j in range(0, i):
+          if self.matriz[i][j] != 0:
+                flag = False
+      return flag
+    
     def __mul__(self,otro):
     if self.columnas != otro.filas:
         print('Esas matrices no tienen dimensiones validas para multiplicar')
