@@ -168,7 +168,11 @@ class matriz:
           if self.matriz[i][j] != 0:
                 flag = False
       return flag
-    
+
+def is_triangular_inferior(self):
+      self.matriz = self.transposicion()
+      return self.is_triangular_superior()
+
     def __mul__(self,otro):
     if self.columnas != otro.filas:
         print('Esas matrices no tienen dimensiones validas para multiplicar')
@@ -245,10 +249,6 @@ class matriz:
                 suma += self.matriz[i][j]
         media = suma/(self.filas*self.columnas)
         return media
-                                         
-A = matriz([[2,3,4], [1,2,5], [9,2,3]])
-B = matriz([[5,2,3], [3,2,3], [9,2,4]])
-C = matriz([[1],[2],[7]])
-print(A-B)
-print(A.is_cuadrada())
-print(B.is_columna())
+
+D = matriz([[1,0,0], [1,2,0], [2,7,9]])
+print(D.is_triangular_inferior())
