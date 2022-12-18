@@ -169,25 +169,25 @@ class matriz:
                 flag = False
       return flag
 
-def is_triangular_inferior(self):
-      self.matriz = self.transposicion()
-      return self.is_triangular_superior()
+    def is_triangular_inferior(self):
+        self.matriz = self.transposicion()
+        return self.is_triangular_superior()
 
     def __mul__(self,otro):
-    if self.columnas != otro.filas:
-        print('Esas matrices no tienen dimensiones validas para multiplicar')
-        quit()
-    else:
-        mul = []
-        for i in range(self.filas):
-            fila = []
-            for j in range(otro.columnas):
-                suma = 0
-                for t in range(otro.columnas):
-                    suma += self.matriz[i][t] * otro.matriz[t][j]
-                fila.append(suma)
-            mul.append(fila)
-        return mul
+        if self.columnas != otro.filas:
+            print('Esas matrices no tienen dimensiones validas para multiplicar')
+            quit()
+        else:
+            mul = []
+            for i in range(self.filas):
+                fila = []
+                for j in range(otro.columnas):
+                    suma = 0
+                    for t in range(otro.columnas):
+                        suma += self.matriz[i][t] * otro.matriz[t][j]
+                        fila.append(suma)
+                mul.append(fila)
+             return mul
     
     def es_magica(self):
     if not self.is_cuadrada():
