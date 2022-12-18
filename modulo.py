@@ -142,7 +142,19 @@ class matriz:
         return True
       else:
         return False
-
+    
+    def is_fila(self):
+      if self.filas == 1:
+        return True
+      else:
+        return False
+    
+    def is_columna(self):
+      if self.columnas == 1:
+        return True
+      else: 
+        return False
+    
     def __mul__(self,otro):
     if self.columnas != otro.filas:
         print('Esas matrices no tienen dimensiones validas para multiplicar')
@@ -159,8 +171,10 @@ class matriz:
             mul.append(fila)
         return mul
     
+
 A = matriz([[2,3,4], [1,2,5], [9,2,3]])
 B = matriz([[5,2,3], [3,2,3], [9,2,4]])
+C = matriz([[1],[2],[7]])
 print(A-B)
 print(A.is_cuadrada())
-  
+print(B.is_columna())
