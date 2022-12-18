@@ -155,6 +155,12 @@ class matriz:
       else: 
         return False
     
+    def is_simetrica(self):
+      if self.transposicion() == self.matriz:
+        return True
+      else:
+        return False
+    
     def __mul__(self,otro):
     if self.columnas != otro.filas:
         print('Esas matrices no tienen dimensiones validas para multiplicar')
