@@ -161,14 +161,6 @@ class matriz:
       else:
         return False
     
-    def is_triangular_superior(self):
-      flag = True
-      for i in range(1, self.filas):
-        for j in range(0, i):
-          if self.matriz[i][j] != 0:
-                flag = False
-      return flag
-    
     def __mul__(self,otro):
     if self.columnas != otro.filas:
         print('Esas matrices no tienen dimensiones validas para multiplicar')
@@ -221,6 +213,35 @@ class matriz:
                 return False
         return True
 
+    def minimo(self):
+        minimo = self.matriz[0][0]
+        for i in range(self.filas):
+            for j in range(self.columnas):
+                if minimo > self.matriz[i][j]:
+                    minimo = self.matriz[i][j]
+        return minimo
+
+    
+    def maximo(self):
+        maximo = self.matriz[0][0]
+        for i in range(self.filas):
+            for j in range(self.columnas):
+                if maximo < self.matriz[i][j]:
+                    maximo = self.matriz[i][j]
+        return maximo
+
+    def media(self):
+        suma = 0
+        for i in range(self.filas):
+            for j in range(self.columnas):
+                suma += self.matriz[i][j]
+        media = suma/(self.filas*self.columnas)
+        return media
+                                      
+
+
+
+    
 A = matriz([[2,3,4], [1,2,5], [9,2,3]])
 B = matriz([[5,2,3], [3,2,3], [9,2,4]])
 C = matriz([[1],[2],[7]])
