@@ -137,8 +137,14 @@ class matriz:
           lista_nula[i][j] = self.matriz[j][i]
       return lista_nula
     
+    def is_cuadrada(self):
+      if self.filas == self.columnas:
+        return True
+      else:
+        return False
 
 A = matriz([[2,3,4], [1,2,5], [9,2,3]])
 B = matriz([[5,2,3], [3,2,3], [9,2,4]])
 print(A-B)
-print(A.transposicion())   
+print(A.is_cuadrada())
+  
