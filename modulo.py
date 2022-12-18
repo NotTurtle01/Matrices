@@ -59,17 +59,20 @@ class matriz:
       return lista_columna
       
     def diagonal(self,d):
-        #OJO. Hacer la comprobación de ES_CUADRADA
-      if d == 1:
-        lista_diagonal_1 = []
-        for i in range(self.columnas):
-          lista_diagonal_1.append(self.matriz[i][i])
-        return lista_diagonal_1
-      if d == 2:
-        lista_diagonal_2 = []
-        for i in range(self.columnas):
-          lista_diagonal_2.append(self.matriz[self.filas -1 - i][i])
-        return lista_diagonal_2
+      if self.is_cuadrada() == False:
+        print('La matriz no es cuadrada, sus diagonales no son completas')
+        quit()
+      else:
+        if d == 1:
+            lista_diagonal_1 = []
+            for i in range(self.columnas):
+                lista_diagonal_1.append(self.matriz[i][i])
+            return lista_diagonal_1
+        if d == 2:
+            lista_diagonal_2 = []
+            for i in range(self.columnas):
+                lista_diagonal_2.append(self.matriz[self.filas -1 - i][i])
+            return lista_diagonal_2
         
     def escalar_matriz(self,escalar):
       for fila in range(self.columnas):
