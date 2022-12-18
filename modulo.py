@@ -124,9 +124,21 @@ class matriz:
                     fila.append(self.matriz[i][j] - otro.matriz[i][j])
                 resta.append(fila)
         return resta
+    
+    def transposicion(self):
+      lista_nula = [[0]]
+      for i in range(self.columnas -1):
+          lista_nula.append([0])
+      for i in range(self.columnas):
+          for j in range(self.filas -1):
+              lista_nula[i].append(0)
+      for i in range (self.filas):
+        for j in range (self.columnas):
+          lista_nula[i][j] = self.matriz[j][i]
+      return lista_nula
+    
 
 A = matriz([[2,3,4], [1,2,5], [9,2,3]])
 B = matriz([[5,2,3], [3,2,3], [9,2,4]])
 print(A-B)
-
-   
+print(A.transposicion())   
