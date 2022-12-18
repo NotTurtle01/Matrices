@@ -59,7 +59,7 @@ class matriz:
       return lista_columna
       
     def diagonal(self,d):
-      if self.is_cuadrada() == False:
+      if not self.is_cuadrada():
         print('La matriz no es cuadrada, sus diagonales no son completas')
         quit()
       else:
@@ -116,9 +116,9 @@ class matriz:
 
     def __sub__(self,otro):
         if otro.filas != self.filas:
-            print('Como las matrices no tienen las mismas dimensiones no se pueden sumar')
+            print('Como las matrices no tienen las mismas dimensiones no se pueden restar')
         elif otro.columnas != self.columnas:
-            print('Como las matrices no tienen las mismas dimensiones no se pueden sumar')
+            print('Como las matrices no tienen las mismas dimensiones no se pueden restar')
         else:
             resta = []
             for i in range(self.filas):
@@ -173,7 +173,7 @@ class matriz:
       return flag
 
     def is_triangular_inferior(self):
-        self.matriz = self.transposicion()
+        self.matriz = self.transposicion() #Uso recursivo de las funciones transposicion() e is_triangular_superior()
         return self.is_triangular_superior()
 
     def __mul__(self,otro):
@@ -190,12 +190,12 @@ class matriz:
                         suma += self.matriz[i][t] * otro.matriz[t][j]
                         fila.append(suma)
                 mul.append(fila)
-             return mul
+            return mul
     
     def es_magica(self):
-    if not self.is_cuadrada():
+      if not self.is_cuadrada():
         return False
-    else:
+      else:
         for i in range(1,(self.filas*self.filas)+1):
             presente = False
             for j in range(self.filas):
