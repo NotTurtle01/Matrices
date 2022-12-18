@@ -177,6 +177,41 @@ class matriz:
             mul.append(fila)
         return mul
     
+    def es_magica(self):
+    if not self.is_cuadrada():
+        return False
+    else:
+        for i in range(1,(self.filas*self.filas)+1):
+            presente = False
+            for j in range(self.filas):
+                for t in range(self.columnas):
+                    if self.matriz[j][t] == i:
+                        presente = True
+            if not presente:
+                return False
+        sumas = []
+        for i in range(self.filas):
+            suma = 0
+            for j in range(self.columnas):
+                suma += self.matriz[i][j]
+            sumas.append(suma)
+        for i in range(self.columnas):
+            suma = 0
+            for j in range(self.filas):
+                suma += self.matriz[j][i]
+            sumas.append(suma)
+        suma = 0
+        for i in range(self.filas):
+            suma += self.matriz[i][i]
+        sumas.append(suma)
+        suma = 0
+        for i in range(self.filas):
+            suma += self.matriz[i][-(i+1)]
+        sumas.append(suma)
+        for i in range(len(sumas)):
+            if sumas[0] != sumas[i]:
+                return False
+        return True
 
 A = matriz([[2,3,4], [1,2,5], [9,2,3]])
 B = matriz([[5,2,3], [3,2,3], [9,2,4]])
