@@ -13,6 +13,9 @@ def menu():
         print('8) Devolución de dimensiones')
         print('9) Sumar matrices')
         print('10) Restar matrices')
+        print('11) Obtener la matriz opuesta')
+        print('12) Multiplicar matrices')
+        print('13) Multiplicar matrices')
         opcion = int(input('Escoge opción: '))
     return opcion
 
