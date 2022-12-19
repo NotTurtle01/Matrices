@@ -10,6 +10,7 @@ def menu():
         print('5) Obtención de una fila')
         print('6) Obtención de una columna')
         print('7) Obtención de una diagonal')
+        print('8) Devolución de dimensiones')
         
         opcion = int(input('Escoge opción: '))
     return opcion
