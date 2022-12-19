@@ -252,19 +252,6 @@ class matriz:
         media = suma/(self.filas*self.columnas)
         return media
 
-def intmayor0(a):
-    flag = False
-    while flag == False:
-        try:
-            a = int(input('Dame un número entero positivo: '))
-            if int(a) > 0:
-                flag = True
-            else:
-                print('No has introducido un entero positivo. Vuelve a adjuntar el número.')
-        except ValueError:
-            print('No has introducido un número entero. Inténtalo de nuevo.')
-    return int(a)
-
 def intmayor00(cadena):
     flag = False
     while flag == False:
