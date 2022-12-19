@@ -9,6 +9,8 @@ def menu():
         print('4) Presentación de una matriz por pantalla')
         print('5) Obtención de una fila')
         print('6) Obtención de una columna')
+        print('7) Obtención de una diagonal')
+        
         opcion = int(input('Escoge opción: '))
     return opcion
 
