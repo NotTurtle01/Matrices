@@ -6,14 +6,14 @@ vacia = matriz([])
 
 d = {}
 
-def guardar(matriz):
+def guardar(lista):
     print('Quiere guardar la matriz o descartarla?\n')
     print('1: Guardar la matriz')
     print('2: Descartar la matriz')
     opcion = intmayor0('la opción que desea')
     if opcion == 1:
         nombre = str(input('Dime el nombre con el que quieres guardar la matriz: '))
-        d[nombre] = matriz
+        d[nombre] = matriz(lista)
         print(d)
     elif opcion == 2:
         quit()
@@ -46,8 +46,8 @@ def menu():
         if opcion == 1:
             filas = intmayor0('cuantas filas quieres que tenga la matriz')
             columnas = intmayor0('cuantas columnas quieres que tenga la matriz')
-            matriz = vacia.crearmatriz(filas,columnas)
-            guardar(matriz)
+            lista = vacia.crearmatriz(filas,columnas)
+            guardar(lista)
          
         elif opcion == 2:
             
