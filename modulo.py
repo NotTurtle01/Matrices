@@ -252,7 +252,7 @@ class matriz:
         media = suma/(self.filas*self.columnas)
         return media
 
-def comprobacion_entero_positivo(a):
+def intmayor0(a):
     flag = False
     while flag == False:
         try:
