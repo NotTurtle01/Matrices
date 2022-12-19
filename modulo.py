@@ -264,6 +264,3 @@ def intmayor0(a):
         except ValueError:
             print('No has introducido un número entero. Inténtalo de nuevo.')
     return int(a)
-
-D = matriz([[1,0,0], [1,2,0], [2,7,9]])
-print(D.is_triangular_inferior())
