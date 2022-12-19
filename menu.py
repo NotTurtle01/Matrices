@@ -16,6 +16,8 @@ def menu():
         print('11) Obtener la matriz opuesta')
         print('12) Multiplicar matrices')
         print('13) Producto de escalar por matriz')
+        print('14) Generar matriz nula')
+        print('15) Generar matriz identidad')
         opcion = int(input('Escoge opción: '))
     return opcion
 
