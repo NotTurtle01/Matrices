@@ -59,12 +59,9 @@ def menu():
         elif opcion == 3:
             filas = intmayor0('fila del elemento')
             columnas = intmayor0('columna del elemento')
-            elemento = floatlibre('dime el elemento que quieres mostrar')
             lista = A.mostrar_objeto(filas,columnas)
             guardar(lista)
     
     return opcion
 
 A = [ [1, 2, 3], [2, 12, 6], [1, 0, -3], [0, -1, 0] ]
-
-
