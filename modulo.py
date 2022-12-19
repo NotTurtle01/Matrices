@@ -264,3 +264,16 @@ def intmayor0(a):
         except ValueError:
             print('No has introducido un número entero. Inténtalo de nuevo.')
     return int(a)
+
+def intmayor00(cadena):
+    flag = False
+    while flag == False:
+        try:
+            a = int(input('Dime ' + cadena + ': '))
+            if a > 0:
+                flag = True
+            else:
+                print('No has introducido un entero positivo. Vuelve a adjuntar el número.')
+        except ValueError:
+            print('No has introducido un número entero. Inténtalo de nuevo.')
+    return a
