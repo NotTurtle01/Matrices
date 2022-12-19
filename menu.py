@@ -2,6 +2,22 @@
 
 from modulo.py import *
 
+vacia = matriz([])
+
+d = {}
+
+def guardar(matriz):
+    print('Quiere guardar la matriz o descartarla?\n')
+    print('1: Guardar la matriz')
+    print('2: Descartar la matriz')
+    opcion = intmayor0('la opción que desea')
+    if opcion == 1:
+        nombre = str(input('Dime el nombre con el que quieres guardar la matriz: '))
+        d[nombre] = matriz
+        print(d)
+    elif opcion == 2:
+        quit()
+
 def menu():
     opcion = 0
     while opcion == 0:
@@ -26,6 +42,12 @@ def menu():
         print('19) Obtención valor mínimo')
         print('20) Obtención valor medio')
         opcion = int(input('Escoge opción: '))
+        if opcion == 1:
+            filas = intmayor0('cuantas filas quieres que tenga la matriz')
+            columnas = intmayor0('cuantas columnas quieres que tenga la matriz')
+            matriz = vacia.crearmatriz(filas,columnas)
+            guardar(matriz)
+    
     return opcion
 
 
