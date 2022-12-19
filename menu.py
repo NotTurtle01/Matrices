@@ -48,6 +48,9 @@ def menu():
             columnas = intmayor0('cuantas columnas quieres que tenga la matriz')
             matriz = vacia.crearmatriz(filas,columnas)
             guardar(matriz)
+         
+        elif opcion == 2:
+            
     
     return opcion
 
