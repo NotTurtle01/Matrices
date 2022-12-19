@@ -1,5 +1,7 @@
 #Menu
 
+from modulo.py import *
+
 def menu():
     opcion = 0
     while opcion == 0:
@@ -25,6 +27,7 @@ def menu():
         print('20) Obtención valor medio')
         opcion = int(input('Escoge opción: '))
     return opcion
+
 
 
 
