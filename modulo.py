@@ -252,7 +252,7 @@ class matriz:
         media = suma/(self.filas*self.columnas)
         return media
 
-def intmayor00(cadena):
+def intmayor0(cadena):
     flag = False
     while flag == False:
         try:
