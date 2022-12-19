@@ -42,6 +42,7 @@ def menu():
         print('19) Obtención valor mínimo')
         print('20) Obtención valor medio')
         opcion = int(input('Escoge opción: '))
+        
         if opcion == 1:
             filas = intmayor0('cuantas filas quieres que tenga la matriz')
             columnas = intmayor0('cuantas columnas quieres que tenga la matriz')
