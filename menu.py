@@ -50,17 +50,17 @@ def menu():
             guardar(lista)
          
         elif opcion == 2:
-            filas = intmayor0('cuantas filas quieres que tenga la matriz')
-            columnas = intmayor0('cuantas columnas quieres que tenga la matriz')
+            filas = intmayor0('fila del elemento')
+            columnas = intmayor0('columna del elemento')
             elemento = floatlibre('dime el elemento que quieres asignar')
             lista = A.asignar_elemento(filas,columnas,elemento)
             guardar(lista)
         
         elif opcion == 3:
-            filas = intmayor0('cuantas filas quieres que tenga la matriz')
-            columnas = intmayor0('cuantas columnas quieres que tenga la matriz')
-            elemento = floatlibre('dime el elemento que quieres asignar')
-            lista = A.mostrar_objeto(filas,columnas,elemento)
+            filas = intmayor0('fila del elemento')
+            columnas = intmayor0('columna del elemento')
+            elemento = floatlibre('dime el elemento que quieres mostrar')
+            lista = A.mostrar_objeto(filas,columnas)
             guardar(lista)
     
     return opcion
