@@ -11,7 +11,8 @@ def menu():
         print('6) Obtención de una columna')
         print('7) Obtención de una diagonal')
         print('8) Devolución de dimensiones')
-        
+        print('9) Sumar matrices')
+        print('10) Restar matrices')
         opcion = int(input('Escoge opción: '))
     return opcion
 
