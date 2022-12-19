@@ -256,14 +256,13 @@ def comprobacion_entero_positivo(a):
     flag = False
     while flag == False:
         try:
+            a = int(input('Dame un número entero positivo: '))
             if int(a) > 0:
                 flag = True
             else:
                 print('No has introducido un entero positivo. Vuelve a adjuntar el número.')
-                a = int(input('Dame un número entero positivo: '))
         except ValueError:
             print('No has introducido un número entero. Inténtalo de nuevo.')
-            a = input('Dame un entero positivo: ')
     return int(a)
 
 D = matriz([[1,0,0], [1,2,0], [2,7,9]])
