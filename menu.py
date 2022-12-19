@@ -19,6 +19,10 @@ def menu():
         print('14) Generar matriz nula')
         print('15) Generar matriz identidad')
         print('16) Trasponer una matriz')
+        print('17) Tipo de matriz')
+        print('18) Obtención valor máximo')
+        print('19) Obtención valor mínimo')
+        print('20) Obtención valor medio')
         opcion = int(input('Escoge opción: '))
     return opcion
 
