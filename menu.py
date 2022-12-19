@@ -52,7 +52,7 @@ def menu():
         elif opcion == 2:
             filas = intmayor0('cuantas filas quieres que tenga la matriz')
             columnas = intmayor0('cuantas columnas quieres que tenga la matriz')
-            elemento = ('dime el elemento que quieres asignar')
+            elemento = floatlibre('dime el elemento que quieres asignar')
     
     return opcion
 
