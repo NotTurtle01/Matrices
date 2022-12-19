@@ -7,6 +7,8 @@ def menu():
         print('2) Asignación de un elemento específico de una matriz')
         print('3) Obtención de un elemento específico de una matriz')
         print('4) Presentación de una matriz por pantalla')
+        print('5) Obtención de una fila')
+        print('6) Obtención de una columna')
         opcion = int(input('Escoge opción: '))
     return opcion
 
