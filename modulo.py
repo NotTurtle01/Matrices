@@ -60,8 +60,7 @@ class matriz:
       
     def diagonal(self,d):
       if not self.is_cuadrada():
-        print('La matriz no es cuadrada, sus diagonales no son completas')
-        quit()
+        return False
       else:
         if d == 1:
             lista_diagonal_1 = []
