@@ -264,3 +264,14 @@ def intmayor0(cadena):
         except ValueError:
             print('No has introducido un número entero. Inténtalo de nuevo.')
     return a
+
+def floatlibre(a):
+    flag = False
+    while flag == False:
+        try:
+            float(a)
+            flag = True
+        except ValueError:
+            print('No has introducido un número flotante. Inténtalo de nuevo.')
+            a = input('Dame un flotante: ')
+    return float(a)
