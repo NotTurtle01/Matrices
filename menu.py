@@ -15,7 +15,7 @@ def menu():
         print('10) Restar matrices')
         print('11) Obtener la matriz opuesta')
         print('12) Multiplicar matrices')
-        print('13) Multiplicar matrices')
+        print('13) Producto de escalar por matriz')
         opcion = int(input('Escoge opción: '))
     return opcion
 
