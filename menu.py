@@ -60,7 +60,7 @@ def menu():
             filas = intmayor0('cuantas filas quieres que tenga la matriz')
             columnas = intmayor0('cuantas columnas quieres que tenga la matriz')
             elemento = floatlibre('dime el elemento que quieres asignar')
-            lista = A.mostrar_elemento(filas,columnas,elemento)
+            lista = A.mostrar_objeto(filas,columnas,elemento)
             guardar(lista)
     
     return opcion
