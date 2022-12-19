@@ -18,6 +18,7 @@ def menu():
         print('13) Producto de escalar por matriz')
         print('14) Generar matriz nula')
         print('15) Generar matriz identidad')
+        print('16) Trasponer una matriz')
         opcion = int(input('Escoge opción: '))
     return opcion
 
