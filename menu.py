@@ -62,7 +62,6 @@ def menu():
             print(A.mostrar_elemento(filas,columnas))
            
         elif opcion == 4:
-            print(A)
 
         elif opcion == 5:
             fila = intmayor0('dame la fila: ')
