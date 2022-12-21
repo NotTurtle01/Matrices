@@ -6,7 +6,11 @@ Joel Rubio González.
 
 '''
 
-#Módulo "ClassMatrix" 
+'''
+
+Módulo "ClassMatrix" 
+
+'''
 
 class matriz:
     def __init__(self,lista):
