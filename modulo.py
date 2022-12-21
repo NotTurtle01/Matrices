@@ -60,6 +60,7 @@ class matriz:
       
     def diagonal(self,d):
       if not self.is_cuadrada():
+        print('La matriz no es cuadrada')
         return False
       else:
         if d == 1:
