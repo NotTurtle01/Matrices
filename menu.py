@@ -93,24 +93,24 @@ def menu():
             print('La matriz tiene de dimensiones: ' + str(dimensiones[0]) + ' filas y ' + str(dimensiones[1]) + ' columnas')
             
         elif opcion == 9:
-            nombre1 = str(input('Nombre de la primera matriz que quieres utilizar:'))
-            nombre2 = str(input('Nombre de la segunda matriz que quieres utilizar:'))
+            nombre1 = str(input('Nombre de la primera matriz que quieres utilizar: '))
+            nombre2 = str(input('Nombre de la segunda matriz que quieres utilizar: '))
             try:
                 lista = d[nombre1] + d[nombre2]
                 print(lista)
                 guardar(lista)
             except IndexError:
-                print('Las matrices no tienen las dimensiones adecuadas para poder sumarse.')
+                print('Las matrices no tienen las dimensiones adecuadas para poder sumarse')
                 
         elif opcion == 10:
-            nombre1 = str(input('Nombre de la primera matriz que quieres utilizar:'))
-            nombre2 = str(input('Nombre de la segunda matriz que quieres utilizar:'))
+            nombre1 = str(input('Nombre de la primera matriz que quieres utilizar: '))
+            nombre2 = str(input('Nombre de la segunda matriz que quieres utilizar: '))
             try:
                 lista = d[nombre1] - d[nombre2]
                 print(lista)
                 guardar(lista)
             except IndexError:
-                print('Las matrices no tienen las dimensiones adecuadas para poder restarse.')
+                print('Las matrices no tienen las dimensiones adecuadas para poder restarse')
             
         elif opcion == 11:
             nombre = str(input('Nombre de la matriz que quieres utilizar: '))
@@ -119,8 +119,8 @@ def menu():
             guardar(lista)
         
         elif opcion == 12:
-            nombre1 = str(input('Nombre de la primera matriz que quieres utilizar:'))
-            nombre2 = str(input('Nombre de la segunda matriz que quieres utilizar:'))
+            nombre1 = str(input('Nombre de la primera matriz que quieres utilizar: '))
+            nombre2 = str(input('Nombre de la segunda matriz que quieres utilizar: '))
             try:
                 lista = d[nombre1] * d[nombre2]
                 print(lista)
