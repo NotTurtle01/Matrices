@@ -196,15 +196,15 @@ def menu():
             else:
                 print('La matriz que ha seleccionado no es una matriz triangular superior')
                 
-        elif opcion == 25:
+        elif opcion == 23:
             nombre = str(input('Dime el nombre de la matriz que quieres utilizar: '))
             print('El valor mínimo es: ', d[nombre].minimo())
             
-        elif opcion == 26:
+        elif opcion == 24:
             nombre = str(input('Dime el nombre de la matriz que quieres utilizar: '))
             print('El valor máximo es: ', d[nombre].maximo())
             
-        elif opcion == 27:
+        elif opcion == 25:
             nombre = str(input('Dime el nombre de la matriz que quieres utilizar: '))
             print('El valor medio es: ', d[nombre].media())
             
