@@ -66,7 +66,7 @@ def menu():
         elif opcion == 5:
             nombre = str(input('Dime el nombre de la matriz que quieres utilizar:'))
             fila = intmayor0('dame la fila: ')
-            lista = A.fila(fila)
+            lista = d[nombre].fila(fila)
             print(lista)
         
         elif opcion == 6:
