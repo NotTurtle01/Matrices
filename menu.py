@@ -127,10 +127,18 @@ def menu():
                 guardar(lista)
             except IndexError:
                 print('Las matrices no tienen las dimensiones adecuadas para poder multiplicarse.')
+                
         elif opcion == 13:
             nombre = str(input('Dime el nombre de la matriz que quieres utilizar: '))
             num = intlibre('el número por el que quieres multiplicar')
             lista = d[nombre].escalar_matriz(num)
+            print(lista)
+            guardar(lista)
+        
+        elif opcion == 14:
+            fila = intmayor0('número de filas: ')
+            columna = intmayor0('número de columnas: ')
+            lista = vacia.nula(filas,columnas)
             print(lista)
             guardar(lista)
 
