@@ -70,8 +70,9 @@ def menu():
             print(lista)
         
         elif opcion == 6:
+            nombre = str(input('Dime el nombre de la matriz que quieres utilizar:'))
             columna = intmayor0('dame la columna: ')
-            lista = A.columna(columna)
+            lista = d[nombre].columna(columna)
             print(lista)
         
         elif opcion == 7:
