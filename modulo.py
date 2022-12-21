@@ -263,7 +263,7 @@ def intmayor0(cadena):
     flag = False
     while flag == False:
         try:
-            a = int(input('Dime el ' + cadena + ': '))
+            a = int(input(cadena + ': '))
             if a > 0:
                 flag = True
             else:
