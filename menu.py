@@ -61,6 +61,9 @@ def menu():
             columnas = intmayor0('columna del elemento que quieres mostrar')
             lista = A.mostrar_objeto(filas,columnas)
             guardar(lista)
+        
+        elif opcion == 4:
+            print(A)
     
     return opcion
 
