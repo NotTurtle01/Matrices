@@ -97,6 +97,7 @@ def menu():
             nombre2 = str(input('Dime el nombre de la segunda matriz que quieres utilizar:'))
             try:
                 lista = d[nombre1] + d[nombre2]
+                print(lista)
                 guardar(lista)
             except IndexError:
                 print('Las matrices no tienen las dimensiones adecuadas para poder sumarse.')
@@ -106,6 +107,7 @@ def menu():
             nombre2 = str(input('Dime el nombre de la segunda matriz que quieres utilizar:'))
             try:
                 lista = d[nombre1] - d[nombre2]
+                print(lista)
                 guardar(lista)
             except IndexError:
                 print('Las matrices no tienen las dimensiones adecuadas para poder restarse.')
