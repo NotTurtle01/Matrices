@@ -57,22 +57,27 @@ def menu():
             guardar(lista)
         
         elif opcion == 3:
-            filas = intmayor0('fila del elemento que quieres mostrar')
-            columnas = intmayor0('columna del elemento que quieres mostrar')
+            filas = intmayor0('fila del elemento que quieres mostrar: ')
+            columnas = intmayor0('columna del elemento que quieres mostrar: ')
             lista = A.mostrar_objeto(filas,columnas)
             guardar(lista)
         
         elif opcion == 4:
             print(A)
-        
+
         elif opcion == 5:
-            fila = intmayor0('dame la fila')
+            fila = intmayor0('dame la fila: ')
             lista = A.fila(fila)
             print(lista)
         
         elif opcion == 6:
-            columna = intmayor0('dame la columna')
+            columna = intmayor0('dame la columna: ')
             lista = A.columna(columna)
+            print(lista)
+        
+        elif opcion == 7:
+            diagonal = intmayor0('1) Diagonal 2) Diagonal inversa')
+            lista = A.diagonal(diagonal)
             print(lista)
     
     return opcion
