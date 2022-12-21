@@ -89,6 +89,15 @@ def menu():
             nombre = str(input('Dime el nombre de la matriz: '))
             dimensiones = d[nombre].dimensiones()
             print('La matriz tiene de dimensiones: ' + str(dimensiones[0]) + ' filas y ' + str(dimensiones[1]) + ' columnas')
+        
+        elif opcion == 9:
+            nombre1 = str(input('Dime el nombre de la primera matriz que quieres utilizar:'))
+            nombre2 = str(input('Dime el nombre de la segunda matriz que quieres utilizar:'))
+            try:
+                lista = d[nombre1] + d[nombre2]
+                guardar(lista)
+            except IndexError:
+                print('Las matrices no tienen las dimensiones adecuadas para poder sumarse.')
             
         elif opcion == 11:
             nombre = str(input('Dime el nombre de la matriz que quieres utilizar: '))
