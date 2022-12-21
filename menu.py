@@ -117,6 +117,16 @@ def menu():
             lista = d[nombre].opuesta()
             print(lista)
             guardar(lista)
+        
+        elif opcion == 12:
+            nombre1 = str(input('Dime el nombre de la primera matriz que quieres utilizar:'))
+            nombre2 = str(input('Dime el nombre de la segunda matriz que quieres utilizar:'))
+            try:
+                lista = d[nombre1] * d[nombre2]
+                print(lista)
+                guardar(lista)
+            except IndexError:
+                print('Las matrices no tienen las dimensiones adecuadas para poder multiplicarse.')
 
     return opcion
 
