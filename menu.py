@@ -59,11 +59,12 @@ def menu():
         elif opcion == 3:
             filas = intmayor0('fila del elemento que quieres mostrar: ')
             columnas = intmayor0('columna del elemento que quieres mostrar: ')
-            print(A.mostrar_elemento(filas,columnas))
+            print(d[nombre].mostrar_elemento(filas,columnas))
            
         elif opcion == 4:
 
         elif opcion == 5:
+            nombre = str(input('Dime el nombre de la matriz que quieres utilizar:'))
             fila = intmayor0('dame la fila: ')
             lista = A.fila(fila)
             print(lista)
