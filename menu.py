@@ -69,11 +69,6 @@ def menu():
             nombre = str(input('Dime la matriz que quieres mostrar por pantalla: '))
             print(d[nombre])
 
-        elif opcion == 8:
-            nombre = str(input('Dime el nombre de la matriz: '))
-            dimensiones = d[nombre].dimensiones()
-            print('La matriz tiene de dimensiones: ' + str(dimensiones[0]) + ' filas y ' + str(dimensiones[1]) + ' columnas')
-
         elif opcion == 5:
             nombre = str(input('Dime el nombre de la matriz que quieres utilizar:'))
             fila = intmayor0('dame la fila: ')
@@ -89,6 +84,12 @@ def menu():
             diagonal = intmayor0('1) Diagonal principal 2) Diagonal inversa')
             lista = A.diagonal(diagonal)
             print(lista)
+        
+        elif opcion == 8:
+            nombre = str(input('Dime el nombre de la matriz: '))
+            dimensiones = d[nombre].dimensiones()
+            print('La matriz tiene de dimensiones: ' + str(dimensiones[0]) + ' filas y ' + str(dimensiones[1]) + ' columnas')
+            
         elif opcion == 11:
             nombre = str(input('Dime el nombre de la matriz que quieres utilizar: '))
             lista = d[nombre].opuesta()
