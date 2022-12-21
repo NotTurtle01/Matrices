@@ -1,6 +1,12 @@
-#Óscar Mirás Sánchez. Joel Rubio González.
+'''
+Autores:
 
-#Módulo de Python: class matriz.
+Óscar Mirás Sánchez. 
+Joel Rubio González.
+
+'''
+
+#Módulo "ClassMatrix" 
 
 class matriz:
     def __init__(self,lista):
