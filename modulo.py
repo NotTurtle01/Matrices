@@ -42,7 +42,7 @@ class matriz:
                       print('Eso no es un número válido, intentelo de nuevo')
       return defecto
       
-    def mostrar_objeto(self,n,m):
+    def mostrar_elemento(self,n,m):
       return self.matriz[n-1][m-1]
       
     def asignar_elemento(self,n,m,elemento):
