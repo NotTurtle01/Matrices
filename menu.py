@@ -160,6 +160,13 @@ def menu():
                 print('La matriz que ha seleccionado es mágica')
             else:
                 print('La matriz que ha seleccionado no es mágica')
+                
+        elif opcion == 18:
+            nombre = str(input('Dime la matriz que quieras utilizar: '))
+            if d[nombre].is_cuadrada():
+                print('La matriz que ha seleccionado es cuadrada')
+            else:
+                print('La matriz que ha seleccionado no es cuadrada')
 
     return opcion
 
