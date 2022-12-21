@@ -276,3 +276,14 @@ def floatlibre(a):
             print('No has introducido un número flotante. Inténtalo de nuevo.')
             a = input('Dame un flotante: ')
     return float(a)
+
+def intlibre(a):
+    flag = False
+    while flag == False:
+        try:
+            int(a)
+            flag = True
+        except ValueError:
+            print('No has introducido un número entero. Inténtalo de nuevo.')
+            a = input('Dame un entero: ')
+    return int(a)
