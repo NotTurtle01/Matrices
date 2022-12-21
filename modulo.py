@@ -42,7 +42,7 @@ class matriz:
               valido = False
               while not valido:
                   try:          
-                      defecto[i][j] = float(input('Dime el elemento de la fila ' + str(i+1) + ' ,columna ' + str(j+1) + ': '))
+                      defecto[i][j] = float(input('Dime el elemento de la fila ' + str(i+1) + ', columna ' + str(j+1) + ': '))
                       valido = True
                   except ValueError:
                       print('Eso no es un número válido, intentelo de nuevo')
