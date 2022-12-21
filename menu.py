@@ -59,7 +59,7 @@ def menu():
         elif opcion == 3:
             filas = intmayor0('fila del elemento que quieres mostrar: ')
             columnas = intmayor0('columna del elemento que quieres mostrar: ')
-            lista = A.mostrar_objeto(filas,columnas)
+            lista = A.mostrar_elemento(filas,columnas)
             guardar(lista)
         
         elif opcion == 4:
