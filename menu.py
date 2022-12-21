@@ -7,7 +7,7 @@ vacia = matriz([])
 d = {}
 
 def guardar(lista):
-    print('Quiere guardar la matriz o descartarla?\n')
+    print('\nQuiere guardar la matriz o descartarla?\n')
     print('1: Guardar la matriz')
     print('2: Descartar la matriz')
     opcion = intmayor0('La opción que desea: ')
