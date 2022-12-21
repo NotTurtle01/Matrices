@@ -83,7 +83,7 @@ def menu():
         
         elif opcion == 7:
             nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-            diagonal = intmayor0('1) Diagonal principal 2) Diagonal inversa')
+            diagonal = intmayor0('1) Diagonal principal 2) Diagonal inversa: ')
             lista = d[nombre].diagonal(diagonal)
             print(lista)
         
