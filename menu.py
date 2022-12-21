@@ -69,11 +69,10 @@ def menu():
             nombre = str(input('Dime la matriz que quieres mostrar por pantalla: '))
             print(d[nombre])
 
-
         elif opcion == 5:
             nombre = str(input('Dime el nombre de la matriz que quieres utilizar:'))
             fila = intmayor0('dame la fila: ')
-            lista = A.fila(fila)
+            lista = d[nombre].fila(fila)
             print(lista)
         
         elif opcion == 6:
