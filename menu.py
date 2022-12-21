@@ -141,6 +141,12 @@ def menu():
             lista = vacia.nula(filas,columnas)
             print(lista)
             guardar(lista)
+        
+        elif opcion == 15:
+            orden = intmayor0('orden de la matriz identidad: ')
+            lista = vacia.identidad(orden)
+            print(lista)
+            guardar(lista)
 
         elif opcion == 16:
             nombre = str(input('Dime la matriz que quieras utilizar: '))
