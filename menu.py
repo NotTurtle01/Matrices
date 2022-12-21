@@ -195,6 +195,13 @@ def menu():
                 print('La matriz que ha seleccionado es una matriz triangular superior')
             else:
                 print('La matriz que ha seleccionado no es una matriz triangular superior')
+        
+        elif opcion == 23:
+            nombre = str(input('Dime la matriz que quieras utilizar: '))
+            if d[nombre].is_triangular_inferior():
+                print('La matriz que ha seleccionado es una matriz triangular inferior')
+            else:
+                print('La matriz que ha seleccionado no es una matriz triangular inferior')
 
     return opcion
 
