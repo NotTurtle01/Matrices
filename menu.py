@@ -181,6 +181,13 @@ def menu():
                 print('La matriz que ha seleccionado es una matriz columna')
             else:
                 print('La matriz que ha seleccionado no es una matriz columna')
+        
+        elif opcion == 21:
+            nombre = str(input('Dime la matriz que quieras utilizar: '))
+            if d[nombre].is_simetrica():
+                print('La matriz que ha seleccionado es una matriz simétrica')
+            else:
+                print('La matriz que ha seleccionado no es una matriz simétrica')
 
     return opcion
 
