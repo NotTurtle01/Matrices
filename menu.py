@@ -50,48 +50,51 @@ def menu():
             guardar(lista)
          
         elif opcion == 2:
-            nombre = str(input('Dime el nombre de la matriz que quieres utilizar:'))
+            nombre = str(input('Dime el nombre de la matriz que quieres utilizar'))
             filas = intmayor0('fila del elemento')
             columnas = intmayor0('columna del elemento')
             elemento = floatlibre('dime el elemento que quieres asignar')
-            lista = d[nombre].asignar_elemento(filas,columnas,elemento)
-            guardar(lista)
-        
+            d[nombre].asignarelemento(filas,columnas,elemento)
+            print(d[nombre]) 
+
         elif opcion == 3:
-            nombre = str(input('Dime el nombre de la matriz que quieres utilizar:'))
+            nombre = str(input('Dime el nombre de la matriz que quieres utilizar'))
             filas = intmayor0('fila del elemento que quieres mostrar: ')
             columnas = intmayor0('columna del elemento que quieres mostrar: ')
-            print(d[nombre].mostrar_elemento(filas,columnas))
-           
+            print(d[nombre].mostrarelemento(filas,columnas))
+            
         elif opcion == 4:
+            print('Estas son las matrices disponibles: ')
+            print(d.keys())
+            nombre = str(input('Dime la matriz que quieres mostrar por pantalla: '))
+            print(d[nombre])
+
+        elif opcion == 8:
+            nombre = str(input('Dime el nombre de la matriz: '))
+            dimensiones = d[nombre].dimensiones()
+            print('La matriz tiene de dimensiones: ' + str(dimensiones[0]) + ' filas y ' + str(dimensiones[1]) + ' columnas')
 
         elif opcion == 5:
             nombre = str(input('Dime el nombre de la matriz que quieres utilizar:'))
             fila = intmayor0('dame la fila: ')
-            lista = d[nombre].fila(fila)
+            lista = A.fila(fila)
             print(lista)
         
         elif opcion == 6:
-            nombre = str(input('Dime el nombre de la matriz que quieres utilizar:'))
             columna = intmayor0('dame la columna: ')
-            lista = d[nombre].columna(columna)
+            lista = A.columna(columna)
             print(lista)
         
         elif opcion == 7:
-            nombre = str(input('Dime el nombre de la matriz que quieres utilizar:'))
             diagonal = intmayor0('1) Diagonal principal 2) Diagonal inversa')
-            lista = d[nombre].diagonal(diagonal)
+            lista = A.diagonal(diagonal)
             print(lista)
-         
-        elif opcion == 9:
-            nombre1 = str(input('Dime el nombre de la primera matriz que quieres utilizar:'))
-            nombre2 = str(input('Dime el nombre de la segunda matriz que quieres utilizar:'))
-            try:
-                lista = d[nombre1] + d[nombre2]
-                guardar(lista)
-            except IndexError:
-                print('Las matrices no tienen las dimensiones adecuadas para poder sumarse.')
-    
+        elif opcion == 11:
+            nombre = str(input('Dime el nombre de la matriz que quieres utilizar: '))
+            lista = d[nombre].opuesta()
+            print(lista)
+            guardar(lista)
+
     return opcion
 
 A = matriz([ [1, 2, 3], [2, 12, 6], [1, 0, -3], [0, -1, 0] ])
