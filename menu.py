@@ -174,6 +174,13 @@ def menu():
                 print('La matriz que ha seleccionado es una matriz fila')
             else:
                 print('La matriz que ha seleccionado no es una matriz fila')
+        
+        elif opcion == 20:
+            nombre = str(input('Dime la matriz que quieras utilizar: '))
+            if d[nombre].is_columna():
+                print('La matriz que ha seleccionado es una matriz columna')
+            else:
+                print('La matriz que ha seleccionado no es una matriz columna')
 
     return opcion
 
