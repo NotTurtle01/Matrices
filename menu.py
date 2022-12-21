@@ -100,6 +100,15 @@ def menu():
                 guardar(lista)
             except IndexError:
                 print('Las matrices no tienen las dimensiones adecuadas para poder sumarse.')
+                
+        elif opcion == 10:
+            nombre1 = str(input('Dime el nombre de la primera matriz que quieres utilizar:'))
+            nombre2 = str(input('Dime el nombre de la segunda matriz que quieres utilizar:'))
+            try:
+                lista = d[nombre1] - d[nombre2]
+                guardar(lista)
+            except IndexError:
+                print('Las matrices no tienen las dimensiones adecuadas para poder restarse.')
             
         elif opcion == 11:
             nombre = str(input('Dime el nombre de la matriz que quieres utilizar: '))
