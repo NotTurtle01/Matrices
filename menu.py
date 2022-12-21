@@ -82,6 +82,15 @@ def menu():
             diagonal = intmayor0('1) Diagonal principal 2) Diagonal inversa')
             lista = d[nombre].diagonal(diagonal)
             print(lista)
+         
+        elif opcion == 9:
+            nombre1 = str(input('Dime el nombre de la primera matriz que quieres utilizar:'))
+            nombre2 = str(input('Dime el nombre de la segunda matriz que quieres utilizar:'))
+            try:
+                lista = d[nombre1] + d[nombre2]
+                guardar(lista)
+            except IndexError:
+                print('Las matrices no tienen las dimensiones adecuadas para poder sumarse.')
     
     return opcion
 
