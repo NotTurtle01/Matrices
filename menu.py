@@ -77,13 +77,15 @@ def menu():
             print(lista)
         
         elif opcion == 6:
+            nombre = str(input('Dime el nombre de la matriz: '))
             columna = intmayor0('dame la columna: ')
-            lista = A.columna(columna)
+            lista = d[nombre].columna(columna)
             print(lista)
         
         elif opcion == 7:
+            nombre = str(input('Dime el nombre de la matriz: '))
             diagonal = intmayor0('1) Diagonal principal 2) Diagonal inversa')
-            lista = A.diagonal(diagonal)
+            lista = d[nombre].diagonal(diagonal)
             print(lista)
         
         elif opcion == 8:
