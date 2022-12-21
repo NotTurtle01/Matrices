@@ -167,6 +167,13 @@ def menu():
                 print('La matriz que ha seleccionado es cuadrada')
             else:
                 print('La matriz que ha seleccionado no es cuadrada')
+        
+        elif opcion == 19:
+            nombre = str(input('Dime la matriz que quieras utilizar: '))
+            if d[nombre].is_fila():
+                print('La matriz que ha seleccionado es una matriz fila')
+            else:
+                print('La matriz que ha seleccionado no es una matriz fila')
 
     return opcion
 
