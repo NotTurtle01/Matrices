@@ -15,7 +15,7 @@ class matriz:
         else:
             for fila in lista:
                 if len(fila) != len(lista[0]):
-                    print('La matriz no es válida')
+                    print('Eso no es una matriz válida')
                     quit()
             self.matriz = lista
             self.filas = len(lista)
@@ -42,7 +42,7 @@ class matriz:
               valido = False
               while not valido:
                   try:          
-                      defecto[i][j] = float(input('Dime el elemento de la fila ' + str(i+1) + ' , columna ' + str(j+1) + ': '))
+                      defecto[i][j] = float(input('Dime el elemento de la fila ' + str(i+1) + ' ,columna ' + str(j+1) + ': '))
                       valido = True
                   except ValueError:
                       print('Eso no es un número válido, intentelo de nuevo')
@@ -184,7 +184,7 @@ class matriz:
 
     def __mul__(self,otro):
         if self.columnas != otro.filas:
-            print('Las matrices no tienen dimensiones validas para multiplicar')
+            print('Esas matrices no tienen dimensiones validas para multiplicar')
             quit()
         else:
             mul = []
@@ -263,7 +263,7 @@ def intmayor0(cadena):
     flag = False
     while flag == False:
         try:
-            a = int(input('Dime ' + cadena + ': '))
+            a = int(input('Dime el ' + cadena + ': '))
             if a > 0:
                 flag = True
             else:
