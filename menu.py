@@ -76,7 +76,7 @@ def menu():
             print(lista)
         
         elif opcion == 7:
-            diagonal = intmayor0('1) Diagonal 2) Diagonal inversa')
+            diagonal = intmayor0('1) Diagonal principal 2) Diagonal inversa')
             lista = A.diagonal(diagonal)
             print(lista)
     
