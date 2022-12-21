@@ -147,6 +147,13 @@ def menu():
             lista = d[nombre].transposicion()
             print(lista)
             guardar(lista)
+            
+        elif opcion == 17:
+            nombre = str(input('Dime la matriz que quieras utilizar: '))
+            if d[nombre].es_magica():
+                print('La matriz que ha seleccionado es mágica')
+            else:
+                print('La matriz que ha seleccionado no es mágica')
 
     return opcion
 
