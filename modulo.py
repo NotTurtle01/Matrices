@@ -280,21 +280,21 @@ def intmayor0(cadena):
 def floatlibre(a):
     flag = False
     while flag == False:
-        try:
-            float(a)
-            flag = True
-        except ValueError:
-            print('No has introducido un número flotante. Inténtalo de nuevo.')
-            a = input('Dame un flotante: ')
+      a = input('Dame un flotante: ')
+      try:
+          float(a)
+          flag = True
+      except ValueError:
+          print('No has introducido un número flotante. Inténtalo de nuevo.')
     return float(a)
 
 def intlibre(a):
     flag = False
     while flag == False:
+        a = input('Dame un entero: ')
         try:
             int(a)
             flag = True
         except ValueError:
             print('No has introducido un número entero. Inténtalo de nuevo.')
-            a = input('Dame un entero: ')
     return int(a)
