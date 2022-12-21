@@ -136,8 +136,8 @@ def menu():
             guardar(lista)
         
         elif opcion == 14:
-            fila = intmayor0('número de filas: ')
-            columna = intmayor0('número de columnas: ')
+            filas = intmayor0('número de filas: ')
+            columnas = intmayor0('número de columnas: ')
             lista = vacia.nula(filas,columnas)
             print(lista)
             guardar(lista)
