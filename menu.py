@@ -69,6 +69,11 @@ def menu():
             fila = intmayor0('dame la fila')
             lista = A.fila(fila)
             print(lista)
+        
+        elif opcion == 6:
+            columna = intmayor0('dame la columna')
+            lista = A.columna(columna)
+            print(lista)
     
     return opcion
 
