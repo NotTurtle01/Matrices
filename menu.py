@@ -64,6 +64,11 @@ def menu():
         
         elif opcion == 4:
             print(A)
+        
+        elif opcion == 5:
+            fila = intmayor0('dame la fila')
+            lista = A.fila(fila)
+            print(lista)
     
     return opcion
 
