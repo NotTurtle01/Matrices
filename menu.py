@@ -188,6 +188,13 @@ def menu():
                 print('La matriz que ha seleccionado es una matriz simétrica')
             else:
                 print('La matriz que ha seleccionado no es una matriz simétrica')
+        
+        elif opcion == 22:
+            nombre = str(input('Dime la matriz que quieras utilizar: '))
+            if d[nombre].is_triangular_superior():
+                print('La matriz que ha seleccionado es una matriz triangular superior')
+            else:
+                print('La matriz que ha seleccionado no es una matriz triangular superior')
 
     return opcion
 
