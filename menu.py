@@ -51,33 +51,33 @@ def menu():
          
         elif opcion == 2:
             nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-            filas = intmayor0('fila del elemento')
-            columnas = intmayor0('columna del elemento')
-            elemento = floatlibre('dime el elemento que quieres asignar')
+            filas = intmayor0('Fila del elemento: ')
+            columnas = intmayor0('Columna del elemento: ')
+            elemento = floatlibre('Elemento que quieres asignar: ') #Se sobreescribirá el elemento a la matrz ya existente.
             d[nombre].asignarelemento(filas,columnas,elemento)
             print(d[nombre]) 
 
         elif opcion == 3:
             nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-            filas = intmayor0('fila del elemento que quieres mostrar: ')
-            columnas = intmayor0('columna del elemento que quieres mostrar: ')
+            filas = intmayor0('Fila del elemento que quieres mostrar: ')
+            columnas = intmayor0('Folumna del elemento que quieres mostrar: ')
             print(d[nombre].mostrarelemento(filas,columnas))
             
         elif opcion == 4:
             print('Estas son las matrices disponibles: ')
             print(d.keys())
-            nombre = str(input('Dime la matriz que quieres mostrar por pantalla: '))
+            nombre = str(input('Nombre de la matriz que quieres mostrar por pantalla: '))
             print(d[nombre])
 
         elif opcion == 5:
             nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-            fila = intmayor0('dame la fila: ')
+            fila = intmayor0('Fila: ')
             lista = d[nombre].fila(fila)
             print(lista)
         
         elif opcion == 6:
             nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-            columna = intmayor0('dame la columna: ')
+            columna = intmayor0('Columna: ')
             lista = d[nombre].columna(columna)
             print(lista)
         
@@ -130,7 +130,7 @@ def menu():
                 
         elif opcion == 13:
             nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-            num = intlibre('Número por el que quieres multiplicar')
+            num = intlibre('Número por el que quieres multiplicar: ')
             lista = d[nombre].escalar_matriz(num)
             print(lista)
             guardar(lista)
