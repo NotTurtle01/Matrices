@@ -50,13 +50,15 @@ def menu():
             guardar(lista)
          
         elif opcion == 2:
+            nombre = str(input('Dime el nombre de la matriz que quieres utilizar:'))
             filas = intmayor0('fila del elemento')
             columnas = intmayor0('columna del elemento')
             elemento = floatlibre('dime el elemento que quieres asignar')
-            lista = A.asignar_elemento(filas,columnas,elemento)
+            lista = d[nombre].asignar_elemento(filas,columnas,elemento)
             guardar(lista)
         
         elif opcion == 3:
+            nombre = str(input('Dime el nombre de la matriz que quieres utilizar:'))
             filas = intmayor0('fila del elemento que quieres mostrar: ')
             columnas = intmayor0('columna del elemento que quieres mostrar: ')
             print(d[nombre].mostrar_elemento(filas,columnas))
