@@ -9,7 +9,7 @@ class matriz:
         else:
             for fila in lista:
                 if len(fila) != len(lista[0]):
-                    print('Eso no es una matriz válida')
+                    print('La matriz no es válida')
                     quit()
             self.matriz = lista
             self.filas = len(lista)
@@ -178,7 +178,7 @@ class matriz:
 
     def __mul__(self,otro):
         if self.columnas != otro.filas:
-            print('Esas matrices no tienen dimensiones validas para multiplicar')
+            print('Las matrices no tienen dimensiones validas para multiplicar')
             quit()
         else:
             mul = []
