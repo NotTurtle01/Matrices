@@ -54,14 +54,14 @@ def menu():
             filas = intmayor0('Fila del elemento: ')
             columnas = intmayor0('Columna del elemento: ')
             elemento = floatlibre('Elemento que quieres asignar: ') #Se sobreescribirá el elemento a la matrz ya existente.
-            d[nombre].asignarelemento(filas,columnas,elemento)
+            d[nombre].asignar_elemento(filas,columnas,elemento)
             print(d[nombre]) 
 
         elif opcion == 3:
             nombre = str(input('Nombre de la matriz que quieres utilizar: '))
             filas = intmayor0('Fila del elemento que quieres mostrar: ')
             columnas = intmayor0('Folumna del elemento que quieres mostrar: ')
-            print(d[nombre].mostrarelemento(filas,columnas))
+            print(d[nombre].mostrar_elemento(filas,columnas))
             
         elif opcion == 4:
             print('Estas son las matrices disponibles: ')
