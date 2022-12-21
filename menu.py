@@ -10,7 +10,7 @@ def guardar(lista):
     print('Quiere guardar la matriz o descartarla?\n')
     print('1: Guardar la matriz')
     print('2: Descartar la matriz')
-    opcion = intmayor0('la opción que desea')
+    opcion = intmayor0('La opción que desea: ')
     if opcion == 1:
         nombre = str(input('Dime el nombre con el que quieres guardar la matriz: '))
         d[nombre] = matriz(lista)
@@ -44,13 +44,13 @@ def menu():
         opcion = int(input('Escoge opción: '))
         
         if opcion == 1:
-            filas = intmayor0('cuantas filas quieres que tenga la matriz')
-            columnas = intmayor0('cuantas columnas quieres que tenga la matriz')
+            filas = intmayor0('Número de filas: ')
+            columnas = intmayor0('Número de columnas: ')
             lista = vacia.crearmatriz(filas,columnas)
             guardar(lista)
          
         elif opcion == 2:
-            nombre = str(input('Dime el nombre de la matriz que quieres utilizar'))
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
             filas = intmayor0('fila del elemento')
             columnas = intmayor0('columna del elemento')
             elemento = floatlibre('dime el elemento que quieres asignar')
@@ -58,7 +58,7 @@ def menu():
             print(d[nombre]) 
 
         elif opcion == 3:
-            nombre = str(input('Dime el nombre de la matriz que quieres utilizar'))
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
             filas = intmayor0('fila del elemento que quieres mostrar: ')
             columnas = intmayor0('columna del elemento que quieres mostrar: ')
             print(d[nombre].mostrarelemento(filas,columnas))
@@ -70,31 +70,31 @@ def menu():
             print(d[nombre])
 
         elif opcion == 5:
-            nombre = str(input('Dime el nombre de la matriz que quieres utilizar:'))
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
             fila = intmayor0('dame la fila: ')
             lista = d[nombre].fila(fila)
             print(lista)
         
         elif opcion == 6:
-            nombre = str(input('Dime el nombre de la matriz: '))
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
             columna = intmayor0('dame la columna: ')
             lista = d[nombre].columna(columna)
             print(lista)
         
         elif opcion == 7:
-            nombre = str(input('Dime el nombre de la matriz: '))
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
             diagonal = intmayor0('1) Diagonal principal 2) Diagonal inversa')
             lista = d[nombre].diagonal(diagonal)
             print(lista)
         
         elif opcion == 8:
-            nombre = str(input('Dime el nombre de la matriz: '))
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
             dimensiones = d[nombre].dimensiones()
             print('La matriz tiene de dimensiones: ' + str(dimensiones[0]) + ' filas y ' + str(dimensiones[1]) + ' columnas')
             
         elif opcion == 9:
-            nombre1 = str(input('Dime el nombre de la primera matriz que quieres utilizar:'))
-            nombre2 = str(input('Dime el nombre de la segunda matriz que quieres utilizar:'))
+            nombre1 = str(input('Nombre de la primera matriz que quieres utilizar:'))
+            nombre2 = str(input('Nombre de la segunda matriz que quieres utilizar:'))
             try:
                 lista = d[nombre1] + d[nombre2]
                 print(lista)
@@ -103,8 +103,8 @@ def menu():
                 print('Las matrices no tienen las dimensiones adecuadas para poder sumarse.')
                 
         elif opcion == 10:
-            nombre1 = str(input('Dime el nombre de la primera matriz que quieres utilizar:'))
-            nombre2 = str(input('Dime el nombre de la segunda matriz que quieres utilizar:'))
+            nombre1 = str(input('Nombre de la primera matriz que quieres utilizar:'))
+            nombre2 = str(input('Nombre de la segunda matriz que quieres utilizar:'))
             try:
                 lista = d[nombre1] - d[nombre2]
                 print(lista)
@@ -113,14 +113,14 @@ def menu():
                 print('Las matrices no tienen las dimensiones adecuadas para poder restarse.')
             
         elif opcion == 11:
-            nombre = str(input('Dime el nombre de la matriz que quieres utilizar: '))
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
             lista = d[nombre].opuesta()
             print(lista)
             guardar(lista)
         
         elif opcion == 12:
-            nombre1 = str(input('Dime el nombre de la primera matriz que quieres utilizar:'))
-            nombre2 = str(input('Dime el nombre de la segunda matriz que quieres utilizar:'))
+            nombre1 = str(input('Nombre de la primera matriz que quieres utilizar:'))
+            nombre2 = str(input('Nombre de la segunda matriz que quieres utilizar:'))
             try:
                 lista = d[nombre1] * d[nombre2]
                 print(lista)
@@ -129,83 +129,83 @@ def menu():
                 print('Las matrices no tienen las dimensiones adecuadas para poder multiplicarse.')
                 
         elif opcion == 13:
-            nombre = str(input('Dime el nombre de la matriz que quieres utilizar: '))
-            num = intlibre('el número por el que quieres multiplicar')
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
+            num = intlibre('Número por el que quieres multiplicar')
             lista = d[nombre].escalar_matriz(num)
             print(lista)
             guardar(lista)
         
         elif opcion == 14:
-            filas = intmayor0('número de filas: ')
-            columnas = intmayor0('número de columnas: ')
+            filas = intmayor0('Número de filas: ')
+            columnas = intmayor0('Número de columnas: ')
             lista = vacia.nula(filas,columnas)
             print(lista)
             guardar(lista)
         
         elif opcion == 15:
-            orden = intmayor0('orden de la matriz identidad: ')
+            orden = intmayor0('Orden de la matriz identidad: ')
             lista = vacia.identidad(orden)
             print(lista)
             guardar(lista)
 
         elif opcion == 16:
-            nombre = str(input('Dime la matriz que quieras utilizar: '))
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
             lista = d[nombre].transposicion()
             print(lista)
             guardar(lista)
             
         elif opcion == 17:
-            nombre = str(input('Dime la matriz que quieras utilizar: '))
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
             if d[nombre].es_magica():
                 print('La matriz que ha seleccionado es mágica')
             else:
                 print('La matriz que ha seleccionado no es mágica')
                 
         elif opcion == 18:
-            nombre = str(input('Dime la matriz que quieras utilizar: '))
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
             if d[nombre].is_cuadrada():
                 print('La matriz que ha seleccionado es cuadrada')
             else:
                 print('La matriz que ha seleccionado no es cuadrada')
         
         elif opcion == 19:
-            nombre = str(input('Dime la matriz que quieras utilizar: '))
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
             if d[nombre].is_fila():
                 print('La matriz que ha seleccionado es una matriz fila')
             else:
                 print('La matriz que ha seleccionado no es una matriz fila')
         
         elif opcion == 20:
-            nombre = str(input('Dime la matriz que quieras utilizar: '))
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
             if d[nombre].is_columna():
                 print('La matriz que ha seleccionado es una matriz columna')
             else:
                 print('La matriz que ha seleccionado no es una matriz columna')
         
         elif opcion == 21:
-            nombre = str(input('Dime la matriz que quieras utilizar: '))
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
             if d[nombre].is_simetrica():
                 print('La matriz que ha seleccionado es una matriz simétrica')
             else:
                 print('La matriz que ha seleccionado no es una matriz simétrica')
         
         elif opcion == 22:
-            nombre = str(input('Dime la matriz que quieras utilizar: '))
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
             if d[nombre].is_triangular_superior():
                 print('La matriz que ha seleccionado es una matriz triangular superior')
             else:
                 print('La matriz que ha seleccionado no es una matriz triangular superior')
                 
         elif opcion == 23:
-            nombre = str(input('Dime el nombre de la matriz que quieres utilizar: '))
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
             print('El valor mínimo es: ', d[nombre].minimo())
             
         elif opcion == 24:
-            nombre = str(input('Dime el nombre de la matriz que quieres utilizar: '))
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
             print('El valor máximo es: ', d[nombre].maximo())
             
         elif opcion == 25:
-            nombre = str(input('Dime el nombre de la matriz que quieres utilizar: '))
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
             print('El valor medio es: ', d[nombre].media())
             
     return opcion
