@@ -283,7 +283,7 @@ def intmayor0(cadena):
 def floatlibre(a):
     flag = False
     while flag == False:
-      a = input('Dame un flotante: ')
+      a = input(cadena)
       try:
           float(a)
           flag = True
@@ -294,7 +294,7 @@ def floatlibre(a):
 def intlibre(a):
     flag = False
     while flag == False:
-        a = input('Dame un entero: ')
+        a = input(cadena)
         try:
             int(a)
             flag = True
