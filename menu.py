@@ -112,23 +112,17 @@ def menu():
     elif opcion == 9:
         nombre1 = str(input('Nombre de la primera matriz que quieres utilizar: '))
         nombre2 = str(input('Nombre de la segunda matriz que quieres utilizar: '))
-        try:
-            lista = d[nombre1] + d[nombre2]
-            print(lista)
-            guardar(lista)
-        except IndexError:
-            print('Las matrices no tienen las dimensiones adecuadas para poder sumarse')
+        lista = d[nombre1] + d[nombre2]
+        print(lista)
+        guardar(lista)
         menu()
             
     elif opcion == 10:
         nombre1 = str(input('Nombre de la primera matriz que quieres utilizar: '))
         nombre2 = str(input('Nombre de la segunda matriz que quieres utilizar: '))
-        try:
-            lista = d[nombre1] - d[nombre2]
-            print(lista)
-            guardar(lista)
-        except IndexError:
-            print('Las matrices no tienen las dimensiones adecuadas para poder restarse')
+        lista = d[nombre1] - d[nombre2]
+        print(lista)
+        guardar(lista)
         menu()
         
     elif opcion == 11:
@@ -141,12 +135,10 @@ def menu():
     elif opcion == 12:
         nombre1 = str(input('Nombre de la primera matriz que quieres utilizar: '))
         nombre2 = str(input('Nombre de la segunda matriz que quieres utilizar: '))
-        try:
-            lista = d[nombre1] * d[nombre2]
-            print(lista)
-            guardar(lista)
-        except IndexError:
-            print('Las matrices no tienen las dimensiones adecuadas para poder multiplicarse.')
+        lista = d[nombre1] * d[nombre2]
+        print(lista)
+        guardar(lista)
+        print('Las matrices no tienen las dimensiones adecuadas para poder multiplicarse.')
         menu()
             
     elif opcion == 13:
