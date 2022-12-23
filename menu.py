@@ -17,7 +17,25 @@ def guardar(lista):
         print(d)
     elif opcion == 2:
         menu()
+        
+def mostrardiccionario():
+    print('Estas son las matrices disponibles: ')
+    for clave in d.keys():
+        print(clave)
+        print(d[clave])
 
+def comprobdic():
+    if len(d) == 0:
+        return 'vacio'
+    else:
+        return 'no vacio'
+
+def comprobnombre(nombre):
+    if nombre not in d.keys():
+        return False
+    else:
+        return True
+    
 def menu():
     print('\n-1) Salir del menú')
     print('1) Definición de una matriz de unas dimensiones dadas')
