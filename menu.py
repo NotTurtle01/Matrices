@@ -20,7 +20,7 @@ def guardar(lista):
 
 def menu():
     opcion = 0
-    while opcion == 0:
+    while opcion != -1:
         print('\n-1) Salir del menú')
         print('1) Definición de una matriz de unas dimensiones dadas')
         print('2) Asignación de un elemento específico de una matriz')
