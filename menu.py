@@ -16,7 +16,6 @@ def guardar(lista):
         d[nombre] = matriz(lista)
         print(d)
     elif opcion == 2:
-        quit()
         menu()
 
 def menu():
