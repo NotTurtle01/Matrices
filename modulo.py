@@ -1,16 +1,11 @@
 '''
-
 Autores:
-
 Óscar Mirás Sánchez. 
 Joel Rubio González.
-
 '''
 
 '''
-
 Módulo "ClassMatrix" 
-
 '''
 
 class matriz:
@@ -280,7 +275,7 @@ def intmayor0(cadena):
             print('No has introducido un número entero. Inténtalo de nuevo.')
     return a
 
-def floatlibre(a):
+def floatlibre(cadena):
     flag = False
     while flag == False:
       a = input(cadena)
@@ -291,7 +286,7 @@ def floatlibre(a):
           print('No has introducido un número flotante. Inténtalo de nuevo.')
     return float(a)
 
-def intlibre(a):
+def intlibre(cadena):
     flag = False
     while flag == False:
         a = input(cadena)
