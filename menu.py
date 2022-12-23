@@ -138,7 +138,6 @@ def menu():
         lista = d[nombre1] * d[nombre2]
         print(lista)
         guardar(lista)
-        print('Las matrices no tienen las dimensiones adecuadas para poder multiplicarse.')
         menu()
             
     elif opcion == 13:
