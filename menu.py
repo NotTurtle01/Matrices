@@ -54,17 +54,11 @@ def menu():
     print('14) Generar matriz nula')
     print('15) Generar matriz identidad')
     print('16) Trasponer una matriz')
-    print('17) Mágica')
-    print('18) Cuadrada')
-    print('19) Fila')
-    print('20) Columna')
-    print('21) Simétrica')
-    print('22) Triangular superior')
-    print('23) Triangular inferior')
-    print('24) Obtención valor máximo')
-    print('25) Obtención valor mínimo')
-    print('26) Obtención valor medio')
-    opcion = int(input('Escoge opción: '))
+    print('17) Caracterización de matriz')
+    print('18) Obtención valor máximo')
+    print('19) Obtención valor mínimo')
+    print('20) Obtención valor medio')
+    opcion = int(input('\nEscoge opción: '))
     
     while opcion != -1 and opcion not in range(1,26):
         print('Esa no es una opción válida')
@@ -189,72 +183,86 @@ def menu():
         menu()
         
     elif opcion == 17:
-        nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-        if d[nombre].es_magica():
-            print('La matriz que ha seleccionado es mágica')
-        else:
-            print('La matriz que ha seleccionado no es mágica')
-        menu()
+        print('\n1) Mágica')
+        print('2) Cuadrada')
+        print('3) Fila')
+        print('4) Columna')
+        print('5) Simétrica')
+        print('6) Triangular superior')
+        print('7) Triangular inferior')
+        nueva_opcion = int(input('\nEscoge opción: '))
+
+        while nueva_opcion not in range (1,8):
+            print('Esa no es una opción válida')
+            nueva_opcion = intlibre('La opcion que desea: ')
+
+        if nueva_opcion == 1:
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
+            if d[nombre].es_magica():
+                print('La matriz que ha seleccionado es mágica')
+            else:
+                print('La matriz que ha seleccionado no es mágica')
+            menu()
+            
+        elif nueva_opcion == 2:
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
+            if d[nombre].is_cuadrada():
+                print('La matriz que ha seleccionado es cuadrada')
+            else:
+                print('La matriz que ha seleccionado no es cuadrada')
+            menu()
+            
+        elif nueva_opcion == 3:
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
+            if d[nombre].is_fila():
+                print('La matriz que ha seleccionado es una matriz fila')
+            else:
+                print('La matriz que ha seleccionado no es una matriz fila')
+            menu()
+        
+        elif nueva_opcion == 4:
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
+            if d[nombre].is_columna():
+                print('La matriz que ha seleccionado es una matriz columna')
+            else:
+                print('La matriz que ha seleccionado no es una matriz columna')
+            menu()
+            
+        elif nueva_opcion == 5:
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
+            if d[nombre].is_simetrica():
+                print('La matriz que ha seleccionado es una matriz simétrica')
+            else:
+                print('La matriz que ha seleccionado no es una matriz simétrica')
+            menu()
+            
+        elif nueva_opcion == 6:
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
+            if d[nombre].is_triangular_superior():
+                print('La matriz que ha seleccionado es una matriz triangular superior')
+            else:
+                print('La matriz que ha seleccionado no es una matriz triangular superior')
+            menu()
+            
+        elif nueva_opcion == 7:
+            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
+            if d[nombre].is_triangular_inferior():
+                print('La matriz que ha seleccionado es una matriz triangular inferior')
+            else:
+                print('La matriz que ha seleccionado no es una matriz triangular inferior')
+            menu()
             
     elif opcion == 18:
-        nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-        if d[nombre].is_cuadrada():
-            print('La matriz que ha seleccionado es cuadrada')
-        else:
-            print('La matriz que ha seleccionado no es cuadrada')
-        menu()
-    
-    elif opcion == 19:
-        nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-        if d[nombre].is_fila():
-            print('La matriz que ha seleccionado es una matriz fila')
-        else:
-            print('La matriz que ha seleccionado no es una matriz fila')
-        menu()
-    
-    elif opcion == 20:
-        nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-        if d[nombre].is_columna():
-            print('La matriz que ha seleccionado es una matriz columna')
-        else:
-            print('La matriz que ha seleccionado no es una matriz columna')
-        menu()
-    
-    elif opcion == 21:
-        nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-        if d[nombre].is_simetrica():
-            print('La matriz que ha seleccionado es una matriz simétrica')
-        else:
-            print('La matriz que ha seleccionado no es una matriz simétrica')
-        menu()
-    
-    elif opcion == 22:
-        nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-        if d[nombre].is_triangular_superior():
-            print('La matriz que ha seleccionado es una matriz triangular superior')
-        else:
-            print('La matriz que ha seleccionado no es una matriz triangular superior')
-        menu()
-    
-    elif opcion == 23:
-        nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-        if d[nombre].is_triangular_inferior():
-            print('La matriz que ha seleccionado es una matriz triangular inferior')
-        else:
-            print('La matriz que ha seleccionado no es una matriz triangular inferior')
-        menu()
-            
-    elif opcion == 24:
         nombre = str(input('Nombre de la matriz que quieres utilizar: '))
         print('El valor mínimo es: ', d[nombre].minimo())
         menu()
         
-    elif opcion == 25:
+    elif opcion == 19:
         nombre = str(input('Nombre de la matriz que quieres utilizar: '))
         print('El valor máximo es: ', d[nombre].maximo())
         menu()
         
-    elif opcion == 26:
+    elif opcion == 20:
         nombre = str(input('Nombre de la matriz que quieres utilizar: '))
         print('El valor medio es: ', d[nombre].media())
         menu()
