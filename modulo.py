@@ -301,3 +301,36 @@ def intlibre(a):
         except ValueError:
             print('No has introducido un número entero. Inténtalo de nuevo.')
     return int(a)
+
+def intmayor0v2(cadena):
+    flag = False
+    while flag == False:
+        try:
+            a = int(input('Dime ' + cadena + ': '))
+            if a > 0:
+                flag = True
+            else:
+                print('No has introducido un entero positivo. Vuelve a adjuntar el número.')
+        except ValueError:
+            print('No has introducido un número entero. Inténtalo de nuevo.')
+    return a
+
+def floatlibrev2(cadena):
+    flag = False
+    while flag == False:
+        try:
+            a = float(input('Dime' + cadena + ': '))
+            flag = True
+        except ValueError:
+            print('No has introducido un número flotante. Inténtalo de nuevo.')
+    return a
+
+def intlibrev2(cadena):
+    flag = False
+    while flag == False:
+        try:
+            a = int(input('Dime' + cadena + ': '))
+            flag = True
+        except ValueError:
+            print('No has introducido un número flotante. Inténtalo de nuevo.')
+    return a
