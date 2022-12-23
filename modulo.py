@@ -202,7 +202,7 @@ class matriz:
                     suma = 0
                     for t in range(otro.columnas):
                         suma += self.matriz[i][t] * otro.matriz[t][j]
-                        fila.append(suma)
+                    fila.append(suma)
                 mul.append(fila)
             return mul
     
