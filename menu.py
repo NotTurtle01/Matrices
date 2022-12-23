@@ -50,7 +50,7 @@ def menu():
         print('25) Obtención valor mínimo')
         print('26) Obtención valor medio')
         opcion = int(input('Escoge opción: '))
-        while opcion != -1 and opcion not in range(1,30):
+        while opcion != -1 and opcion not in range(1,26):
             print('Esa no es una opción válida')
             opcion = intlibre('la opcion que desea')
         
@@ -71,7 +71,7 @@ def menu():
         elif opcion == 3:
             nombre = str(input('Nombre de la matriz que quieres utilizar: '))
             filas = intmayor0('Fila del elemento que quieres mostrar: ')
-            columnas = intmayor0('Columna del elemento que quieres mostrar: ')
+            columnas = intmayor0('Folumna del elemento que quieres mostrar: ')
             print(d[nombre].mostrar_elemento(filas,columnas))
             
         elif opcion == 4:
