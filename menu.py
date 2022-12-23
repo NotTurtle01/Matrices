@@ -50,7 +50,7 @@ def menu():
     
     while opcion != -1 and opcion not in range(1,26):
         print('Esa no es una opción válida')
-        opcion = intlibre('la opcion que desea')
+        opcion = intlibre('La opcion que desea: ')
     
     if opcion == 1:
         filas = intmayor0('Número de filas: ')
