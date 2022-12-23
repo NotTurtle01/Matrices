@@ -50,6 +50,7 @@ def menu():
         print('25) Obtención valor mínimo')
         print('26) Obtención valor medio')
         opcion = int(input('Escoge opción: '))
+        
         while opcion != -1 and opcion not in range(1,26):
             print('Esa no es una opción válida')
             opcion = intlibre('la opcion que desea')
