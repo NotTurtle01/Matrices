@@ -17,6 +17,7 @@ def guardar(lista):
         print(d)
     elif opcion == 2:
         quit()
+        menu()
 
 def menu():
     opcion = 0
