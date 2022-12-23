@@ -332,5 +332,5 @@ def intlibrev2(cadena):
             a = int(input('Dime' + cadena + ': '))
             flag = True
         except ValueError:
-            print('No has introducido un número flotante. Inténtalo de nuevo.')
+            print('No has introducido un número entero. Inténtalo de nuevo.')
     return a
