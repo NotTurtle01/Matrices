@@ -350,3 +350,33 @@ if __name__ == "__main__":
   '4) Presentación de una matriz por pantalla'
 
   print(matriz1)
+  
+  '5) Obtención de una fila'
+
+  print(matriz2.fila(3))
+  print(matriz2[3])
+
+  '6) Obtención de una columna'
+
+  print(matriz1.columna(2))
+
+  '7) Obtención de una diagonal'
+
+  print(matriz1.diagonal(2))
+  print(matriz2.diagonal(1))
+
+  '8) Devolución de dimensiones'
+
+  print(matriz1.dimensiones())
+
+  '9) Suma de matrices'
+
+  print(matriz1 + matriz2)
+
+  '10) Resta de matrices'
+
+  print(matriz1 - matriz2)
+
+  '11) Obtener la matriz opuesta'
+
+  print(matriz2.opuesta())
