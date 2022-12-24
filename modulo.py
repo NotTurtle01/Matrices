@@ -262,7 +262,7 @@ class matriz:
         media = suma/(self.filas*self.columnas)
         return media
     
-    def guardar(self, archivo, matrices):
+    def guardar(self, archivo, matrices): #NO ACABADO
         contenido = ""
         for matriz in matrices:
             for i in range(1, matriz.filas+1):
@@ -275,7 +275,7 @@ class matriz:
         archivo.write(contenido)
         archivo.close()
     
-    def cargar(self, archivo):
+    def cargar(self, archivo): #NO ACABADO
       archivo = open(archivo, 'r')
       contenido = archivo.read()
       archivo.close()
