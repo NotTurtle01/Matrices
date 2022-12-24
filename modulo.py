@@ -261,6 +261,39 @@ class matriz:
                 suma += self.matriz[i][j]
         media = suma/(self.filas*self.columnas)
         return media
+    
+    def guardar(self, archivo, matrices):
+        contenido = ""
+        for matriz in matrices:
+            for i in range(1, matriz.filas+1):
+                for j in range(1, matriz.columnas+1):
+                    contenido += str(matriz[i][j]) + ","
+                contenido = contenido[:-1]+"\n"
+            contenido += "\n"
+
+        archivo = open(archivo, 'w')
+        archivo.write(contenido)
+        archivo.close()
+    
+    def cargar(self, archivo):
+      archivo = open(archivo, 'r')
+      contenido = archivo.read()
+      archivo.close()
+
+      matrices = []
+      contenido = contenido.split("\n")
+      nueva_matriz = []
+      for linea in contenido:
+          if linea == "":
+              if len(nueva_matriz) > 0:
+                matrices.append(matriz(nueva_matriz))
+              nueva_matriz = []
+          else:
+              fila = linea.split(",")
+              fila = [float(elemento) for elemento in fila]
+              nueva_matriz.append(fila)
+
+      return matrices
 
 def intmayor0(cadena):
     flag = False
@@ -297,35 +330,23 @@ def intlibre(cadena):
             print('No has introducido un número entero. Inténtalo de nuevo.')
     return int(a)
 
-def intmayor0v2(cadena):
-    flag = False
-    while flag == False:
-        try:
-            a = int(input('Dime ' + cadena + ': '))
-            if a > 0:
-                flag = True
-            else:
-                print('No has introducido un entero positivo. Vuelve a adjuntar el número.')
-        except ValueError:
-            print('No has introducido un número entero. Inténtalo de nuevo.')
-    return a
+if __name__ == "__main__":
 
-def floatlibrev2(cadena):
-    flag = False
-    while flag == False:
-        try:
-            a = float(input('Dime' + cadena + ': '))
-            flag = True
-        except ValueError:
-            print('No has introducido un número flotante. Inténtalo de nuevo.')
-    return a
+  matriz1 = matriz([[1,2,3],[3,2,3],[9,2,4]])
+  matriz2 = matriz([[2,4,3],[4,6,5],[-9,4,-2]])
 
-def intlibrev2(cadena):
-    flag = False
-    while flag == False:
-        try:
-            a = int(input('Dime' + cadena + ': '))
-            flag = True
-        except ValueError:
-            print('No has introducido un número entero. Inténtalo de nuevo.')
-    return a
+  '1) Definición de una matriz de dimensiones dadas'
+
+  matriz_nueva = vacia.crearmatriz(filas,columnas)
+
+  '2) Asignación de un elemento específico de una matriz'
+
+  matriz1[2,3] = 87
+
+  '3) Obtención de un elemento específico de una matriz'
+
+  print(matriz2[1,2])
+
+  '4) Presentación de una matriz por pantalla'
+
+  print(matriz1)
