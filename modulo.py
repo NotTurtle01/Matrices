@@ -330,14 +330,15 @@ def intlibre(cadena):
             print('No has introducido un número entero. Inténtalo de nuevo.')
     return int(a)
 
-if __name__ == "__main__":
+if __name__ == "__main__": #Comprobaciones.
 
   matriz1 = matriz([[1,2,3],[3,2,3],[9,2,4]])
   matriz2 = matriz([[2,4,3],[4,6,5],[-9,4,-2]])
+  vacia = matriz([])
 
   '1) Definición de una matriz de dimensiones dadas'
 
-  matriz_nueva = vacia.crearmatriz(filas,columnas)
+  matriz_nueva = vacia.crearmatriz(3,4)
 
   '2) Asignación de un elemento específico de una matriz'
 
@@ -380,3 +381,45 @@ if __name__ == "__main__":
   '11) Obtener la matriz opuesta'
 
   print(matriz2.opuesta())
+
+  '12) Multiplicación de matrices'
+
+  print(matriz1 * matriz2)
+
+  '13) Producto de escalar por matriz'
+
+  print(matriz2 * 6)
+
+  '14) Generar matriz nula'
+
+  nula = vacia.nula(4,5)
+
+  '15) Generar matriz identidad'
+
+  midentidad = vacia.identidad(8)
+
+  '16) Trasponer una matriz'
+
+  print(matriz1.transposicion())
+
+  '17) Caracterización de matrices'
+
+  print(matriz1.es_magica())
+  print(matriz1.is_cuadrada())
+  print(matriz1.is_fila())
+  print(matriz1.is_columna())
+  print(matriz1.is_simetrica())
+  print(matriz1.is_triangular_superior())
+  print(matriz1.is_triangular_inferior())
+
+  '18) Obtención valor máximo'
+
+  print(matriz2.maximo())
+
+  '19) Obtención valor mínimo'
+
+  print(matriz2.minimo())
+
+  '20) Obtención valor medio'
+
+  print(matriz2.media())
