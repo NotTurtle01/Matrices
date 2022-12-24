@@ -398,7 +398,7 @@ if __name__ == "__main__": #Comprobaciones.
 
   midentidad = vacia.identidad(8)
 
-  '16) Trasponer una matriz'
+  '16) Transponer una matriz'
 
   print(matriz1.transposicion())
 
