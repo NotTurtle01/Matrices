@@ -429,4 +429,4 @@ if __name__ == "__main__": #Comprobaciones.
   print(matriz2.media())
     
     
-  print('\nPrueba finalizada sin errores en tiempo de ejecución')
+  print('\nPrueba finalizada sin errores en tiempo de ejecución.')
