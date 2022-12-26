@@ -339,14 +339,17 @@ if __name__ == "__main__": #Comprobaciones.
   '1) Definición de una matriz de dimensiones dadas'
 
   matriz_nueva = vacia.crearmatriz(3,4)
+  print(matriz_nueva)
 
   '2) Asignación de un elemento específico de una matriz'
 
-  matriz1[2,3] = 87
+  matriz1.asignar_elemento(2, 2, 28)
+  print(matriz1)
 
   '3) Obtención de un elemento específico de una matriz'
 
-  print(matriz2[1,2])
+  nuevo_elemento = matriz1.mostrar_elemento(2, 2)
+  print(nuevo_elemento)
 
   '4) Presentación de una matriz por pantalla'
 
@@ -355,7 +358,6 @@ if __name__ == "__main__": #Comprobaciones.
   '5) Obtención de una fila'
 
   print(matriz2.fila(3))
-  print(matriz2[3])
 
   '6) Obtención de una columna'
 
@@ -388,15 +390,17 @@ if __name__ == "__main__": #Comprobaciones.
 
   '13) Producto de escalar por matriz'
 
-  print(matriz2 * 6)
+  print(matriz2.escalar_matriz(6))
 
   '14) Generar matriz nula'
 
   nula = vacia.nula(4,5)
+  print(nula)
 
   '15) Generar matriz identidad'
 
   midentidad = vacia.identidad(8)
+  print(midentidad)
 
   '16) Transponer una matriz'
 
