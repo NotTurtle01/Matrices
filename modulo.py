@@ -261,39 +261,6 @@ class matriz:
                 suma += self.matriz[i][j]
         media = suma/(self.filas*self.columnas)
         return media
-    
-    def guardar(self, archivo, matrices): #NO ACABADO
-        contenido = ""
-        for matriz in matrices:
-            for i in range(1, matriz.filas+1):
-                for j in range(1, matriz.columnas+1):
-                    contenido += str(matriz[i][j]) + ","
-                contenido = contenido[:-1]+"\n"
-            contenido += "\n"
-
-        archivo = open(archivo, 'w')
-        archivo.write(contenido)
-        archivo.close()
-    
-    def cargar(self, archivo): #NO ACABADO
-      archivo = open(archivo, 'r')
-      contenido = archivo.read()
-      archivo.close()
-
-      matrices = []
-      contenido = contenido.split("\n")
-      nueva_matriz = []
-      for linea in contenido:
-          if linea == "":
-              if len(nueva_matriz) > 0:
-                matrices.append(matriz(nueva_matriz))
-              nueva_matriz = []
-          else:
-              fila = linea.split(",")
-              fila = [float(elemento) for elemento in fila]
-              nueva_matriz.append(fila)
-
-      return matrices
 
 def intmayor0(cadena):
     flag = False
@@ -427,6 +394,5 @@ if __name__ == "__main__": #Comprobaciones.
   '20) Obtención valor medio'
 
   print(matriz2.media())
-    
-    
+
   print('\nPrueba finalizada sin errores en tiempo de ejecución.')
