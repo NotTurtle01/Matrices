@@ -13,3 +13,9 @@ def guardar(archivo):
     archivo.close()
 
 print(guardar('nuevo1_texto.txt'))
+
+import six
+if six.PY2:
+    input("Press the <ENTER> key to continue...")
+else:
+    input("Press the <ENTER> key to continue...")
