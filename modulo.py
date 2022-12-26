@@ -427,3 +427,6 @@ if __name__ == "__main__": #Comprobaciones.
   '20) Obtención valor medio'
 
   print(matriz2.media())
+    
+    
+  print('\nPrueba finalizada sin errores en tiempo de ejecución')
