@@ -83,7 +83,7 @@ def menu():
     elif opcion == 3:
         nombre = str(input('Nombre de la matriz que quieres utilizar: '))
         filas = intmayor0('Fila del elemento que quieres mostrar: ')
-        columnas = intmayor0('Folumna del elemento que quieres mostrar: ')
+        columnas = intmayor0('Columna del elemento que quieres mostrar: ')
         print(d[nombre].mostrar_elemento(filas,columnas))
         menu()
         
