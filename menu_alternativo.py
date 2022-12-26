@@ -61,10 +61,10 @@ def menu():
     print('17: Comprobar si una matriz es de un tipo')
     print('18: Valor mínimo, máximo y medio de una matriz')
     opcion = intlibre('Dime la opcion que desea: ')
+    
     while opcion != -1 and opcion not in range(1,26):
         print('Esa no es una opción válida')
         opcion = intlibre('Dime la opcion que desea:')
-
 
     if opcion == 1:
         filas = intmayor0('\nDime cuantas filas quieres que tenga la matriz: ')
