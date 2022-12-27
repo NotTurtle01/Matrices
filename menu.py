@@ -64,6 +64,7 @@ def menu():
     print('17: Caracterizar una matriz')
     print('18: Valor mínimo, máximo y medio de una matriz')
     print('19: Guardar matrices')
+    print('20: Cargar matrices')
     opcion = intlibre('\nDime la opcion que desea: ')
     
     while opcion != -1 and opcion not in range(1,26):
