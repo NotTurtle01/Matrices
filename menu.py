@@ -363,6 +363,6 @@ def menu():
         menu()
     
     elif opcion == 19:
-        guardacion(d, 'pruebisima.txt')
+        guardar_archivo(d, 'pruebisima.txt')
 
 menu()
