@@ -42,7 +42,25 @@ def espera():
     a = 0
     while a != '':
         a = input('Pulsa <ENTER> para continuar: ')
-
+        
+def cargararchivo(archivo):
+    archivo = open(archivo, 'r')
+    linea = archivo.readline()
+    while linea != '':
+        lista = linea.split(' ')
+        contenido = lista[3].replace(',',' ')
+        contenido = contenido.split()
+        numeros = []
+        for i in range(int(lista[1])):
+            fila = []
+            for j in range(int(lista[2])):
+                fila.append(float(contenido[0]))
+                del(contenido[0])
+            numeros.append(fila)
+        d[lista[0]] = matriz(numeros)
+        linea = archivo.readline()
+    archivo.close()
+    
 def menu():
     print('-1: Salir del menu')
     print('1: Crear una matriz.')
@@ -365,5 +383,12 @@ def menu():
     
     elif opcion == 19:
         guardacion(d, 'pruebisima.txt')
+        
+    elif opcion == 20:
+        archivo = str(input('\nDime el nombre del archivo del que quieres cargar las matrices: '))
+        cargararchivo(archivo)
+        print('\nLas matrices han sido cargadas\n')
+        espera()
+        menu()
 
 menu()
