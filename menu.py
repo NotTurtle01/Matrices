@@ -1,4 +1,3 @@
-#Menu
 
 from modulo import *
 
@@ -10,16 +9,15 @@ def guardar(lista):
     print('\nQuiere guardar la matriz o descartarla?\n')
     print('1: Guardar la matriz')
     print('2: Descartar la matriz')
-    opcion = intmayor0('\nLa opción que desea: ')
+    opcion = intmayor0('\nDime la opción que desea: ')
     if opcion == 1:
-        nombre = str(input('Dime el nombre con el que quieres guardar la matriz: '))
+        nombre = str(input('\nDime el nombre con el que quieres guardar la matriz: '))
         d[nombre] = matriz(lista)
-        print(d)
     elif opcion == 2:
         menu()
-        
+
 def mostrardiccionario():
-    print('Estas son las matrices disponibles: ')
+    print('\nEstas son las matrices disponibles: ')
     for clave in d.keys():
         print(clave)
         print(d[clave])
@@ -30,244 +28,340 @@ def comprobdic():
     else:
         return 'no vacio'
 
-def comprobnombre(nombre):
-    if nombre not in d.keys():
-        return False
-    else:
-        return True
-    
+def nombrevalido(cadena = 'Dime el nombre de la matriz que quieras utilizar: '):
+    valido = False
+    while not valido:
+        nombre = str(input(cadena))
+        if nombre not in d.keys():
+            print('No se ha encontrado esa matriz')
+        else:
+            valido = True
+    return nombre
+
+def espera():
+    a = 0
+    while a != '':
+        a = input('Pulsa <ENTER> para continuar: ')
+
 def menu():
-    print('\n-1) Salir del menú')
-    print('1) Definición de una matriz de unas dimensiones dadas')
-    print('2) Asignación de un elemento específico de una matriz')
-    print('3) Obtención de un elemento específico de una matriz')
-    print('4) Presentación de una matriz por pantalla')
-    print('5) Obtención de una fila')
-    print('6) Obtención de una columna')
-    print('7) Obtención de una diagonal')
-    print('8) Devolución de dimensiones')
-    print('9) Sumar matrices')
-    print('10) Restar matrices')
-    print('11) Obtener la matriz opuesta')
-    print('12) Multiplicar matrices')
-    print('13) Producto de escalar por matriz')
-    print('14) Generar matriz nula')
-    print('15) Generar matriz identidad')
-    print('16) Trasponer una matriz')
-    print('17) Caracterización de matriz')
-    print('18) Obtención valor máximo')
-    print('19) Obtención valor mínimo')
-    print('20) Obtención valor medio')
-    opcion = int(input('\nEscoge opción: '))
+    print('-1: Salir del menu')
+    print('1: Crear una matriz.')
+    print('2: Asignarle un elemento a una matriz')
+    print('3: Obtener un elemento de una matriz')
+    print('4: Imprimir una matriz por pantalla')
+    print('5: Obtener una fila')
+    print('6: Obtener una columna')
+    print('7: Obtener diagonal de una matriz')
+    print('8: Dimensiones de una matriz')
+    print('9: Sumar dos matrices')
+    print('10: Restar dos matrices')
+    print('11: Obtener la matriz opuesta')
+    print('12: Producto de matrices')
+    print('13: Producto de un escalar por una matriz')
+    print('14: Generar la matriz nula')
+    print('15: Generar la matriz de identidad')
+    print('16: Trasponer una matriz')
+    print('17: Caracterizar una matriz')
+    print('18: Valor mínimo, máximo y medio de una matriz')
+    print('19: Guardar matrices')
+    opcion = intlibre('\nDime la opcion que desea: ')
     
     while opcion != -1 and opcion not in range(1,26):
         print('Esa no es una opción válida')
-        opcion = intlibre('La opcion que desea: ')
-    
+        opcion = intlibre('Dime la opcion que desea:')
+
     if opcion == 1:
-        filas = intmayor0('Número de filas: ')
-        columnas = intmayor0('Número de columnas: ')
+        filas = intmayor0('\nDime cuantas filas quieres que tenga la matriz: ')
+        columnas = intmayor0('Dime cuantas columnas quieres que tenga la matriz: ')
+        print()
         lista = vacia.crearmatriz(filas,columnas)
+        print('\nEsta es la matriz resultante: ')
+        print(lista)
+        espera()
         guardar(lista)
         menu()
-        
+
     elif opcion == 2:
-        nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-        filas = intmayor0('Fila del elemento: ')
-        columnas = intmayor0('Columna del elemento: ')
-        elemento = floatlibre('Elemento que quieres asignar: ') #Se sobreescribirá el elemento a la matrz ya existente.
-        d[nombre].asignar_elemento(filas,columnas,elemento)
-        print(d[nombre]) 
+        if comprobdic() == 'vacio':
+            print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
+            espera()
+        else:
+            mostrardiccionario()
+            nombre = nombrevalido()
+            filas = intmayor0('\nDime la fila del elemento: ')
+            columnas = intmayor0('Dime la columna del elemento: ')
+            elemento = floatlibre('\nDime el elemento que quieres asignar: ')
+            d[nombre].asignar_elemento(filas,columnas,elemento)
+            print('\nEsta es la matriz resultante: ')
+            print(d[nombre])
+            espera()
         menu()
 
     elif opcion == 3:
-        nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-        filas = intmayor0('Fila del elemento que quieres mostrar: ')
-        columnas = intmayor0('Columna del elemento que quieres mostrar: ')
-        print(d[nombre].mostrar_elemento(filas,columnas))
-        menu()
-        
-    elif opcion == 4:
-        print('Estas son las matrices disponibles: ')
-        print(d.keys())
-        nombre = str(input('Nombre de la matriz que quieres mostrar por pantalla: '))
-        print(d[nombre])
+        if comprobdic() == 'vacio':
+            print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
+            espera()
+        else:
+            mostrardiccionario()
+            nombre = nombrevalido()
+            filas = intmayor0('\nDime la fila del elemento que quieres mostrar: ')
+            columnas = intmayor0('Dime la columna del elemento que quieres mostrar: ')
+            print('\nEl elemento de esa fila y esa columna es: ', d[nombre].mostrar_elemento(filas,columnas))
+            espera()
         menu()
 
+    elif opcion == 4:
+        if comprobdic() == 'vacio':
+            print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
+            espera()
+        else:
+            print('\nEstas son las matrices disponibles para imprimir: ')
+            for clave in d.keys():
+                print(clave)
+            nombre = nombrevalido()
+            print('\nEsta es la matriz', nombre, ': ')
+            print(d[nombre])
+            espera()
+        menu()
+    
     elif opcion == 5:
-        nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-        fila = intmayor0('Fila: ')
-        lista = d[nombre].fila(fila)
-        print(lista)
+        if comprobdic() == 'vacio':
+            print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
+            espera()
+        else:
+            mostrardiccionario()
+            nombre = nombrevalido()
+            fila = intmayor0('\nDime la fila que quieras obtener: ')
+            lista = d[nombre].fila(fila)
+            print('\nEsta es la fila seleccionada: ', lista)
+            espera()
         menu()
-    
+
     elif opcion == 6:
-        nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-        columna = intmayor0('Columna: ')
-        lista = d[nombre].columna(columna)
-        print(lista)
+        if comprobdic() == 'vacio':
+            print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
+            espera()
+        else:
+            mostrardiccionario()
+            nombre = nombrevalido()
+            columna = intmayor0('\nDime la columna que quieras obtener: ')
+            lista = d[nombre].columna(columna)
+            print('\nEsta es la columna seleccionada: ', lista)
+            espera()
         menu()
-    
+
     elif opcion == 7:
-        nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-        diagonal = intmayor0('1) Diagonal principal 2) Diagonal inversa: ')
-        lista = d[nombre].diagonal(diagonal)
-        print(lista)
+        if comprobdic() == 'vacio':
+            print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
+            espera()
+        else:
+            mostrardiccionario()
+            nombre = nombrevalido()
+            print('\nQue diagonal quieres obtener?\n1: Diagonal principal\n2: Diagonal inversa')
+            diagonal = intlibre('Dime la opción que deseas: ')
+            while diagonal not in range(1,3):
+                print('Esa no es una opción valida, intentelo de nuevo.')
+                diagonal = intlibre('Dime la opción que deseas: ')
+            lista = d[nombre].diagonal(diagonal)
+            print('\nEsta es la diagonal seleccionada: ', lista)
+            espera()
         menu()
-    
+
     elif opcion == 8:
-        nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-        dimensiones = d[nombre].dimensiones()
-        print('La matriz tiene de dimensiones: ' + str(dimensiones[0]) + ' filas y ' + str(dimensiones[1]) + ' columnas')
+        if comprobdic() == 'vacio':
+            print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
+            espera()
+        else:
+            mostrardiccionario()
+            nombre = nombrevalido()
+            dimensiones = d[nombre].dimensiones()
+            print('\nLa matriz tiene de dimensiones: ' + str(dimensiones[0]) + ' filas y ' + str(dimensiones[1]) + ' columnas\n')
+            espera()
         menu()
-        
+
     elif opcion == 9:
-        nombre1 = str(input('Nombre de la primera matriz que quieres utilizar: '))
-        nombre2 = str(input('Nombre de la segunda matriz que quieres utilizar: '))
-        lista = d[nombre1] + d[nombre2]
-        print(lista)
-        guardar(lista)
+        if comprobdic() == 'vacio':
+            print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
+            espera()
+        else:
+            mostrardiccionario()
+            nombre1 = nombrevalido('Dime el nombre de la primera matriz que quieras sumar: ')
+            nombre2 = nombrevalido('Dime el nombre de la segunda matriz que quieras sumar: ')
+            lista = d[nombre1] + d[nombre2]
+            print('\nEsta es la matriz suma: ', lista)
+            espera()
+            guardar(lista)
         menu()
-            
+
     elif opcion == 10:
-        nombre1 = str(input('Nombre de la primera matriz que quieres utilizar: '))
-        nombre2 = str(input('Nombre de la segunda matriz que quieres utilizar: '))
-        lista = d[nombre1] - d[nombre2]
-        print(lista)
-        guardar(lista)
+        if comprobdic() == 'vacio':
+            print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
+            espera()
+        else:
+            mostrardiccionario()
+            nombre1 = nombrevalido('Dime el nombre de la primera matriz que quieras utilizar: ')
+            nombre2 = nombrevalido('Dime el nombre de la segunda matriz que quieras restar: ')
+            lista = d[nombre1] - d[nombre2]
+            print('\nEsta es la matriz resta: ', lista)
+            espera()
+            guardar(lista)
         menu()
-        
+
     elif opcion == 11:
-        nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-        lista = d[nombre].opuesta()
-        print(lista)
-        guardar(lista)
+        if comprobdic() == 'vacio':
+            print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
+            espera()
+        else:
+            mostrardiccionario()
+            nombre = nombrevalido()
+            lista = d[nombre].opuesta()
+            print('\nEsta es la matriz opuesta: ', lista)
+            espera()
+            guardar(lista)
         menu()
-    
+
     elif opcion == 12:
-        nombre1 = str(input('Nombre de la primera matriz que quieres utilizar: '))
-        nombre2 = str(input('Nombre de la segunda matriz que quieres utilizar: '))
-        lista = d[nombre1] * d[nombre2]
-        print(lista)
-        guardar(lista)
+        if comprobdic() == 'vacio':
+            print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
+            espera()
+        else:
+            mostrardiccionario()
+            nombre1 = nombrevalido('Dime el nombre de la primera matriz que quieras utilizar: ')
+            nombre2 = nombrevalido('Dime el nombre de la segunda matriz que quieres multiplicar: ')
+            try:
+                lista = d[nombre1] * d[nombre2]
+                print('\nEsta es la matriz multiplicación: ', lista)
+                espera()
+                guardar(lista)
+                menu()
+            except IndexError:
+                print('Las matrices no tienen las dimensiones adecuadas para poder multiplicarse.')
         menu()
-            
+
     elif opcion == 13:
-        nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-        num = intlibre('Número por el que quieres multiplicar: ')
-        lista = d[nombre].escalar_matriz(num)
-        print(lista)
-        guardar(lista)
+        if comprobdic() == 'vacio':
+            print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
+            espera()
+        else:
+            mostrardiccionario()
+            nombre = nombrevalido()
+            num = intlibre('Dime el escalar por el que quieres multiplicar: ')
+            lista = d[nombre].escalar_matriz(num)
+            print('\nLa matriz resultante es: ', lista)
+            espera()
+            guardar(lista)
         menu()
     
     elif opcion == 14:
-        filas = intmayor0('Número de filas: ')
-        columnas = intmayor0('Número de columnas: ')
+        filas = intmayor0('\nDime el número de filas: ')
+        columnas = intmayor0('Dime el número de columnas: ')
         lista = vacia.nula(filas,columnas)
-        print(lista)
+        print('\nEsta es la matriz nula: ', lista)
+        espera()
         guardar(lista)
         menu()
-    
+
     elif opcion == 15:
-        orden = intmayor0('Orden de la matriz identidad: ')
+        orden = intmayor0('\nDime el orden de la matriz de identidad: ')
         lista = vacia.identidad(orden)
-        print(lista)
+        print('Esta es la matriz de identidad: ', lista)
+        espera()
         guardar(lista)
         menu()
 
     elif opcion == 16:
-        nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-        lista = d[nombre].transposicion()
-        print(lista)
-        guardar(lista)
+        if comprobdic() == 'vacio':
+            print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
+            espera()
+        else:
+            mostrardiccionario()
+            nombre = nombrevalido()
+            lista = d[nombre].transposicion()
+            print('\nLa matriz traspuesta es: ', lista)
+            espera()
+            guardar(lista)
         menu()
-        
+
     elif opcion == 17:
-        print('\n1) Mágica')
-        print('2) Cuadrada')
-        print('3) Fila')
-        print('4) Columna')
-        print('5) Simétrica')
-        print('6) Triangular superior')
-        print('7) Triangular inferior')
-        nueva_opcion = int(input('\nEscoge opción: '))
+        if comprobdic() == 'vacio':
+            print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
+            espera()
+        else:
+            print('\n1) Mágica')
+            print('2) Cuadrada')
+            print('3) Fila')
+            print('4) Columna')
+            print('5) Simétrica')
+            print('6) Triangular superior')
+            print('7) Triangular inferior')
+            nueva_opcion = int(input('\nOpción: '))
 
-        while nueva_opcion not in range (1,8):
-            print('Esa no es una opción válida')
-            nueva_opcion = intlibre('La opcion que desea: ')
+            while nueva_opcion not in range (1,8):
+                print('Esa no es una opción válida')
+                nueva_opcion = intlibre('Opción: ')
+            
+            mostrardiccionario()
+            nombre = nombrevalido()
 
-        if nueva_opcion == 1:
-            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-            if d[nombre].es_magica():
-                print('La matriz que ha seleccionado es mágica')
-            else:
-                print('La matriz que ha seleccionado no es mágica')
-            menu()
+            if nueva_opcion == 1:
+                if d[nombre].es_magica():
+                    print('\nLa matriz que ha seleccionado es mágica')
+                else:
+                    print('\nLa matriz que ha seleccionado no es mágica')
+                
+            elif nueva_opcion == 2:
+                if d[nombre].is_cuadrada():
+                    print('\nLa matriz que ha seleccionado es cuadrada')
+                else:
+                    print('\nLa matriz que ha seleccionado no es cuadrada')
+                
+            elif nueva_opcion == 3:
+                if d[nombre].is_fila():
+                    print('\nLa matriz que ha seleccionado es una matriz fila')
+                else:
+                    print('\nLa matriz que ha seleccionado no es una matriz fila')
             
-        elif nueva_opcion == 2:
-            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-            if d[nombre].is_cuadrada():
-                print('La matriz que ha seleccionado es cuadrada')
-            else:
-                print('La matriz que ha seleccionado no es cuadrada')
+            elif nueva_opcion == 4:
+                if d[nombre].is_columna():
+                    print('\nLa matriz que ha seleccionado es una matriz columna')
+                else:
+                    print('\nLa matriz que ha seleccionado no es una matriz columna')
+                
+            elif nueva_opcion == 5:
+                if d[nombre].is_simetrica():
+                    print('\nLa matriz que ha seleccionado es una matriz simétrica')
+                else:
+                    print('\nLa matriz que ha seleccionado no es una matriz simétrica')
+
+            elif nueva_opcion == 6:
+                if d[nombre].is_triangular_superior():
+                    print('\nLa matriz que ha seleccionado es una matriz triangular superior')
+                else:
+                    print('\nLa matriz que ha seleccionado no es una matriz triangular superior')
+
+            elif nueva_opcion == 7:
+                if d[nombre].is_triangular_inferior():
+                    print('\nLa matriz que ha seleccionado es una matriz triangular inferior')
+                else:
+                    print('\nLa matriz que ha seleccionado no es una matriz triangular inferior')
+
+            espera()
             menu()
-            
-        elif nueva_opcion == 3:
-            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-            if d[nombre].is_fila():
-                print('La matriz que ha seleccionado es una matriz fila')
-            else:
-                print('La matriz que ha seleccionado no es una matriz fila')
-            menu()
-        
-        elif nueva_opcion == 4:
-            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-            if d[nombre].is_columna():
-                print('La matriz que ha seleccionado es una matriz columna')
-            else:
-                print('La matriz que ha seleccionado no es una matriz columna')
-            menu()
-            
-        elif nueva_opcion == 5:
-            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-            if d[nombre].is_simetrica():
-                print('La matriz que ha seleccionado es una matriz simétrica')
-            else:
-                print('La matriz que ha seleccionado no es una matriz simétrica')
-            menu()
-            
-        elif nueva_opcion == 6:
-            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-            if d[nombre].is_triangular_superior():
-                print('La matriz que ha seleccionado es una matriz triangular superior')
-            else:
-                print('La matriz que ha seleccionado no es una matriz triangular superior')
-            menu()
-            
-        elif nueva_opcion == 7:
-            nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-            if d[nombre].is_triangular_inferior():
-                print('La matriz que ha seleccionado es una matriz triangular inferior')
-            else:
-                print('La matriz que ha seleccionado no es una matriz triangular inferior')
-            menu()
-            
+
     elif opcion == 18:
-        nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-        print('El valor mínimo es: ', d[nombre].minimo())
+        if comprobdic() == 'vacio':
+            print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
+            espera()
+        else:
+            mostrardiccionario()
+            nombre = nombrevalido()
+            print('El valor mínimo es: ', d[nombre].minimo())
+            print('El valor máximo es: ', d[nombre].maximo())
+            print('El valor medio es: ', d[nombre].media())
+            espera()
         menu()
-        
+    
     elif opcion == 19:
-        nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-        print('El valor máximo es: ', d[nombre].maximo())
-        menu()
-        
-    elif opcion == 20:
-        nombre = str(input('Nombre de la matriz que quieres utilizar: '))
-        print('El valor medio es: ', d[nombre].media())
-        menu()
-            
-    return opcion
+        guardacion(d, 'pruebisima.txt')
 
-A = matriz([ [1, 2, 3], [2, 12, 6], [1, 0, -3], [0, -1, 0] ])
 menu()
