@@ -42,6 +42,17 @@ def espera():
     a = 0
     while a != '':
         a = input('Pulsa <ENTER> para continuar: ')
+        
+def guardar_archivo(d, archivo):
+  contenido = ''
+  for i in d.keys():
+    contenido += i + "*" + str(d[i].filas) + "*" + str(d[i].columnas) + "*" + str(d[i].resize()) + '\n'
+  caracteres = '[]" "'
+  resultado = ''.join(x for x in contenido if x not in caracteres) #Sintaxis para eliminar los caracteres '[' ']'
+  resultado = resultado.replace("*", " ")
+  archivo = open(archivo, 'w')
+  archivo.write(resultado)
+  archivo.close()
 
 def menu():
     print('-1: Salir del menu')
