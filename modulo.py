@@ -268,7 +268,7 @@ class matriz:
       media = suma/(self.filas*self.columnas)
       return media
     
-def guardacion(d, archivo):
+def guardar_archivo(d, archivo):
   contenido = ''
   for i in d.keys():
     contenido += i + "*" + str(d[i].filas) + "*" + str(d[i].columnas) + "*" + str(d[i].resize()) + '\n'
