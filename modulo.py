@@ -27,7 +27,13 @@ class matriz:
         if i != (len(self.matriz)-1):
           cadena = cadena + str(self.matriz[i]) + '\n'
         else:
-            cadena = cadena + str(self.matriz[i])
+          cadena = cadena + str(self.matriz[i])
+      return cadena
+    
+    def resize(self): #Función creada para manipular el sistema de archivos.
+      cadena = []
+      for i in range(len(self.matriz)):
+        cadena = cadena + self.matriz[i]
       return cadena
       
     def crearmatriz(self,n,m):
@@ -255,12 +261,23 @@ class matriz:
         return maximo
 
     def media(self):
-        suma = 0
-        for i in range(self.filas):
-            for j in range(self.columnas):
-                suma += self.matriz[i][j]
-        media = suma/(self.filas*self.columnas)
-        return media
+      suma = 0
+      for i in range(self.filas):
+          for j in range(self.columnas):
+              suma += self.matriz[i][j]
+      media = suma/(self.filas*self.columnas)
+      return media
+    
+def guardacion(d, archivo):
+  contenido = ''
+  for i in d.keys():
+    contenido += i + "*" + str(d[i].filas) + "*" + str(d[i].columnas) + "*" + str(d[i].resize()) + '\n'
+  caracteres = '[]" "'
+  resultado = ''.join(x for x in contenido if x not in caracteres) #Sintaxis para eliminar los caracteres '[' ']'
+  resultado = resultado.replace("*", " ")
+  archivo = open(archivo, 'w')
+  archivo.write(resultado)
+  archivo.close()
 
 def intmayor0(cadena):
     flag = False
