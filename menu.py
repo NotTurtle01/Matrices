@@ -393,5 +393,12 @@ def menu():
     
     elif opcion == 19:
         guardar_archivo(d, 'pruebisima.txt')
+    
+    elif opcion == 20:
+        archivo = str(input('\nDime el nombre del archivo del que quieres cargar las matrices: '))
+        cargararchivo(archivo)
+        print('\nLas matrices han sido cargadas\n')
+        espera()
+        menu()
 
 menu()
