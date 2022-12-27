@@ -1,6 +1,5 @@
 
-from matrices import *
-import time
+from modulo import *
 
 vacia = matriz([])
 
@@ -39,6 +38,10 @@ def nombrevalido(cadena = 'Dime el nombre de la matriz que quieras utilizar: '):
             valido = True
     return nombre
 
+def espera():
+    a = 0
+    while a != '':
+        a = input('Pulsa <ENTER> para continuar: ')
 
 def menu():
     print('-1: Salir del menu')
@@ -60,6 +63,7 @@ def menu():
     print('16: Trasponer una matriz')
     print('17: Comprobar si una matriz es de un tipo')
     print('18: Valor mínimo, máximo y medio de una matriz')
+    print('19: Guardar matrices')
     opcion = intlibre('Dime la opcion que desea: ')
     
     while opcion != -1 and opcion not in range(1,26):
@@ -73,43 +77,43 @@ def menu():
         lista = vacia.crearmatriz(filas,columnas)
         print('\nEsta es la matriz resultante: ')
         print(lista)
-        time.sleep(2)
+        espera()
         guardar(lista)
         menu()
 
     elif opcion == 2:
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
-            time.sleep(2)
+            espera()
         else:
             mostrardiccionario()
             nombre = nombrevalido()
             filas = intmayor0('\nDime la fila del elemento: ')
             columnas = intmayor0('\nDime la columna del elemento: ')
             elemento = floatlibre('\nDime el elemento que quieres asignar: ')
-            d[nombre].asignarelemento(filas,columnas,elemento)
+            d[nombre].asignar_elemento(filas,columnas,elemento)
             print('\nEsta es la matriz resultante: ')
             print(d[nombre])
-            time.sleep(2)
+            espera()
         menu()
 
     elif opcion == 3:
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
-            time.sleep(2)
+            espera()
         else:
             mostrardiccionario()
             nombre = nombrevalido()
             filas = intmayor0('\nDime la fila del elemento que quieres mostrar: ')
             columnas = intmayor0('\nDime la columna del elemento que quieres mostrar: ')
-            print('El elemento de esa fila y esa columna es: ',d[nombre].mostrarelemento(filas,columnas))
-            time.sleep(2)
+            print('\nEl elemento de esa fila y esa columna es: ',d[nombre].mostrar_elemento(filas,columnas))
+            espera()
         menu()
 
     elif opcion == 4:
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
-            time.sleep(2)
+            espera()
         else:
             print('\nEstas son las matrices disponibles para imprimir: ')
             for clave in d.keys():
@@ -117,39 +121,39 @@ def menu():
             nombre = nombrevalido()
             print('\nEsta es la matriz ', nombre, ': ')
             print(d[nombre])
-            time.sleep(4)
+            espera()
         menu()
     
     elif opcion == 5:
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
-            time.sleep(2)
+            espera()
         else:
             mostrardiccionario()
             nombre = nombrevalido()
             fila = intmayor0('\nDime la fila que quieras obtener: ')
             lista = d[nombre].fila(fila)
             print('\nEsta es la fila seleccionada: ', lista)
-            time.sleep(4)
+            espera()
         menu()
 
     elif opcion == 6:
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
-            time.sleep(2)
+            espera()
         else:
             mostrardiccionario()
             nombre = nombrevalido()
             columna = intmayor0('\nDime la columna que quieras obtener: ')
             lista = d[nombre].columna(columna)
             print('\nEsta es la columna seleccionada: ', lista)
-            time.sleep(4)
+            espera()
         menu()
 
     elif opcion == 7:
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
-            time.sleep(2)
+            espera()
         else:
             mostrardiccionario()
             nombre = nombrevalido()
@@ -160,66 +164,66 @@ def menu():
                 diagonal = intlibre('Dime la opción que deseas: ')
             lista = d[nombre].diagonal(diagonal)
             print('\nEsta es la diagonal seleccionada: ', lista)
-            time.sleep(4)
+            espera()
         menu()
 
     elif opcion == 8:
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
-            time.sleep(2)
+            espera()
         else:
             mostrardiccionario()
             nombre = nombrevalido()
             dimensiones = d[nombre].dimensiones()
             print('\nLa matriz tiene de dimensiones: ' + str(dimensiones[0]) + ' filas y ' + str(dimensiones[1]) + ' columnas\n')
-            time.sleep(4)
+            espera()
         menu()
 
     elif opcion == 9:
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
-            time.sleep(2)
+            espera()
         else:
             mostrardiccionario()
             nombre1 = nombrevalido('Dime el nombre de la primera matriz que quieras utilizar: ')
             nombre2 = nombrevalido('Dime el nombre de la segunda matriz que quieras utilizar: ')
             lista = d[nombre1] + d[nombre2]
             print('\nEsta es la matriz suma: ', lista)
-            time.sleep(2)
+            espera()
             guardar(lista)
         menu()
 
     elif opcion == 10:
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
-            time.sleep(2)
+            espera()
         else:
             mostrardiccionario()
             nombre1 = nombrevalido('Dime el nombre de la primera matriz que quieras utilizar: ')
             nombre2 = nombrevalido('Dime el nombre de la segunda matriz que quieras utilizar: ')
             lista = d[nombre1] - d[nombre2]
             print('\nEsta es la matriz resta: ', lista)
-            time.sleep(2)
+            espera()
             guardar(lista)
         menu()
 
     elif opcion == 11:
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
-            time.sleep(2)
+            espera()
         else:
             mostrardiccionario()
             nombre = nombrevalido()
             lista = d[nombre].opuesta()
             print('\nEsta es la matriz opuesta: ', lista)
-            time.sleep(2)
+            espera()
             guardar(lista)
         menu()
 
     elif opcion == 12:
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
-            time.sleep(2)
+            espera()
         else:
             mostrardiccionario()
             nombre1 = nombrevalido('Dime el nombre de la primera matriz que quieras utilizar: ')
@@ -227,7 +231,7 @@ def menu():
             try:
                 lista = d[nombre1] * d[nombre2]
                 print('\nEsta es la matriz multiplicación: ', lista)
-                time.sleep(2)
+                espera()
                 guardar(lista)
                 menu()
             except IndexError:
@@ -237,14 +241,14 @@ def menu():
     elif opcion == 13:
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
-            time.sleep(2)
+            espera()
         else:
             mostrardiccionario()
             nombre = nombrevalido()
             num = intlibre('Dime el número por el que quieres multiplicar: ')
             lista = d[nombre].escalar_matriz(num)
             print('\nLa matriz resultante es: ', lista)
-            time.sleep(2)
+            espera()
             guardar(lista)
         menu()
     
@@ -253,7 +257,7 @@ def menu():
         columnas = intmayor0('\nDime el número de columnas: ')
         lista = vacia.nula(filas,columnas)
         print('\nEsta es la matriz nula: ', lista)
-        time.sleep(2)
+        espera()
         guardar(lista)
         menu()
 
@@ -261,27 +265,27 @@ def menu():
         orden = intmayor0('\nDime el orden de la matriz de identidad: ')
         lista = vacia.identidad(orden)
         print('Esta es la matriz de identidad: ', lista)
-        time.sleep(2)
+        espera()
         guardar(lista)
         menu()
 
     elif opcion == 16:
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
-            time.sleep(2)
+            espera()
         else:
             mostrardiccionario()
             nombre = nombrevalido()
             lista = d[nombre].transposicion()
             print('\nLa matriz traspuesta es: ', lista)
-            time.sleep(2)
+            espera()
             guardar(lista)
         menu()
 
     elif opcion == 17:
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
-            time.sleep(2)
+            espera()
         else:
             print('\n1) Mágica')
             print('2) Cuadrada')
@@ -341,22 +345,25 @@ def menu():
                 else:
                     print('\nLa matriz que ha seleccionado no es una matriz triangular inferior')
 
-            time.sleep(2)
+            espera()
             menu()
 
     elif opcion == 18:
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
-            time.sleep(2)
+            espera()
         else:
             mostrardiccionario()
             nombre = nombrevalido()
             print('El valor mínimo es: ', d[nombre].minimo())
-            time.sleep(1)
+            espera()
             print('El valor máximo es: ', d[nombre].maximo())
-            time.sleep(1)
+            espera()
             print('El valor medio es: ', d[nombre].media())
-            time.sleep(4)
+            espera()
         menu()
+    
+    elif opcion == 19:
+        guardacion(d, 'pruebisima.txt')
 
 menu()
