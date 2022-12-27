@@ -30,7 +30,12 @@ class matriz:
           cadena = cadena + str(self.matriz[i])
       return cadena
     
-    def resize(self): #Función creada para manipular el sistema de archivos.
+    def resize(self): 
+        
+      '''
+      
+      '''
+    
       cadena = []
       for i in range(len(self.matriz)):
         cadena = cadena + self.matriz[i]
