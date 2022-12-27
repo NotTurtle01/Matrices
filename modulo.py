@@ -267,17 +267,6 @@ class matriz:
               suma += self.matriz[i][j]
       media = suma/(self.filas*self.columnas)
       return media
-    
-def guardar_archivo(d, archivo):
-  contenido = ''
-  for i in d.keys():
-    contenido += i + "*" + str(d[i].filas) + "*" + str(d[i].columnas) + "*" + str(d[i].resize()) + '\n'
-  caracteres = '[]" "'
-  resultado = ''.join(x for x in contenido if x not in caracteres) #Sintaxis para eliminar los caracteres '[' ']'
-  resultado = resultado.replace("*", " ")
-  archivo = open(archivo, 'w')
-  archivo.write(resultado)
-  archivo.close()
 
 def intmayor0(cadena):
     flag = False
