@@ -248,14 +248,10 @@ def menu():
             mostrardiccionario()
             nombre1 = nombrevalido('Dime el nombre de la primera matriz que quieras utilizar: ')
             nombre2 = nombrevalido('Dime el nombre de la segunda matriz que quieres multiplicar: ')
-            try:
-                lista = d[nombre1] * d[nombre2]
-                print('\nEsta es la matriz multiplicación: ', lista)
-                espera()
-                guardar(lista)
-                menu()
-            except IndexError:
-                print('Las matrices no tienen las dimensiones adecuadas para poder multiplicarse.')
+            lista = d[nombre1] * d[nombre2]
+            print('\nEsta es la matriz multiplicación: ', lista)
+            espera()
+            guardar(lista)
         menu()
 
     elif opcion == 13:
