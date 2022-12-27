@@ -43,6 +43,17 @@ def espera():
     while a != '':
         a = input('Pulsa <ENTER> para continuar: ')
         
+def guardar_archivo(d, archivo):
+  contenido = ''
+  for i in d.keys():
+    contenido += i + "*" + str(d[i].filas) + "*" + str(d[i].columnas) + "*" + str(d[i].resize()) + '\n'
+  caracteres = '[]" "'
+  resultado = ''.join(x for x in contenido if x not in caracteres) #Sintaxis para eliminar los caracteres '[' ']'
+  resultado = resultado.replace("*", " ")
+  archivo = open(archivo, 'w')
+  archivo.write(resultado)
+  archivo.close()
+    
 def cargararchivo(archivo):
     archivo = open(archivo, 'r')
     linea = archivo.readline()
@@ -60,7 +71,7 @@ def cargararchivo(archivo):
         d[lista[0]] = matriz(numeros)
         linea = archivo.readline()
     archivo.close()
-    
+
 def menu():
     print('-1: Salir del menu')
     print('1: Crear una matriz.')
@@ -79,10 +90,11 @@ def menu():
     print('14: Generar la matriz nula')
     print('15: Generar la matriz de identidad')
     print('16: Trasponer una matriz')
-    print('17: Comprobar si una matriz es de un tipo')
+    print('17: Caracterizar una matriz')
     print('18: Valor mínimo, máximo y medio de una matriz')
     print('19: Guardar matrices')
-    opcion = intlibre('Dime la opcion que desea: ')
+    print('20: Cargar matrices')
+    opcion = intlibre('\nDime la opcion que desea: ')
     
     while opcion != -1 and opcion not in range(1,26):
         print('Esa no es una opción válida')
@@ -90,7 +102,7 @@ def menu():
 
     if opcion == 1:
         filas = intmayor0('\nDime cuantas filas quieres que tenga la matriz: ')
-        columnas = intmayor0('\nDime cuantas columnas quieres que tenga la matriz: ')
+        columnas = intmayor0('Dime cuantas columnas quieres que tenga la matriz: ')
         print()
         lista = vacia.crearmatriz(filas,columnas)
         print('\nEsta es la matriz resultante: ')
@@ -107,7 +119,7 @@ def menu():
             mostrardiccionario()
             nombre = nombrevalido()
             filas = intmayor0('\nDime la fila del elemento: ')
-            columnas = intmayor0('\nDime la columna del elemento: ')
+            columnas = intmayor0('Dime la columna del elemento: ')
             elemento = floatlibre('\nDime el elemento que quieres asignar: ')
             d[nombre].asignar_elemento(filas,columnas,elemento)
             print('\nEsta es la matriz resultante: ')
@@ -123,8 +135,8 @@ def menu():
             mostrardiccionario()
             nombre = nombrevalido()
             filas = intmayor0('\nDime la fila del elemento que quieres mostrar: ')
-            columnas = intmayor0('\nDime la columna del elemento que quieres mostrar: ')
-            print('\nEl elemento de esa fila y esa columna es: ',d[nombre].mostrar_elemento(filas,columnas))
+            columnas = intmayor0('Dime la columna del elemento que quieres mostrar: ')
+            print('\nEl elemento de esa fila y esa columna es: ', d[nombre].mostrar_elemento(filas,columnas))
             espera()
         menu()
 
@@ -137,7 +149,7 @@ def menu():
             for clave in d.keys():
                 print(clave)
             nombre = nombrevalido()
-            print('\nEsta es la matriz ', nombre, ': ')
+            print('\nEsta es la matriz', nombre, ': ')
             print(d[nombre])
             espera()
         menu()
@@ -203,8 +215,8 @@ def menu():
             espera()
         else:
             mostrardiccionario()
-            nombre1 = nombrevalido('Dime el nombre de la primera matriz que quieras utilizar: ')
-            nombre2 = nombrevalido('Dime el nombre de la segunda matriz que quieras utilizar: ')
+            nombre1 = nombrevalido('Dime el nombre de la primera matriz que quieras sumar: ')
+            nombre2 = nombrevalido('Dime el nombre de la segunda matriz que quieras sumar: ')
             lista = d[nombre1] + d[nombre2]
             print('\nEsta es la matriz suma: ', lista)
             espera()
@@ -218,7 +230,7 @@ def menu():
         else:
             mostrardiccionario()
             nombre1 = nombrevalido('Dime el nombre de la primera matriz que quieras utilizar: ')
-            nombre2 = nombrevalido('Dime el nombre de la segunda matriz que quieras utilizar: ')
+            nombre2 = nombrevalido('Dime el nombre de la segunda matriz que quieras restar: ')
             lista = d[nombre1] - d[nombre2]
             print('\nEsta es la matriz resta: ', lista)
             espera()
@@ -245,7 +257,7 @@ def menu():
         else:
             mostrardiccionario()
             nombre1 = nombrevalido('Dime el nombre de la primera matriz que quieras utilizar: ')
-            nombre2 = nombrevalido('Dime el nombre de la segunda matriz que quieras utilizar: ')
+            nombre2 = nombrevalido('Dime el nombre de la segunda matriz que quieres multiplicar: ')
             try:
                 lista = d[nombre1] * d[nombre2]
                 print('\nEsta es la matriz multiplicación: ', lista)
@@ -263,7 +275,7 @@ def menu():
         else:
             mostrardiccionario()
             nombre = nombrevalido()
-            num = intlibre('Dime el número por el que quieres multiplicar: ')
+            num = intlibre('Dime el escalar por el que quieres multiplicar: ')
             lista = d[nombre].escalar_matriz(num)
             print('\nLa matriz resultante es: ', lista)
             espera()
@@ -272,7 +284,7 @@ def menu():
     
     elif opcion == 14:
         filas = intmayor0('\nDime el número de filas: ')
-        columnas = intmayor0('\nDime el número de columnas: ')
+        columnas = intmayor0('Dime el número de columnas: ')
         lista = vacia.nula(filas,columnas)
         print('\nEsta es la matriz nula: ', lista)
         espera()
@@ -312,11 +324,11 @@ def menu():
             print('5) Simétrica')
             print('6) Triangular superior')
             print('7) Triangular inferior')
-            nueva_opcion = int(input('\nDime la opción que deseas'))
+            nueva_opcion = int(input('\nOpción: '))
 
             while nueva_opcion not in range (1,8):
                 print('Esa no es una opción válida')
-                nueva_opcion = intlibre('Dime la opción que deseas')
+                nueva_opcion = intlibre('Opción: ')
             
             mostrardiccionario()
             nombre = nombrevalido()
@@ -374,16 +386,14 @@ def menu():
             mostrardiccionario()
             nombre = nombrevalido()
             print('El valor mínimo es: ', d[nombre].minimo())
-            espera()
             print('El valor máximo es: ', d[nombre].maximo())
-            espera()
             print('El valor medio es: ', d[nombre].media())
             espera()
         menu()
     
     elif opcion == 19:
-        guardacion(d, 'pruebisima.txt')
-        
+        guardar_archivo(d, 'pruebisima.txt')
+    
     elif opcion == 20:
         archivo = str(input('\nDime el nombre del archivo del que quieres cargar las matrices: '))
         cargararchivo(archivo)
