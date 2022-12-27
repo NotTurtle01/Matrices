@@ -199,7 +199,6 @@ class matriz:
     def __mul__(self,otro):
         if self.columnas != otro.filas:
             print('Esas matrices no tienen dimensiones validas para ser multiplicadas')
-            quit()
         else:
             mul = []
             for i in range(self.filas):
