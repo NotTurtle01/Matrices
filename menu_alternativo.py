@@ -249,9 +249,12 @@ def menu():
             nombre1 = nombrevalido('Dime el nombre de la primera matriz que quieras utilizar: ')
             nombre2 = nombrevalido('Dime el nombre de la segunda matriz que quieres multiplicar: ')
             lista = d[nombre1] * d[nombre2]
-            print('\nEsta es la matriz multiplicación: ', lista)
-            espera()
-            guardar(lista)
+            if lista != None:
+                print('\nEsta es la matriz multiplicación: ', lista)
+                espera()
+                guardar(lista)
+            else:
+                espera()
         menu()
 
     elif opcion == 13:
