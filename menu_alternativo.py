@@ -47,9 +47,16 @@ def guardar_archivo(d, archivo):
   contenido = ''
   for i in d.keys():
     contenido += i + "*" + str(d[i].filas) + "*" + str(d[i].columnas) + "*" + str(d[i].resize()) + '\n'
+
+#Como la matriz se imprime con saltos de línea de forma predeterminada, se emplea la función resize()
+#con el objetivo de imprimir la matriz en una sola línea. Además, se marcan los espacios entre i (nombre de la matriz)
+#el número de filas (d[i].filas), el número de columnas (d[i].columnas) y la matriz a imprimir con el caracter *
+#De esta forma se conservarán estos espacios al eliminar el caracter " " posteriormente.
+
   caracteres = '[]" "'
-  resultado = ''.join(x for x in contenido if x not in caracteres) #Sintaxis para eliminar los caracteres '[' ']'
-  resultado = resultado.replace("*", " ")
+  resultado = ''.join(x for x in contenido if x not in caracteres) #Sintaxis para eliminar los caracteres '[' ']' y " "
+  resultado = resultado.replace("*", " ") 
+  #Se lleva a cabo la sustitución de los caracteres * por espacios para construir en resultado la tabla de matrices adecuada.
   archivo = open(archivo, 'w')
   archivo.write(resultado)
   archivo.close()
