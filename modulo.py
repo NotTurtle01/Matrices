@@ -228,36 +228,36 @@ class matriz:
       for i in range(self.columnas):
           for j in range(self.filas -1):
               lista_nula[i].append(0)
-      for i in range (self.filas):
-        for j in range (self.columnas):
+      for i in range(self.filas):
+        for j in range(self.columnas):
           lista_nula[i][j] = self.matriz[j][i]
       return lista_nula
     
-    def is_cuadrada(self):
+    def es_cuadrada(self):
       if self.filas == self.columnas: #Si el número de filas coincide con el número de columnas, la matriz es cuadrada.
         return True
       else:
         return False
     
-    def is_fila(self):
+    def es_fila(self):
       if self.filas == 1: #Si la matriz cuenta con una única fila, se trata de una matriz fila.
         return True
       else:
         return False
     
-    def is_columna(self):
+    def es_columna(self):
       if self.columnas == 1: #Si la matriz cuenta con una única columna, se trata de una matriz columna
         return True
       else: 
         return False
     
-    def is_simetrica(self):
+    def es_simetrica(self):
       if self.transposicion() == self.matriz: #Se comprueba si la matriz transpuesta es igual a la original. En ese caso, sería simétrica.
         return True
       else:
         return False
     
-    def is_triangular_superior(self):
+    def es_triangular_superior(self):
       flag = True
       for i in range(1, self.filas):
         for j in range(0, i): #Bucle que estudia los elementos inferiores a la diagonal principal.  
@@ -265,17 +265,17 @@ class matriz:
                 flag = False
       return flag
 
-    def is_triangular_inferior(self):
+    def es_triangular_inferior(self):
         
         '''
         En primer lugar se llama al método transposicion() para tener las columnas como nuevas filas. 
-        Llamando al método is_triangular_superior() de la nueva matriz (transpuesta) podemos saber si 
+        Llamando al método es_triangular_superior() de la nueva matriz (transpuesta) podemos saber si 
         la matriz original es triangular inferior sin necesidad de programar otro método de comprobación.
         
         '''
         
         self.matriz = self.transposicion() 
-        return self.is_triangular_superior()
+        return self.es_triangular_superior()
 
     def __mul__(self,otro):
         if self.columnas != otro.filas:
@@ -293,7 +293,7 @@ class matriz:
             return mul
     
     def es_magica(self):
-      if not self.is_cuadrada():
+      if not self.es_cuadrada():
         return False
       else:
         for i in range(1,(self.filas*self.filas)+1):
@@ -507,17 +507,17 @@ if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del
     print('Esta es la caracterización de la matriz 1:\n')
     if matriz1.es_magica():
         print('Matriz 1 es mágica')
-    if matriz1.is_cuadrada():
+    if matriz1.es_cuadrada():
         print('Matriz 1 es cuadrada')
-    if matriz1.is_fila():
+    if matriz1.es_fila():
         print('Matriz 1 es una matriz fila')
-    if matriz1.is_columna():
+    if matriz1.es_columna():
         print('Matriz 1 es una matriz columna')
-    if matriz1.is_simetrica():
+    if matriz1.es_simetrica():
         print('Matriz 1 es una matriz simétrica')
-    if matriz1.is_triangular_superior():
+    if matriz1.es_triangular_superior():
         print('Matriz 1 es triangular superior')
-    if matriz1.is_triangular_inferior():
+    if matriz1.es_triangular_inferior():
         print('Matriz 1 es triangular inferior')
     espera()
 
