@@ -374,7 +374,7 @@ def floatlibre(cadena): #Función de comprobación. Solicita al usuario la intro
           float(a)
           flag = True
       except ValueError:
-          print('No has introducido un número flotante. Inténtalo de nuevo.')
+          print('No has introducido un número válido. Inténtalo de nuevo.')
     return float(a)
 
 def intlibre(cadena): #Función de comprobación. Solicita al usuario la introducción de un número entero.
