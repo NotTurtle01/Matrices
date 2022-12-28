@@ -182,7 +182,7 @@ class matriz:
         return False
     
     def is_simetrica(self):
-      if self.transposicion() == self.matriz:
+      if self.transposicion() == self.matriz: #Se comprueba si la matriz trasnpuesta es igual a la original. En ese caso, sería simétrica.
         return True
       else:
         return False
@@ -199,7 +199,7 @@ class matriz:
         
         '''
         En primer lugar se llama al método transposicion() para tener las columnas como nuevas filas. 
-        Llamando al método is_triangular_superior() de la matriz traspuesta podemos saber si 
+        Llamando al método is_triangular_superior() de la nueva matriz (transpuesta) podemos saber si 
         la matriz original es triangular inferior sin necesidad de programar otro método de comprobación.
         
         '''
