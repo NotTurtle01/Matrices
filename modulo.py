@@ -1,7 +1,8 @@
 '''
 Autores:
-Óscar Mirás Sánchez. 
-Joel Rubio González.
+*Óscar Mirás Sánchez. 
+*Joel Rubio González.
+
 '''
 
 '''
