@@ -61,8 +61,12 @@ def guardar_archivo(d, archivo):
   archivo.write(resultado)
   archivo.close()
     
-def cargar_archivo(archivo):        #La función guardararchivo guarda las matrices siguiendo un formato: 'nombre' 'filas' 'columnas' 'contenido'. La función de cargar va cogiendo 
-    archivo = open(archivo, 'r')    #cada una de estas posiciones y las va utilizando para crear la entrada del diccionario que le corresponde a cada matriz.
+def cargar_archivo(archivo): 
+    
+    #La función guardar_archivo guarda las matrices siguiendo un formato: 'nombre' 'filas' 'columnas' 'contenido'. La función cargar_archivo coge 
+    #cada una de estas posiciones y las va utilizando para crear la entrada del diccionario que le corresponde a cada matriz.
+    
+    archivo = open(archivo, 'r')   
     linea = archivo.readline()
     while linea != '':
         lista = linea.split(' ')
@@ -177,7 +181,6 @@ def menu():
             lista = d[nombre].fila(fila)
             print('\nEsta es la fila seleccionada: ', lista)
             espera()
-
         menu()
 
 
@@ -195,7 +198,6 @@ def menu():
             lista = d[nombre].columna(columna)
             print('\nEsta es la columna seleccionada: ', lista)
             espera()
-
         menu()
 
     elif opcion == 7:   #Esta opción obtiene una diagonal de una matriz
@@ -397,7 +399,7 @@ def menu():
                     print('\nLa matriz que ha seleccionado es una matriz triangular inferior')
                 else:
                     print('\nLa matriz que ha seleccionado no es una matriz triangular inferior')
-
+                    
             espera()
             menu()
 
