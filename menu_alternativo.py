@@ -5,7 +5,7 @@ vacia = matriz([])
 
 d = {}
 
-def guardar(lista):
+def guardar(lista):   #Esta función guarda una matriz en el diccionario.
     print('\nQuiere guardar la matriz o descartarla?\n')
     print('1: Guardar la matriz')
     print('2: Descartar la matriz')
@@ -16,19 +16,19 @@ def guardar(lista):
     elif opcion == 2:
         menu()
 
-def mostrardiccionario():
+def mostrardiccionario():  #Función que muestra las entradas del diccionario
     print('\nEstas son las matrices disponibles: ')
     for clave in d.keys():
         print(clave)
         print(d[clave])
 
-def comprobdic():
+def comprobdic():   #Función que comprueba si el diccionario esta vacio.
     if len(d) == 0:
         return 'vacio'
     else:
         return 'no vacio'
 
-def nombrevalido(cadena = 'Dime el nombre de la matriz que quieras utilizar: '):
+def nombrevalido(cadena = 'Dime el nombre de la matriz que quieras utilizar: '):   #Función que comprueba que un nombre esta en el diccionario
     valido = False
     while not valido:
         nombre = str(input(cadena))
@@ -54,8 +54,8 @@ def guardar_archivo(d, archivo):
   archivo.write(resultado)
   archivo.close()
     
-def cargar_archivo(archivo):
-    archivo = open(archivo, 'r')
+def cargar_archivo(archivo):        #La función guardararchivo guarda las matrices siguiendo un formato: 'nombre' 'filas' 'columnas' 'contenido'. La función de cargar va cogiendo 
+    archivo = open(archivo, 'r')    #cada una de estas posiciones y las va utilizando para crear la entrada del diccionario que le corresponde a cada matriz.
     linea = archivo.readline()
     while linea != '':
         lista = linea.split(' ')
@@ -123,7 +123,7 @@ def menu():
             espera()
         menu()
 
-    elif opcion == 3:
+    elif opcion == 3:    #Esta opción muestra un elemento de una matriz
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
             espera()
@@ -142,7 +142,7 @@ def menu():
             espera()
         menu()
 
-    elif opcion == 4:
+    elif opcion == 4:    #Esta opción imprime una matriz por pantalla.
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
             espera()
@@ -156,7 +156,7 @@ def menu():
             espera()
         menu()
     
-    elif opcion == 5:
+    elif opcion == 5:   #Esta opción obtiene una fila de una matriz
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
             espera()
@@ -169,7 +169,7 @@ def menu():
             espera()
         menu()
 
-    elif opcion == 6:
+    elif opcion == 6:    #Esta opción obtiene una columna de una matriz
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
             espera()
@@ -182,7 +182,7 @@ def menu():
             espera()
         menu()
 
-    elif opcion == 7:
+    elif opcion == 7:   #Esta opción obtiene una diagonal de una matriz
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
             espera()
@@ -199,7 +199,7 @@ def menu():
             espera()
         menu()
 
-    elif opcion == 8:
+    elif opcion == 8:   #Esta opción devuelve las dimensiones
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
             espera()
@@ -211,7 +211,7 @@ def menu():
             espera()
         menu()
 
-    elif opcion == 9:
+    elif opcion == 9:   #Esta opción suma matrices
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
             espera()
