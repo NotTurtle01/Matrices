@@ -134,7 +134,7 @@ class matriz:
     def identidad(self,n): 
         
       '''
-      Genera la matriz identidad de un orden dado a través de la adicción de elementos a una lista vacía.
+      Genera la matriz identidad de un orden dado a través de la adición de elementos a una lista vacía.
       
       '''
     
@@ -150,7 +150,7 @@ class matriz:
       '''
       Crea una matriz nula según las dimensiones dadas.
       
-      ''
+      '''
       
       lista_nula = [[0]]
       for i in range(n-1):
@@ -201,19 +201,19 @@ class matriz:
       return lista_nula
     
     def is_cuadrada(self):
-      if self.filas == self.columnas:
+      if self.filas == self.columnas: #Si el número de filas coincide con el número de columnas, la matriz es cuadrada.
         return True
       else:
         return False
     
     def is_fila(self):
-      if self.filas == 1:
+      if self.filas == 1: #Si la matriz cuenta con una única fila, se trata de una matriz fila.
         return True
       else:
         return False
     
     def is_columna(self):
-      if self.columnas == 1:
+      if self.columnas == 1: #Si la matriz cuenta con una única columna, se trata de una matriz columna
         return True
       else: 
         return False
@@ -507,4 +507,3 @@ if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del
     espera()
 
     print('\nPrueba finalizada sin errores en tiempo de ejecución.\n')
-
