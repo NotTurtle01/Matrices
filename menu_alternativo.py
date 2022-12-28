@@ -171,10 +171,15 @@ def menu():
             mostrardiccionario()
             nombre = nombrevalido()
             fila = intmayor0('\nDime la fila que quieras obtener: ')
+            while fila > d[nombre].dimensiones()[0]:
+                print('No existe esa fila')
+                fila = intmayor0('\nDime la fila del elemento: ')
             lista = d[nombre].fila(fila)
             print('\nEsta es la fila seleccionada: ', lista)
             espera()
+
         menu()
+
 
     elif opcion == 6:    #Esta opción obtiene una columna de una matriz
         if comprobdic() == 'vacio':
@@ -184,9 +189,13 @@ def menu():
             mostrardiccionario()
             nombre = nombrevalido()
             columna = intmayor0('\nDime la columna que quieras obtener: ')
+            while columna > d[nombre].dimensiones()[1]:
+                print('No existe esa columna')
+                columna = intmayor0('\nDime la columna del elemento: ')
             lista = d[nombre].columna(columna)
             print('\nEsta es la columna seleccionada: ', lista)
             espera()
+
         menu()
 
     elif opcion == 7:   #Esta opción obtiene una diagonal de una matriz
