@@ -106,7 +106,7 @@ class matriz:
       return self.matriz
       
     def opuesta(self):
-      return self.escalar_matriz(-1) #Uso recursivo de la función escalar_matriz
+      return self.escalar_matriz(-1) #Obtener la matriz opuesta es equivalente a multiplicar la matriz dada por el escalar -1
       
     def identidad(self,n):
       M = []
