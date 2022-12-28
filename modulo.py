@@ -343,12 +343,12 @@ if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del
 
     matriz1 = matriz([[1,2,3],[3,2,3],[9,2,4]])
     print('Matriz 1:')
-    print(matriz1)
+    print(\nmatriz1)
     espera()
     
     matriz2 = matriz([[2,4,3],[4,6,5],[-9,4,-2]])
     print('Matriz 2:')
-    print(matriz2)
+    print(\nmatriz2)
     espera()
     
     vacia = matriz([])
@@ -357,18 +357,18 @@ if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del
 
     matriz_nueva = vacia.crearmatriz(3,4)
     print('Esta es la nueva matriz:')
-    print(matriz_nueva)
+    print(\nmatriz_nueva)
     espera()
 
     print('\n2) Asignación de un elemento específico de una matriz\n')
 
-    matriz1.asignarelemento(2, 2, 28)
+    matriz1.asignar_elemento(2, 2, 28)
     print('Matriz resultante al asignar al elemento 2,2 de la matriz 1 el número 28: ', matriz1)
     espera()
 
     print('\n3) Obtención de un elemento específico de una matriz\n')
 
-    nuevo_elemento = matriz1.mostrarelemento(2, 2)
+    nuevo_elemento = matriz1.mostrar_elemento(2, 2)
     print('Elemento 2,2 de la matriz 1: ', nuevo_elemento)
     espera()
 
