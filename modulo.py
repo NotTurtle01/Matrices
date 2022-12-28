@@ -98,7 +98,7 @@ class matriz:
             for i in range(self.columnas):
                 lista_diagonal_2.append(self.matriz[self.filas -1 - i][i]) 
                 
-                #Al número de filas se le resta -1 para adecuarse a los índices de listas de Python. A este número se le resta el número de 
+                #Al número de filas se le resta -1 para adecuarse a los índices de listas de Python. A este número se le substrae el número de 
                 #columna en el que está el elemento, de forma que con cada iteración del bucle "for" se aumentará la resta en una unidad, 
                 #de forma que se recorrerán las filas de la matriz de forma "ascendente" mientras las columnas se recorren de izquierda a derecha.
                 
