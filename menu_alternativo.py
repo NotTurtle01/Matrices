@@ -130,9 +130,15 @@ def menu():
         else:
             mostrardiccionario()
             nombre = nombrevalido()
-            filas = intmayor0('\nDime la fila del elemento que quieres mostrar: ')
-            columnas = intmayor0('Dime la columna del elemento que quieres mostrar: ')
-            print('\nEl elemento de esa fila y esa columna es: ', d[nombre].mostrar_elemento(filas,columnas))
+            fila = intmayor0('\nDime la fila del elemento que quieres mostrar: ')
+            while fila > d[nombre].dimensiones()[0]:
+                print('No existe esa fila')
+                fila = intmayor0('\nDime la fila del elemento: ')
+            columna = intmayor0('\nDime la columna del elemento que quieres mostrar: ')
+            while columna > d[nombre].dimensiones()[1]:
+                print('No existe esa columna')
+                columna = intmayor0('\nDime la columna del elemento: ')
+            print('El elemento de esa fila y esa columna es: ',d[nombre].mostrarelemento(fila,columna))
             espera()
         menu()
 
