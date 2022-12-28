@@ -6,11 +6,9 @@ Autores:
 *Óscar Mirás Sánchez. 
 *Joel Rubio González.
 
-
 '''
 
 '''
-
 
 Módulo centrado en las operaciones con matrices y caracterizaciones de las mismas. 
 
@@ -197,9 +195,9 @@ class matriz:
 
     def __add__(self,otro):
         if otro.filas != self.filas:
-            print('Como las matrices no tienen las mismas dimensiones no se pueden sumar')
+            print('Las matrices no tienen las mismas dimensiones. No se pueden sumar.')
         elif otro.columnas != self.columnas:
-            print('Como las matrices no tienen las mismas dimensiones no se pueden sumar')
+            print('Las matrices no tienen las mismas dimensiones. No se pueden sumar.')
         else:
             suma = []
             for i in range(self.filas):
@@ -207,13 +205,13 @@ class matriz:
                 for j in range(self.columnas):
                     fila.append(self.matriz[i][j] + otro.matriz[i][j])
                 suma.append(fila)
-        return suma
+            return suma
 
     def __sub__(self,otro):
         if otro.filas != self.filas:
-            print('Como las matrices no tienen las mismas dimensiones no se pueden restar')
+            print('Las matrices no tienen las mismas dimensiones. No se pueden restar.')
         elif otro.columnas != self.columnas:
-            print('Como las matrices no tienen las mismas dimensiones no se pueden restar')
+            print('Las matrices no tienen las mismas dimensiones. No se pueden restar.')
         else:
             resta = []
             for i in range(self.filas):
@@ -221,7 +219,7 @@ class matriz:
                 for j in range(self.columnas):
                     fila.append(self.matriz[i][j] - otro.matriz[i][j])
                 resta.append(fila)
-        return resta
+            return resta
     
     def transposicion(self):
       lista_nula = [[0]]
@@ -281,7 +279,7 @@ class matriz:
 
     def __mul__(self,otro):
         if self.columnas != otro.filas:
-            print('Esas matrices no tienen dimensiones validas para ser multiplicadas')
+            print('Las matrices no tienen dimensiones validas para ser multiplicadas.')
         else:
             mul = []
             for i in range(self.filas):
@@ -392,10 +390,7 @@ def intlibre(cadena): #Función de comprobación. Solicita al usuario la introdu
 
 
 '''
-
 <Programa por defecto>
-
-
 '''
 
 if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del módulo.
@@ -542,3 +537,4 @@ if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del
     espera()
 
     print('\nPrueba finalizada sin errores en tiempo de ejecución.\n')
+
