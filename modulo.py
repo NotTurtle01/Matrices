@@ -19,16 +19,27 @@ Módulo centrado en las operaciones con matrices y caracterizaciones de las mism
 
 class matriz:
     def __init__(self,lista):
+        
+        '''
+        Método de inicialización de la clase matriz. Se consideran matrices las listas de listas que posean como elementos números en punto flotante.
+       
+        '''
+        
         if lista == []:
             self.matriz = lista
         else:
             for fila in lista:
-                if len(fila) != len(lista[0]):
+                if len(fila) != len(lista[0]): 
+                    
+                    #En caso de que el número de columnas de una fila no coincidiera con el número de columnas de la primera fila (lista[0]),
+                    #no se trataría de una matriz de condiciones válidas.
+                    
                     print('Eso no es una matriz válida')
                     quit()
-            self.matriz = lista
-            self.filas = len(lista)
-            self.columnas = len(lista[0])
+                    
+            self.matriz = lista #Sea self.matriz la propia lista de listas (es decir, la matriz a tratar).
+            self.filas = len(lista) #Sea self.filas el número de filas de la lista.
+            self.columnas = len(lista[0]) #Sea self.columnas el número de columnas de la lista.
     
     def __str__(self):
       cadena = ''
