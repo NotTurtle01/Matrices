@@ -451,13 +451,20 @@ if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del
     print('\n17) Caracterización de matrices\n')
 
     print('Esta es la caracterización de la matriz 1:\n')
-    print(matriz1.es_magica())
-    print(matriz1.is_cuadrada())
-    print(matriz1.is_fila())
-    print(matriz1.is_columna())
-    print(matriz1.is_simetrica())
-    print(matriz1.is_triangular_superior())
-    print(matriz1.is_triangular_inferior())
+    if matriz1.es_magica():
+        print('Matriz 1 es mágica)
+    if matriz1.is_cuadrada():
+        print('Matriz 1 es cuadrada')
+    if matriz1.is_fila():
+        print('Matriz 1 es una matriz fila')
+    if matriz1.is_columna():
+        print('Matriz 1 es una matriz columna')
+    if matriz1.is_simetrica():
+        print('Matriz 1 es una matriz simétrica')
+    if matriz1.is_triangular_superior():
+        print('Matriz 1 es triangular superior')
+    if matriz1.is_triangular_inferior():
+        print('Matriz 1 es triangular inferior')
     espera()
 
     print('\n18) Obtención valor máximo\n')
