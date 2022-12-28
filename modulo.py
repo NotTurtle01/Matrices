@@ -6,7 +6,9 @@ Autores:
 '''
 
 '''
-Módulo "ClassMatrix" 
+
+Módulo centrado en las operaciones con matrices y caracterizaciones de las mismas. 
+
 '''
 
 class matriz:
