@@ -54,7 +54,7 @@ def guardar_archivo(d, archivo):
   archivo.write(resultado)
   archivo.close()
     
-def cargararchivo(archivo):
+def cargar_archivo(archivo):
     archivo = open(archivo, 'r')
     linea = archivo.readline()
     while linea != '':
@@ -381,11 +381,15 @@ def menu():
         menu()
     
     elif opcion == 19:
-        guardar_archivo(d, 'pruebisima.txt')
+        archivo = str(input('\nDime el nombre del archivo en el que quieres guardar las matrices: '))
+        guardar_archivo(d, archivo)
+        print('\nLas matrices han sido guardadas en', archivo)
+        espera()
+        menu()
     
     elif opcion == 20:
         archivo = str(input('\nDime el nombre del archivo del que quieres cargar las matrices: '))
-        cargararchivo(archivo)
+        cargar_archivo(archivo)
         print('\nLas matrices han sido cargadas\n')
         espera()
         menu()
