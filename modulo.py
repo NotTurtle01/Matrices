@@ -34,7 +34,7 @@ class matriz:
       cadena = ''
       for i in range(0,len(self.matriz)):
         if i != (len(self.matriz)-1):
-          cadena = cadena + str(self.matriz[i]) + '\n'
+          cadena = cadena + str(self.matriz[i]) + '\n' #Se añade un salto de línea tras imprimir cada fila de la matriz.
         else:
           cadena = cadena + str(self.matriz[i])
       return cadena
