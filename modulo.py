@@ -184,7 +184,7 @@ class matriz:
         return False
     
     def is_simetrica(self):
-      if self.transposicion() == self.matriz: #Se comprueba si la matriz trasnpuesta es igual a la original. En ese caso, sería simétrica.
+      if self.transposicion() == self.matriz: #Se comprueba si la matriz transpuesta es igual a la original. En ese caso, sería simétrica.
         return True
       else:
         return False
@@ -192,8 +192,8 @@ class matriz:
     def is_triangular_superior(self):
       flag = True
       for i in range(1, self.filas):
-        for j in range(0, i):
-          if self.matriz[i][j] != 0:
+        for j in range(0, i): #Bucle que estudia los elementos inferiores a la diagonal principal.  
+          if self.matriz[i][j] != 0: #Si estos elementos son distintos de 0, no se trataría de una matriz triangular superior.
                 flag = False
       return flag
 
