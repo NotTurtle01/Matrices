@@ -107,10 +107,10 @@ class matriz:
                 
             return lista_diagonal_2
     
-    def dimensiones(self):
-      return [self.filas, self.columnas]
+    def dimensiones(self): #Devolución de las dimensiones de la matriz a través de una lista.
+      return [self.filas, self.columnas] 
         
-    def escalar_matriz(self,escalar):
+    def escalar_matriz(self,escalar): #Se multiplica cada elemento de la matriz por el escalar dado.
       for fila in range(self.columnas):
         for columna in range(self.filas):
           self.matriz[fila][columna] = escalar * self.matriz[fila][columna]
@@ -119,15 +119,27 @@ class matriz:
     def opuesta(self):
       return self.escalar_matriz(-1) #Obtener la matriz opuesta es equivalente a multiplicar la matriz dada por el escalar -1
       
-    def identidad(self,n):
+    def identidad(self,n): 
+        
+      '''
+      Genera la matriz identidad de un orden dado a través de la adicción de elementos a una lista vacía.
+      
+      '''
+    
       M = []
-      for i in range(n):
+      for i in range(n): #Se completa la matriz compuesta por ceros.
         M.append([0] * n )
       for i in range(n):
-        M[i][i] = 1
+        M[i][i] = 1 #Se sustituyen los elementos de la diagonal principal por unos.
       return M
       
-    def nula(self,n,m):
+    def nula(self,n,m): 
+        
+      '''
+      Crea una matriz nula según las dimensiones dadas.
+      
+      ''
+      
       lista_nula = [[0]]
       for i in range(n-1):
           lista_nula.append([0])
