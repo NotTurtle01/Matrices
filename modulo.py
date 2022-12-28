@@ -2,6 +2,7 @@
 '''
 
 Autores:
+
 *Óscar Mirás Sánchez. 
 *Joel Rubio González.
 
@@ -9,6 +10,7 @@ Autores:
 '''
 
 '''
+
 
 Módulo centrado en las operaciones con matrices y caracterizaciones de las mismas. 
 
@@ -329,8 +331,12 @@ def intlibre(cadena): #Función de comprobación. Solicita al usuario la introdu
             print('No has introducido un número entero. Inténtalo de nuevo.')
     return int(a)
 
+
 '''
+
 <Programa por defecto>
+
+
 '''
 
 if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del módulo.
@@ -355,14 +361,15 @@ if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del
     print('\n1) Definición de una matriz de dimensiones dadas\n')
 
     matriz_nueva = vacia.crearmatriz(3,4)
-    print('Esta es la nueva matriz: \n')
+    print('\nEsta es la nueva matriz: \n')
     print(matriz_nueva)
     espera()
 
     print('\n2) Asignación de un elemento específico de una matriz\n')
 
     matriz1.asignar_elemento(2, 2, 28)
-    print('Matriz resultante al asignar al elemento 2,2 de la matriz 1 el número 28: ', matriz1)
+    print('Matriz resultante al asignar al elemento 2,2 de la matriz 1 el número 28:\n')
+    print(matriz1)
     espera()
 
     print('\n3) Obtención de un elemento específico de una matriz\n')
@@ -373,12 +380,13 @@ if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del
 
     print('\n4) Presentación de una matriz por pantalla\n')
 
-    print('Esta es la matriz 1: ', matriz1)
+    print('Esta es la matriz 1:\n')
+    print(matriz1)
     espera()
     
     print('\n5) Obtención de una fila\n')
 
-    print('Fila 3 de la matriz 2', matriz2.fila(3))
+    print('Fila 3 de la matriz 2: ', matriz2.fila(3))
     espera()
 
     print('\n6) Obtención de una columna\n')
@@ -390,7 +398,7 @@ if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del
 
     print('Diagonal inversa de la matriz 1: ', matriz1.diagonal(2))
     espera()
-    print('Diagonal principal de la matriz 2: ', matriz2.diagonal(1))
+    print('\nDiagonal principal de la matriz 2: ', matriz2.diagonal(1))
     espera()
 
     print('\n8) Devolución de dimensiones\n')
@@ -437,12 +445,12 @@ if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del
 
     print('\n16) Transponer una matriz\n')
 
-    print('Matriz traspuesta de la matriz 1: ', matriz1.transposicion())
+    print('Matriz transpuesta de la matriz 1: ', matriz1.transposicion())
     espera()
 
     print('\n17) Caracterización de matrices\n')
 
-    print('Esta es la caracterización de la matriz 1: ')
+    print('Esta es la caracterización de la matriz 1:\n')
     print(matriz1.es_magica())
     print(matriz1.is_cuadrada())
     print(matriz1.is_fila())
@@ -467,7 +475,5 @@ if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del
     print('Valor medio de la matriz 2: ', matriz2.media())
     espera()
 
-    print('\nPrueba finalizada sin errores en tiempo de ejecución.')
-
-  
+    print('\nPrueba finalizada sin errores en tiempo de ejecución.\n')
 
