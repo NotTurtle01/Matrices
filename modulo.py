@@ -341,12 +341,12 @@ if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del
             a = input('\nPulsa <ENTER> para continuar: ')
 
     matriz1 = matriz([[1,2,3],[3,2,3],[9,2,4]])
-    print('Matriz 1: \n')
+    print('\nMatriz 1: \n')
     print(matriz1)
     espera()
     
     matriz2 = matriz([[2,4,3],[4,6,5],[-9,4,-2]])
-    print('Matriz 2: \n')
+    print('\nMatriz 2: \n')
     print(matriz2)
     espera()
     
