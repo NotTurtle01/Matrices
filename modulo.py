@@ -293,7 +293,7 @@ class matriz:
       media = suma/(self.filas*self.columnas)
       return media
 
-def intmayor0(cadena):
+def intmayor0(cadena): #Función de comprobación. Solicita al usuario la introducción de un entero mayor que 0. 
     flag = False
     while flag == False:
         try:
@@ -306,7 +306,7 @@ def intmayor0(cadena):
             print('No has introducido un número entero. Inténtalo de nuevo.')
     return a
 
-def floatlibre(cadena):
+def floatlibre(cadena): #Función de comprobación. Solicita al usuario la introducción de un número flotante.
     flag = False
     while flag == False:
       a = input(cadena)
@@ -317,7 +317,7 @@ def floatlibre(cadena):
           print('No has introducido un número flotante. Inténtalo de nuevo.')
     return float(a)
 
-def intlibre(cadena):
+def intlibre(cadena): #Función de comprobación. Solicita al usuario la introducción de un número entero.
     flag = False
     while flag == False:
         a = input(cadena)
@@ -328,9 +328,15 @@ def intlibre(cadena):
             print('No has introducido un número entero. Inténtalo de nuevo.')
     return int(a)
 
-if __name__ == "__main__": #Comprobaciones.
+'''
 
-    def espera():
+<Programa por defecto>
+
+'''
+
+if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del módulo.
+
+    def espera(): #Función que pide "input" hasta que el usuario pulsa la tecla <ENTER>
         a = 0
         while a != '':
             a = input('\nPulsa <ENTER> para continuar: ')
