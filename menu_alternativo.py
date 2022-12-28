@@ -38,7 +38,7 @@ def nombrevalido(cadena = 'Dime el nombre de la matriz que quieras utilizar: '):
             valido = True
     return nombre
 
-def espera():
+def espera(): #Función que solicita "input" hasta que el usuario pulsa la tecla <ENTER>
     a = 0
     while a != '':
         a = input('Pulsa <ENTER> para continuar: ')
@@ -79,7 +79,7 @@ def menu():
     print('3: Obtener un elemento de una matriz             14: Generar la matriz nula')
     print('4: Imprimir una matriz por pantalla              15: Generar la matriz de identidad')
     print('5: Obtener una fila                              16: Trasponer una matriz')
-    print('6: Obtener una columna                           17: Comprobar si una matriz es de un tipo')
+    print('6: Obtener una columna                           17: Tipo de matriz')
     print('7: Obtener diagonal de una matriz                18: Valor mínimo, máximo y medio de una matriz')
     print('8: Dimensiones de una matriz                     19: Guardar matrices')
     print('9: Sumar dos matrices                            20: Cargar matrices')
