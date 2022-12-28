@@ -33,6 +33,8 @@ class matriz:
     def resize(self): 
         
       '''
+      Función que imprime una matriz sin saltos de linea entre sus filas. Permite presentar la matriz de forma apropiada para ser guardada 
+      en el sistema de archivos mediante la función guardar_archivo().
       
       '''
     
