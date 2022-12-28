@@ -5,7 +5,7 @@ vacia = matriz([])
 
 d = {}
 
-def guardar(lista):   #Esta función guarda una matriz en el diccionario.
+def guardar(lista):  #Esta función guarda una matriz en el diccionario.
     print('\nQuiere guardar la matriz o descartarla?\n')
     print('1: Guardar la matriz')
     print('2: Descartar la matriz')
@@ -16,13 +16,13 @@ def guardar(lista):   #Esta función guarda una matriz en el diccionario.
     elif opcion == 2:
         menu()
 
-def mostrardiccionario():  #Función que muestra las entradas del diccionario
+def mostrardiccionario():  #Función que muestra las entradas del diccionario.
     print('\nEstas son las matrices disponibles: ')
     for clave in d.keys():
         print(clave)
         print(d[clave])
 
-def comprobdic():   #Función que comprueba si el diccionario esta vacio.
+def comprobdic():  #Función que comprueba si el diccionario está vacio.
     if len(d) == 0:
         return 'vacio'
     else:
@@ -56,7 +56,7 @@ def guardar_archivo(d, archivo):
   caracteres = '[]" "'
   resultado = ''.join(x for x in contenido if x not in caracteres) #Sintaxis para eliminar los caracteres '[' ']' y " "
   resultado = resultado.replace("*", " ") 
-  #Se lleva a cabo la sustitución de los caracteres * por espacios para construir en resultado la tabla de matrices adecuada.
+#Se lleva a cabo la sustitución de los caracteres * por espacios para construir en resultado la tabla de matrices adecuada.
   archivo = open(archivo, 'w')
   archivo.write(resultado)
   archivo.close()
