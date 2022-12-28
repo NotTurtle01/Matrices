@@ -84,19 +84,24 @@ class matriz:
       return lista_columna
       
     def diagonal(self,d):
-      if not self.is_cuadrada():
+      if not self.is_cuadrada(): #Si la matriz no es cuadrada, se obvia la búsqueda de sus diagonales.
         print('La matriz no es cuadrada')
         return False
       else:
-        if d == 1:
+        if d == 1: #Para la diagonal principal, se añaden a una lista vacía los elementos [i][i] de la matriz.
             lista_diagonal_1 = []
             for i in range(self.columnas):
                 lista_diagonal_1.append(self.matriz[i][i])
             return lista_diagonal_1
-        if d == 2:
+        if d == 2: #Para la diagonal secundaria, se añaden a una lista vacía los elementos [self.filas -1 -i] [i] de la matriz.
             lista_diagonal_2 = []
             for i in range(self.columnas):
-                lista_diagonal_2.append(self.matriz[self.filas -1 - i][i])
+                lista_diagonal_2.append(self.matriz[self.filas -1 - i][i]) 
+                
+                #Al número de filas se le resta -1 para adecuarse a los índices de listas de Python. A este número se le resta el número de 
+                #columna en el que está el elemento, de forma que con cada iteración del bucle "for" se aumentará la resta en una unidad, 
+                #de forma que se recorrerán las filas de la matriz de forma "ascendente" mientras las columnas se recorren de izquierda a derecha.
+                
             return lista_diagonal_2
     
     def dimensiones(self):
