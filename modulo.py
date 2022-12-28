@@ -16,7 +16,7 @@ Módulo centrado en las operaciones con matrices y caracterizaciones de las mism
 '''
 
 class matriz:
-    def __init__(self,lista):    
+    def __init__(self,lista):
         
         '''
         Método de inicialización de la clase matriz. Se consideran matrices las listas de listas que posean como elementos números en punto flotante.
@@ -39,7 +39,7 @@ class matriz:
             self.filas = len(lista) #Sea self.filas el número de filas de la lista.
             self.columnas = len(lista[0]) #Sea self.columnas el número de columnas de la lista.
     
-    def __str__(self):   #Método para la impresión por pantalla de la matriz
+    def __str__(self):
       cadena = ''
       for i in range(0,len(self.matriz)):
         if i != (len(self.matriz)-1):
@@ -120,7 +120,7 @@ class matriz:
       return lista_columna
       
     def diagonal(self,d):
-      if not self.is_cuadrada(): #Si la matriz no es cuadrada, se obvia la búsqueda de sus diagonales.
+      if not self.es_cuadrada(): #Si la matriz no es cuadrada, se obvia la búsqueda de sus diagonales.
         print('La matriz no es cuadrada')
         return False
       else:
@@ -193,7 +193,7 @@ class matriz:
               lista_nula[i].append(0)
       return lista_nula
 
-    def __add__(self,otro):   #Método para la suma
+    def __add__(self,otro):
         if otro.filas != self.filas:
             print('Las matrices no tienen las mismas dimensiones. No se pueden sumar.')
         elif otro.columnas != self.columnas:
@@ -207,7 +207,7 @@ class matriz:
                 suma.append(fila)
             return suma
 
-    def __sub__(self,otro):   #Método para la resta
+    def __sub__(self,otro):
         if otro.filas != self.filas:
             print('Las matrices no tienen las mismas dimensiones. No se pueden restar.')
         elif otro.columnas != self.columnas:
@@ -277,7 +277,7 @@ class matriz:
         self.matriz = self.transposicion() 
         return self.es_triangular_superior()
 
-    def __mul__(self,otro):     #Método para la multiplicación
+    def __mul__(self,otro):
         if self.columnas != otro.filas:
             print('Las matrices no tienen dimensiones validas para ser multiplicadas.')
         else:
@@ -291,9 +291,14 @@ class matriz:
                     fila.append(suma)
                 mul.append(fila)
             return mul
+            
     
-    def es_magica(self):        #Este método primero comprueba que sea cuadrada, luego va comprobando que esten presentes todos los numeros del 1 a n al cuadrado
-      if not self.es_cuadrada():  # y por ultimo obtiene todas las sumas, las mete en una lista y comprueba que todas son iguales.
+    def es_magica(self): 
+
+#Este método primero comprueba que sea cuadrada, luego va comprobando que esten presentes todos los numeros del 1 a 
+# n al cuadrado y por ultimo obtiene todas las sumas, las mete en una lista y comprueba que todas son iguales.
+
+      if not self.es_cuadrada():
         return False
       else:
         for i in range(1,(self.filas*self.filas)+1):
@@ -336,7 +341,6 @@ class matriz:
                     minimo = self.matriz[i][j]
         return minimo
 
-    
     def maximo(self):
         maximo = self.matriz[0][0]
         for i in range(self.filas):
@@ -385,7 +389,7 @@ def intlibre(cadena): #Función de comprobación. Solicita al usuario la introdu
             int(a)
             flag = True
         except ValueError:
-            print('No has introducido un número entero. Inténtalo de nuevo.')
+            print('No has introducido un número válido. Inténtalo de nuevo.')
     return int(a)
 
 
@@ -537,4 +541,3 @@ if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del
     espera()
 
     print('\nPrueba finalizada sin errores en tiempo de ejecución.\n')
-
