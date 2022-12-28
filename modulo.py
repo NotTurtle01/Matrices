@@ -452,7 +452,7 @@ if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del
 
     print('Esta es la caracterización de la matriz 1:\n')
     if matriz1.es_magica():
-        print('Matriz 1 es mágica)
+        print('Matriz 1 es mágica')
     if matriz1.is_cuadrada():
         print('Matriz 1 es cuadrada')
     if matriz1.is_fila():
