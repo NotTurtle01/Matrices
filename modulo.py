@@ -107,10 +107,22 @@ class matriz:
                 
             return lista_diagonal_2
     
-    def dimensiones(self): #Devolución de las dimensiones de la matriz a través de una lista.
+    def dimensiones(self): 
+        
+      '''
+      Devolución de las dimensiones de la matriz a través de una lista.
+      
+      '''
+    
       return [self.filas, self.columnas] 
         
-    def escalar_matriz(self,escalar): #Se multiplica cada elemento de la matriz por el escalar dado.
+    def escalar_matriz(self,escalar):
+        
+      '''
+      Multiplicación de cada elemento de la matriz por el escalar dado.
+      
+      '''
+    
       for fila in range(self.columnas):
         for columna in range(self.filas):
           self.matriz[fila][columna] = escalar * self.matriz[fila][columna]
