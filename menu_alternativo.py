@@ -90,7 +90,7 @@ def menu():
         print('Esa no es una opción válida')
         opcion = intlibre('Dime la opcion que desea:')
 
-    if opcion == 1:
+    if opcion == 1:  #Esta opción sirve para crear una matriz
         filas = intmayor0('\nDime cuantas filas quieres que tenga la matriz: ')
         columnas = intmayor0('Dime cuantas columnas quieres que tenga la matriz: ')
         print()
@@ -101,17 +101,23 @@ def menu():
         guardar(lista)
         menu()
 
-    elif opcion == 2:
+    elif opcion == 2:  #Esta opción le asigna un elemento a una matriz
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
-            espera()
+            time.sleep(2)
         else:
             mostrardiccionario()
             nombre = nombrevalido()
-            filas = intmayor0('\nDime la fila del elemento: ')
-            columnas = intmayor0('Dime la columna del elemento: ')
+            fila = intmayor0('\nDime la fila del elemento: ')
+            while fila > d[nombre].dimensiones()[0]:
+                print('No existe esa fila')
+                fila = intmayor0('\nDime la fila del elemento: ')
+            columna = intmayor0('\nDime la columna del elemento: ')
+            while columna > d[nombre].dimensiones()[1]:
+                print('No existe esa columna')
+                columna = intmayor0('\nDime la columna del elemento: ')
             elemento = floatlibre('\nDime el elemento que quieres asignar: ')
-            d[nombre].asignar_elemento(filas,columnas,elemento)
+            d[nombre].asignarelemento(fila,columna,elemento)
             print('\nEsta es la matriz resultante: ')
             print(d[nombre])
             espera()
