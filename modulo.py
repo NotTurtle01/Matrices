@@ -120,7 +120,7 @@ class matriz:
       return lista_columna
       
     def diagonal(self,d):
-      if not self.is_cuadrada(): #Si la matriz no es cuadrada, se obvia la búsqueda de sus diagonales.
+      if not self.es_cuadrada(): #Si la matriz no es cuadrada, se obvia la búsqueda de sus diagonales.
         print('La matriz no es cuadrada')
         return False
       else:
