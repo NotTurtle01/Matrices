@@ -1,16 +1,16 @@
 
 '''
-
 Autores:
+
 *Óscar Mirás Sánchez. 
 *Joel Rubio González.
-
 
 '''
 
 '''
 
 Módulo centrado en las operaciones con matrices y caracterizaciones de las mismas. 
+
 
 '''
 
@@ -336,7 +336,7 @@ if __name__ == "__main__": #Comprobaciones.
             a = input('\nPulsa <ENTER> para continuar: ')
 
     matriz1 = matriz([[1,2,3],[3,2,3],[9,2,4]])
-    print('Esta el la matriz 1:')
+    print('Esta es la matriz 1:')
     print(matriz1)
     espera()
     matriz2 = matriz([[2,4,3],[4,6,5],[-9,4,-2]])
@@ -355,40 +355,40 @@ if __name__ == "__main__": #Comprobaciones.
     print('\n2) Asignación de un elemento específico de una matriz\n')
 
     matriz1.asignarelemento(2, 2, 28)
-    print('Esta es la matriz resultante a asignar al elemento 2,2 28 de la matriz 1: ',matriz1)
+    print('Esta es la matriz resultante a asignar al elemento 2,2 28 de la matriz 1: ', matriz1)
     espera()
 
     print('\n3) Obtención de un elemento específico de una matriz\n')
 
     nuevo_elemento = matriz1.mostrarelemento(2, 2)
-    print('Este es el elemento 2,2 de la matriz 1: ',nuevo_elemento)
+    print('Este es el elemento 2,2 de la matriz 1: ', nuevo_elemento)
     espera()
 
     print('\n4) Presentación de una matriz por pantalla\n')
 
-    print('Esta es la matriz 1: ',matriz1)
+    print('Esta es la matriz 1: ', matriz1)
     espera()
     
     print('\n5) Obtención de una fila\n')
 
-    print('Esta es la fila 3 de la matriz 2',matriz2.fila(3))
+    print('Esta es la fila 3 de la matriz 2', matriz2.fila(3))
     espera()
 
     print('\n6) Obtención de una columna\n')
 
-    print('Esta es la columna dos de la matriz 1: ',matriz1.columna(2))
+    print('Esta es la columna dos de la matriz 1: ', matriz1.columna(2))
     espera()
 
     print('\n7) Obtención de una diagonal\n')
 
-    print('Esta es la diagonal inversa de la matriz 1: ',matriz1.diagonal(2))
+    print('Esta es la diagonal inversa de la matriz 1: ', matriz1.diagonal(2))
     espera()
-    print('Esta es la diagonal principal de la matriz 2: ',matriz2.diagonal(1))
+    print('Esta es la diagonal principal de la matriz 2: ', matriz2.diagonal(1))
     espera()
 
     print('\n8) Devolución de dimensiones\n')
 
-    print('Estas son las dimensiones de la matriz 1: ',matriz1.dimensiones())
+    print('Estas son las dimensiones de la matriz 1: ', matriz1.dimensiones())
     espera()
 
     print('\n9) Suma de matrices\n')
@@ -398,39 +398,39 @@ if __name__ == "__main__": #Comprobaciones.
 
     print('\n10) Resta de matrices\n')
 
-    print('Esta es la matriz resta de las matrices 1 y 2: ',matriz1 - matriz2)
+    print('Esta es la matriz resta de las matrices 1 y 2: ', matriz1 - matriz2)
     espera()
 
     print('\n11) Obtener la matriz opuesta\n')
 
-    print('Esta es la matriz opuesta de la matriz 2: ',matriz2.opuesta())
+    print('Esta es la matriz opuesta de la matriz 2: ', matriz2.opuesta())
     espera()
 
     print('\n12) Multiplicación de matrices\n')
 
-    print('Esta es la matriz multiplicación de las matrices 1 y 2: ',matriz1 * matriz2)
+    print('Esta es la matriz multiplicación de las matrices 1 y 2: ', matriz1 * matriz2)
     espera()
 
     print('\n13) Producto de escalar por matriz\n')
 
-    print('Esta es la matriz resultado de multiplicar la matriz 2 por 6: ',matriz2.escalar_matriz(6))
+    print('Esta es la matriz resultado de multiplicar la matriz 2 por 6: ', matriz2.escalar_matriz(6))
     espera()
 
     print('\n14) Generar matriz nula\n')
 
     nula = vacia.nula(4,5)
-    print('Esta es la matriz nula 4 por 5: ',nula)
+    print('Esta es la matriz nula 4 por 5: ', nula)
     espera()
 
     print('\n15) Generar matriz identidad\n')
 
     midentidad = vacia.identidad(8)
-    print('Esta es la identidad de orden 8: ',midentidad)
+    print('Esta es la identidad de orden 8: ', midentidad)
     espera()
 
     print('\n16) Transponer una matriz\n')
 
-    print('Esta es la matriz traspuesta de la matriz 1: ',matriz1.transposicion())
+    print('Esta es la matriz traspuesta de la matriz 1: ', matriz1.transposicion())
     espera()
 
     print('\n17) Caracterización de matrices\n')
@@ -447,17 +447,18 @@ if __name__ == "__main__": #Comprobaciones.
 
     print('\n18) Obtención valor máximo\n')
 
-    print('El valor máximo de la matriz 2 es: ',matriz2.maximo())
+    print('El valor máximo de la matriz 2 es: ', matriz2.maximo())
     espera()
 
     print('\n19) Obtención valor mínimo\n')
 
-    print('El valor mínimo de la matriz 2 es: ',matriz2.minimo())
+    print('El valor mínimo de la matriz 2 es: ', matriz2.minimo())
     espera()
 
     print('\n20) Obtención valor medio\n')
 
-    print('El valor medio de la matriz 2 es: ',matriz2.media())
+    print('El valor medio de la matriz 2 es: ', matriz2.media())
     espera()
 
     print('\nPrueba finalizada sin errores en tiempo de ejecución.')
+
