@@ -56,7 +56,9 @@ def guardar_archivo(d, archivo):
   caracteres = '[]" "'
   resultado = ''.join(x for x in contenido if x not in caracteres) #Sintaxis para eliminar los caracteres '[' ']' y " "
   resultado = resultado.replace("*", " ") 
+    
 #Se lleva a cabo la sustitución de los caracteres * por espacios para construir en resultado la tabla de matrices adecuada.
+
   archivo = open(archivo, 'w')
   archivo.write(resultado)
   archivo.close()
@@ -338,6 +340,12 @@ def menu():
         menu()
 
     elif opcion == 17:
+        
+        '''
+        Se crea un submenú donde se estudian las diferentes caracterizaciones de una matriz. Las comprobaciones relativas al diccionario continúan realizándose.
+        
+        '''
+        
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
             espera()
