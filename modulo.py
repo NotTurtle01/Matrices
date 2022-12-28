@@ -346,7 +346,7 @@ if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del
         while a != '':
             a = input('\nPulsa <ENTER> para continuar: ')
 
-    matriz1 = matriz([[1,2,3],[3,2,3],[9,2,4]])
+    matriz1 = matriz([[1,2,3],[0,2,3],[0,0,4]])
     print('\nMatriz 1: \n')
     print(matriz1)
     espera()
