@@ -82,16 +82,40 @@ class matriz:
       return defecto
       
     def mostrar_elemento(self,n,m):
+        
+      '''
+      Devolución del elemento[n][m] de una matriz.
+       
+      '''
+    
       return self.matriz[n-1][m-1]
       
     def asignar_elemento(self,n,m,elemento):
+      
+      '''
+      Asignación de un elemento a la posición [n][m] de la matriz.
+       
+      '''
+    
       self.matriz[n-1][m-1] = elemento
       return self.matriz
       
     def fila(self,n):
+        
+      '''
+      Devolución de la fila determinada por el usuario.
+      
+      '''
+      
       return self.matriz[n-1]
       
     def columna(self,m):
+        
+      '''
+      Devolución de la columna determinada por el usuario.
+       
+      '''
+    
       lista_columna = []
       for i in self.matriz:
         lista_columna.append(i[m-1])
