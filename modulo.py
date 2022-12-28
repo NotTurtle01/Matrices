@@ -1,9 +1,10 @@
 
 '''
-Autores:
 
+Autores:
 *Óscar Mirás Sánchez. 
 *Joel Rubio González.
+
 
 '''
 
@@ -329,9 +330,7 @@ def intlibre(cadena): #Función de comprobación. Solicita al usuario la introdu
     return int(a)
 
 '''
-
 <Programa por defecto>
-
 '''
 
 if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del módulo.
@@ -342,13 +341,13 @@ if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del
             a = input('\nPulsa <ENTER> para continuar: ')
 
     matriz1 = matriz([[1,2,3],[3,2,3],[9,2,4]])
-    print('Matriz 1:')
-    print(\nmatriz1)
+    print('Matriz 1: \n')
+    print(matriz1)
     espera()
     
     matriz2 = matriz([[2,4,3],[4,6,5],[-9,4,-2]])
-    print('Matriz 2:')
-    print(\nmatriz2)
+    print('Matriz 2: \n')
+    print(matriz2)
     espera()
     
     vacia = matriz([])
@@ -356,8 +355,8 @@ if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del
     print('\n1) Definición de una matriz de dimensiones dadas\n')
 
     matriz_nueva = vacia.crearmatriz(3,4)
-    print('Esta es la nueva matriz:')
-    print(\nmatriz_nueva)
+    print('Esta es la nueva matriz: \n')
+    print(matriz_nueva)
     espera()
 
     print('\n2) Asignación de un elemento específico de una matriz\n')
@@ -469,4 +468,6 @@ if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del
     espera()
 
     print('\nPrueba finalizada sin errores en tiempo de ejecución.')
+
+  
 
