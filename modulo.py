@@ -195,7 +195,15 @@ class matriz:
       return flag
 
     def is_triangular_inferior(self):
-        self.matriz = self.transposicion() #Uso recursivo de las funciones transposicion() e is_triangular_superior()
+        
+        '''
+        En primer lugar se llama al método transposicion() para tener las columnas como nuevas filas. 
+        Llamando al método is_triangular_superior() de la matriz traspuesta podemos saber si 
+        la matriz original es triangular inferior sin necesidad de programar otro método de comprobación.
+        
+        '''
+        
+        self.matriz = self.transposicion() 
         return self.is_triangular_superior()
 
     def __mul__(self,otro):
