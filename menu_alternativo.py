@@ -28,7 +28,7 @@ def comprobdic():  #Función que comprueba si el diccionario está vacio.
     else:
         return 'no vacio'
 
-def nombrevalido(cadena = 'Dime el nombre de la matriz que quieras utilizar: '):   #Función que comprueba que un nombre esta en el diccionario
+def nombrevalido(cadena = 'Dime el nombre de la matriz que quieras utilizar: '):   #Función que comprueba si un nombre está en el diccionario.
     valido = False
     while not valido:
         nombre = str(input(cadena))
@@ -103,7 +103,7 @@ def menu():
         print('Esa no es una opción válida')
         opcion = intlibre('Dime la opcion que desea:')
 
-    if opcion == 1:  #Esta opción sirve para crear una matriz
+    if opcion == 1:  #Esta opción sirve para crear una matriz.
         filas = intmayor0('\nDime cuantas filas quieres que tenga la matriz: ')
         columnas = intmayor0('Dime cuantas columnas quieres que tenga la matriz: ')
         print()
@@ -114,7 +114,7 @@ def menu():
         guardar(lista)
         menu()
 
-    elif opcion == 2:  #Esta opción le asigna un elemento a una matriz
+    elif opcion == 2:  #Esta opción le asigna un elemento a una matriz.
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
             time.sleep(2)
@@ -136,7 +136,7 @@ def menu():
             espera()
         menu()
 
-    elif opcion == 3:    #Esta opción muestra un elemento de una matriz
+    elif opcion == 3:    #Esta opción muestra un elemento de una matriz.
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
             espera()
@@ -169,7 +169,7 @@ def menu():
             espera()
         menu()
     
-    elif opcion == 5:   #Esta opción obtiene una fila de una matriz
+    elif opcion == 5:   #Esta opción obtiene una fila de una matriz.
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
             espera()
@@ -186,7 +186,7 @@ def menu():
         menu()
 
 
-    elif opcion == 6:    #Esta opción obtiene una columna de una matriz
+    elif opcion == 6:    #Esta opción obtiene una columna de una matriz.
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
             espera()
@@ -202,7 +202,7 @@ def menu():
             espera()
         menu()
 
-    elif opcion == 7:   #Esta opción obtiene una diagonal de una matriz
+    elif opcion == 7:   #Esta opción obtiene una diagonal de una matriz.
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opcion\n')
             espera()
@@ -219,7 +219,7 @@ def menu():
             espera()
         menu()
 
-    elif opcion == 8:   #Esta opción devuelve las dimensiones
+    elif opcion == 8:   #Esta opción devuelve las dimensiones.
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
             espera()
@@ -231,7 +231,7 @@ def menu():
             espera()
         menu()
 
-    elif opcion == 9:   #Esta opción suma matrices
+    elif opcion == 9:   #Esta opción suma matrices.
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
             espera()
@@ -248,7 +248,7 @@ def menu():
                 espera()
         menu()
 
-    elif opcion == 10:
+    elif opcion == 10: #Esta opción resta matrices.
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
             espera()
@@ -265,7 +265,7 @@ def menu():
                 espera()
         menu()
 
-    elif opcion == 11:
+    elif opcion == 11: #Esta opción obtiene la matriz opuesta de una dada.
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
             espera()
@@ -278,7 +278,7 @@ def menu():
             guardar(lista)
         menu()
 
-    elif opcion == 12:
+    elif opcion == 12: #Esta opción multiplica matrices.
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
             espera()
@@ -295,7 +295,7 @@ def menu():
                 espera()
         menu()
 
-    elif opcion == 13:
+    elif opcion == 13: #Esta opción multiplica una matriz por un escalar.
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
             espera()
@@ -309,7 +309,7 @@ def menu():
             guardar(lista)
         menu()
     
-    elif opcion == 14:
+    elif opcion == 14: #Esta opción genera una matriz nula.
         filas = intmayor0('\nDime el número de filas: ')
         columnas = intmayor0('Dime el número de columnas: ')
         lista = vacia.nula(filas,columnas)
@@ -318,7 +318,7 @@ def menu():
         guardar(lista)
         menu()
 
-    elif opcion == 15:
+    elif opcion == 15: #Esta opción genera una matriz identidad.
         orden = intmayor0('\nDime el orden de la matriz de identidad: ')
         lista = vacia.identidad(orden)
         print('Esta es la matriz de identidad: ', lista)
@@ -326,7 +326,7 @@ def menu():
         guardar(lista)
         menu()
 
-    elif opcion == 16:
+    elif opcion == 16: #Esta opción transpone una matriz.
         if comprobdic() == 'vacio':
             print('\nNo hay ninguna matriz guardada sobre la que aplicar esta opción\n')
             espera()
@@ -334,12 +334,12 @@ def menu():
             mostrardiccionario()
             nombre = nombrevalido()
             lista = d[nombre].transposicion()
-            print('\nLa matriz traspuesta es: ', lista)
+            print('\nLa matriz transpuesta es: ', lista)
             espera()
             guardar(lista)
         menu()
 
-    elif opcion == 17:
+    elif opcion == 17: 
         
         '''
         Se crea un submenú donde se estudian las diferentes caracterizaciones de una matriz. Las comprobaciones relativas al diccionario continúan realizándose.
@@ -373,37 +373,37 @@ def menu():
                     print('\nLa matriz que ha seleccionado no es mágica')
                 
             elif nueva_opcion == 2:
-                if d[nombre].is_cuadrada():
+                if d[nombre].es_cuadrada():
                     print('\nLa matriz que ha seleccionado es cuadrada')
                 else:
                     print('\nLa matriz que ha seleccionado no es cuadrada')
                 
             elif nueva_opcion == 3:
-                if d[nombre].is_fila():
+                if d[nombre].es_fila():
                     print('\nLa matriz que ha seleccionado es una matriz fila')
                 else:
                     print('\nLa matriz que ha seleccionado no es una matriz fila')
             
             elif nueva_opcion == 4:
-                if d[nombre].is_columna():
+                if d[nombre].es_columna():
                     print('\nLa matriz que ha seleccionado es una matriz columna')
                 else:
                     print('\nLa matriz que ha seleccionado no es una matriz columna')
                 
             elif nueva_opcion == 5:
-                if d[nombre].is_simetrica():
+                if d[nombre].es_simetrica():
                     print('\nLa matriz que ha seleccionado es una matriz simétrica')
                 else:
                     print('\nLa matriz que ha seleccionado no es una matriz simétrica')
 
             elif nueva_opcion == 6:
-                if d[nombre].is_triangular_superior():
+                if d[nombre].es_triangular_superior():
                     print('\nLa matriz que ha seleccionado es una matriz triangular superior')
                 else:
                     print('\nLa matriz que ha seleccionado no es una matriz triangular superior')
 
             elif nueva_opcion == 7:
-                if d[nombre].is_triangular_inferior():
+                if d[nombre].es_triangular_inferior():
                     print('\nLa matriz que ha seleccionado es una matriz triangular inferior')
                 else:
                     print('\nLa matriz que ha seleccionado no es una matriz triangular inferior')
