@@ -18,10 +18,8 @@ Módulo centrado en las operaciones con matrices y caracterizaciones de las mism
 class matriz:
     def __init__(self,lista):
         
-        '''
-        Método de inicialización de la clase matriz. Se consideran matrices las listas de listas que posean como elementos números en punto flotante.
-       
-        '''
+#Método de inicialización de la clase matriz. 
+#Se consideran matrices las listas de listas que posean como elementos números en punto flotante.
         
         if lista == []:
             self.matriz = lista
@@ -29,8 +27,8 @@ class matriz:
             for fila in lista:
                 if len(fila) != len(lista[0]): 
                     
-                    #En caso de que el número de columnas de una fila no coincidiera con el número de columnas de la primera fila (lista[0]),
-                    #no se trataría de una matriz de condiciones válidas.
+                #En caso de que el número de columnas de una fila no coincidiera con el número de columnas de la primera fila (lista[0]),
+                #no se trataría de una matriz de condiciones válidas.
                     
                     print('Eso no es una matriz válida')
                     quit()
@@ -134,9 +132,9 @@ class matriz:
             for i in range(self.columnas):
                 lista_diagonal_2.append(self.matriz[self.filas -1 - i][i]) 
                 
-                #Al número de filas se le resta -1 para adecuarse a los índices de listas de Python. A este número se le substrae el número de 
-                #columna en el que está el elemento, de forma que con cada iteración del bucle "for" se aumentará la resta en una unidad, 
-                #de forma que se recorrerán las filas de la matriz de forma "ascendente" mientras las columnas se recorren de izquierda a derecha.
+        #Al número de filas se le resta -1 para adecuarse a los índices de listas de Python. A este número se le substrae el número de 
+        #columna en el que está el elemento, de forma que con cada iteración del bucle "for" se aumentará la resta en una unidad, 
+        #de forma que se recorrerán las filas de la matriz de forma "ascendente" mientras las columnas se recorren de izquierda a derecha.
                 
             return lista_diagonal_2
     
@@ -155,14 +153,14 @@ class matriz:
       Multiplicación de cada elemento de la matriz por el escalar dado.
       
       '''
-    
+
       for fila in range(self.columnas):
         for columna in range(self.filas):
           self.matriz[fila][columna] = escalar * self.matriz[fila][columna]
       return self.matriz
       
     def opuesta(self):
-      return self.escalar_matriz(-1) #Obtener la matriz opuesta es equivalente a multiplicar la matriz dada por el escalar -1
+      return self.escalar_matriz(-1) #Obtener la matriz opuesta es equivalente a multiplicar la matriz dada por el escalar -1.
       
     def identidad(self,n): 
         
@@ -193,7 +191,7 @@ class matriz:
               lista_nula[i].append(0)
       return lista_nula
 
-    def __add__(self,otro):
+    def __add__(self,otro): #Suma de matrices.
         if otro.filas != self.filas:
             print('Las matrices no tienen las mismas dimensiones. No se pueden sumar.')
         elif otro.columnas != self.columnas:
@@ -207,7 +205,7 @@ class matriz:
                 suma.append(fila)
             return suma
 
-    def __sub__(self,otro):
+    def __sub__(self,otro): #Resta de matrices.
         if otro.filas != self.filas:
             print('Las matrices no tienen las mismas dimensiones. No se pueden restar.')
         elif otro.columnas != self.columnas:
@@ -230,7 +228,7 @@ class matriz:
               lista_nula[i].append(0)
       for i in range(self.filas):
         for j in range(self.columnas):
-          lista_nula[i][j] = self.matriz[j][i]
+          lista_nula[i][j] = self.matriz[j][i] #Se transpone la matriz intercambiando filas por columnas y viceversa.
       return lista_nula
     
     def es_cuadrada(self):
@@ -246,7 +244,7 @@ class matriz:
         return False
     
     def es_columna(self):
-      if self.columnas == 1: #Si la matriz cuenta con una única columna, se trata de una matriz columna
+      if self.columnas == 1: #Si la matriz cuenta con una única columna, se trata de una matriz columna.
         return True
       else: 
         return False
@@ -277,8 +275,9 @@ class matriz:
         self.matriz = self.transposicion() 
         return self.es_triangular_superior()
 
-    def __mul__(self,otro):
-        if self.columnas != otro.filas:
+    def __mul__(self,otro): #Multiplicación de matrices
+        if self.columnas != otro.filas: 
+        #Para ser multiplicadas, el número de columnas de la primera matriz deberá coincidir con el número de filas de la segunda matriz. 
             print('Las matrices no tienen dimensiones validas para ser multiplicadas.')
         else:
             mul = []
@@ -291,12 +290,13 @@ class matriz:
                     fila.append(suma)
                 mul.append(fila)
             return mul
-            
+
     
     def es_magica(self): 
 
-#Este método primero comprueba que sea cuadrada, luego va comprobando que esten presentes todos los numeros del 1 a 
-# n al cuadrado y por ultimo obtiene todas las sumas, las mete en una lista y comprueba que todas son iguales.
+#Este método primero comprueba que sea una matriz cuadrada. Después se comprueba que estén presentes todos los numeros del 1 a 
+#n al cuadrado, y por ultimo se obtienen todas las sumas de filas, columnas y diagonales, se introducen en una lista y 
+#se comprueba que todas son iguales.
 
       if not self.es_cuadrada():
         return False
@@ -337,16 +337,16 @@ class matriz:
         minimo = self.matriz[0][0]
         for i in range(self.filas):
             for j in range(self.columnas):
-                if minimo > self.matriz[i][j]:
-                    minimo = self.matriz[i][j]
+                if minimo > self.matriz[i][j]: 
+                    minimo = self.matriz[i][j] #El elemento mínimo de la matriz se ve intercambiado.
         return minimo
 
     def maximo(self):
         maximo = self.matriz[0][0]
         for i in range(self.filas):
             for j in range(self.columnas):
-                if maximo < self.matriz[i][j]:
-                    maximo = self.matriz[i][j]
+                if maximo < self.matriz[i][j]: 
+                    maximo = self.matriz[i][j] #El elemento máximo de la matriz se ve intercambiado.
         return maximo
 
     def media(self):
@@ -354,7 +354,7 @@ class matriz:
       for i in range(self.filas):
           for j in range(self.columnas):
               suma += self.matriz[i][j]
-      media = suma/(self.filas*self.columnas)
+      media = suma/(self.filas*self.columnas) #Cálculo de la media aritmética.
       return media
 
 def intmayor0(cadena): #Función de comprobación. Solicita al usuario la introducción de un entero mayor que 0. 
@@ -525,17 +525,17 @@ if __name__ == "__main__": #Comprobaciones de las diferentes funcionalidades del
         print('Matriz 1 es triangular inferior')
     espera()
 
-    print('\n18) Obtención valor máximo\n')
+    print('\n18 a) Obtención valor máximo\n')
 
     print('Valor máximo de la matriz 2: ', matriz2.maximo())
     espera()
 
-    print('\n19) Obtención valor mínimo\n')
+    print('\n18 b) Obtención valor mínimo\n')
 
     print('Valor mínimo de la matriz 2: ', matriz2.minimo())
     espera()
 
-    print('\n20) Obtención valor medio\n')
+    print('\n18 c) Obtención valor medio\n')
 
     print('Valor medio de la matriz 2: ', matriz2.media())
     espera()
