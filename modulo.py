@@ -148,16 +148,15 @@ class matriz:
       return [self.filas, self.columnas] 
         
     def escalar_matriz(self,escalar):
-        
       '''
       Multiplicación de cada elemento de la matriz por el escalar dado.
       
       '''
-
-      for fila in range(self.columnas):
-        for columna in range(self.filas):
-          self.matriz[fila][columna] = escalar * self.matriz[fila][columna]
-      return self.matriz
+      nuevo = deepcopy(self.matriz)
+      for fila in range(len(nuevo[0])):
+        for columna in range(len(nuevo)):
+          nuevo[fila][columna] = escalar * nuevo[fila][columna]
+      return nuevo
       
     def opuesta(self):
       return self.escalar_matriz(-1) #Obtener la matriz opuesta es equivalente a multiplicar la matriz dada por el escalar -1.
