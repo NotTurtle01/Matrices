@@ -1,2 +1,2 @@
 # Módulo de Cálculo Matricial (Python)
-Operaciones básicas con *Matrices* + templates de lectura y escritura de ficheros.
+**Operaciones** con **Matrices** + templates de __lectura y escritura__ de ficheros.
